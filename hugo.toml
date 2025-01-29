@@ -1,0 +1,34 @@
+baseURL = 'https://josephpinder.com/'
+languageCode = 'en-us'
+title = 'Joseph Pinder'
+
+upload_dir = "static/uploads"
+public_path = "/uploads"
+disableKinds = [ "taxonomy", "term" ]
+
+[pagination]
+  pagerSize = 6
+
+
+[ params ]
+  version = "1738109400909"
+  twic = "clvrmktg"
+  share = "/uploads/joseph-pinder-share.jpg"
+
+[menus]
+  [[menus.main]]
+    name = 'Blog'
+    pageRef = '/blog'
+    weight = 20
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      wrapStandAloneImageWithinParagraph = false
+      [markup.goldmark.parser.attribute]
+        block = true
+
+    # Links
+    [markup.goldmark.renderHooks]
+      [markup.goldmark.renderHooks.link]
+        enableDefault = true        

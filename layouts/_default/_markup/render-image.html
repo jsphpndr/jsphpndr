@@ -1,0 +1,9 @@
+<figure class="[  pb--1 ]">
+  {{ $uniqueID := (now.UnixNano | string | md5) }}
+  <picture id="picture-{{$uniqueID}}" class="[ bg ]">
+    <style>#picture-{{$uniqueID}} {background-image: url('https://{{ .Page.Site.Params.twic }}.twic.pics/{{ .Destination | safeURL }}?twic=v1/output=preview');}</style>
+    <img class="[ r--10 ]" data-twic-src="image:{{ .Destination | safeURL }}" data-twic-focus="auto" alt="{{- with .PlainText }}{{ . }}{{ end -}}"/>
+    <noscript><img class="[ script ]" src="https://{{ .Page.Site.Params.twic }}.twic.pics/{{ .Destination | safeURL }}?twic=v1/output=preview" alt="{{- with .PlainText }}{{ . }}{{ end -}}"/></noscript>
+  </picture>
+  {{- with .Title }}<figcaption class="[ pt--0.5 ]">{{ . }}</figcaption>{{ end -}}
+</figure>

@@ -1,0 +1,6 @@
+<pre class="[ language-{{ .Type }} ]">
+  <code class="[ language-{{ .Type }} ]">
+    {{- .Inner | htmlEscape | safeHTML }}
+  </code>
+</pre>
+{{ .Page.Store.Set "hasCode" true }}
