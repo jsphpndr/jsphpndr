@@ -1,5 +1,4 @@
 {{- define "main" -}}
-{{- newScratch.Set "hasTwic" true -}}
 <article class="[ post-single ]">
   <div class="[ post-single__header ]">
     <h1>{{ .Title }}</h1>
@@ -14,7 +13,7 @@
     <figure class="[ pb--2 ]">
       <picture class="[ bg ]">
         <style>picture { background-image: url('https://{{ .Site.Params.twic }}.twic.pics/{{ .image }}?twic=v1/output=preview'); }</style>
-        <img data-twic-src="image:{{ .image }}" data-twic-focus="auto" alt="{{ if .alt }}{{ .alt }}{{ end }}" width="683" height="385"/>
+        <img data-twic-src="image:{{ .image }}" data-twic-focus="auto" alt="{{ if .alt }}{{ .alt }}{{ end }}" width="700" height="700"/>
         <noscript>
         <img class="[ script ]" src="https://{{ .Site.Params.twic }}.twic.pics/{{ .image }}?twic=v1/output=preview" alt="{{ if .alt }}{{ .alt }}{{ end }}" width="683" height="385"/></noscript>
       </picture>

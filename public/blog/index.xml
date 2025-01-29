@@ -6,7 +6,14 @@
     <description>Recent content in Blog on Joseph Pinder</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Wed, 29 Jan 2025 06:43:45 -0500</lastBuildDate>
     <atom:link href="https://josephpinder.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Facebook Pixel Is Slowing Down Your Website (And How To Fix It, Securely)</title>
+      <link>https://josephpinder.com/blog/facebook-pixel-is-slowing-down-your-website-and-how-to-fix-it-securely/</link>
+      <pubDate>Sun, 19 Jul 2020 00:00:00 -0400</pubDate>
+      <guid>https://josephpinder.com/blog/facebook-pixel-is-slowing-down-your-website-and-how-to-fix-it-securely/</guid>
+      <description>&lt;p&gt;Analytical tools are ubiquitous with the modern web. Even the most basic website has at least one of these analytical tools (most, likely Google Analytics) running in the background. Why not Facebook?&lt;/p&gt;&#xA;&lt;p&gt;In this article, we will find out how Facebook Pixel slows down your website and how to resolve this problem securely.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-facebook-pixel&#34;&gt;What is Facebook Pixel?&lt;/h2&gt;&#xA;&lt;p&gt;Facebook Pixel is an analytics tool that helps you:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;track conversions from Facebook ads,&lt;/li&gt;&#xA;&lt;li&gt;optimize Facebook Ads,&lt;/li&gt;&#xA;&lt;li&gt;build targeted audiences for future ads,&lt;/li&gt;&#xA;&lt;li&gt;and remarket to people who have taken some kind of action on your website.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;It’s a great tool, but it’s a tool that might be slowing your website down, costing you leads and money.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
