@@ -2,6 +2,11 @@
 date = '2025-01-27T10:11:24-05:00'
 draft = false
 title = 'Privacy Policy'
+
+[params]
+  hasTwic = false
+  hasObscure = true
+  
 +++
 
 

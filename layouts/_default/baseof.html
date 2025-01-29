@@ -18,13 +18,10 @@
     </header>
     <main class="[ main ]{{- if eq .Page.Kind "404" -}}[ error ]{{- end -}}" id="main">
       {{- block "main" . -}}{{- end -}}
-      {{ $s := newScratch }}
-{{ $s.Set "greeting" "Hello" }}
-{{ $s.Get "greeting" }}
     </main>
     {{- partial "footer.html" . -}}
     <script src="/scripts/app-{{ .Site.Params.Version }}.min.js" defer></script>
-    {{- if or .IsHome (.Store.Get "hasObscure") }}
+    {{- if or .IsHome (.Params.hasObscure ) }}
     <script src="/scripts/obscure-{{ .Site.Params.Version }}.min.js"></script>
     {{- end -}}
     {{- if .Store.Get "hasCode" -}}

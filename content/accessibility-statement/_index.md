@@ -2,6 +2,11 @@
 date = '2025-01-27T10:11:24-05:00'
 draft = false
 title = 'Accessibility Statement'
+
+[params]
+  hasTwic = false
+  hasObscure = true
+  
 +++
 
 Hey, I’m Joseph. I’m committed to making my website accessible to everyone, including people with disabilities. My goal is to create a space that’s welcoming, easy to use, and enjoyable for all visitors, regardless of their abilities or the technology they use.

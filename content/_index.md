@@ -13,6 +13,7 @@ title = 'Homepage'
 
 [params]
   hasTwic = true
+  hasObscure = true
 
 +++
 

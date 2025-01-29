@@ -15,4 +15,8 @@ description = ''
 #   id = 1
 #   content = ""
 
+[params]
+  hasTwic = false
+  hasObscure = false
+
 +++
