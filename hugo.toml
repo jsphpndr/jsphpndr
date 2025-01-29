@@ -12,7 +12,7 @@ disableKinds = [ "taxonomy", "term" ]
 
 [ params ]
   version = "1738109400909"
-  twic = "clvrmktg"
+  twic = "jsphpndr"
   share = "/uploads/joseph-pinder-share.jpg"
 
 [menus]
