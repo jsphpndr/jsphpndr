@@ -1,14 +1,14 @@
 {{- define "main" -}}
-  {{- .Page.Store.Set "hasTwic" true -}}
+  {{- .Store.Set "hasTwic" true -}}
   <!-- Profile — START -->
   <div class="[ profile ][ grid ]">
     <!-- Cover Image — START -->
     {{- with .Params.cover -}}
     <figure class="[ profile__cover cover ]">
       <picture id="cover" class="[ bg ]">
-        <style>picture {background-image: url('https://{{ .Site.Params.twic }}.twic.pics/{{ .image }}?twic=v1/output=preview'); }</style>
+        <style>picture {background-image: url('https://{{ $.Site.Params.twic }}.twic.pics/{{ .image }}?twic=v1/output=preview'); }</style>
         <img data-twic-src="image:{{ .image }}" data-twic-focus="auto" alt="{{ .alt }}" width="683" height="385"/>
-        <noscript><img class="[ script ]" src="https://{{ .Site.Params.twic }}.twic.pics/{{ .image }}?twic=v1/output=preview" alt="{{ .alt }}" width="683" height="385"/></noscript>
+        <noscript><img class="[ script ]" src="https://{{ $.Site.Params.twic }}.twic.pics/{{ .image }}?twic=v1/output=preview" alt="{{ .alt }}" width="683" height="385"/></noscript>
       </picture>
     </figure>
     {{- end -}}
