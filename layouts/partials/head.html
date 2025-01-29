@@ -1,31 +1,32 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   {{- if .IsHome -}}
-  <title>{{ .Site.Title }} | Web Designer | Nassau, Bahamas</title>
+  <title>{{- .Site.Title -}} | Web Designer | Nassau, Bahamas</title>
   {{- else -}}
-  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  <title>{{- .Title -}} | {{- .Site.Title -}}</title>
   {{- end -}}
-  <meta name="description" content="{{ .Description }}">
+  <meta name="description" content="{{- .Description -}}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <link rel="canonical" href="{{ .Permalink | replaceRE "/$" "" }}">
-  {{- if .Store.Get "hasError" -}}
+  <link rel="canonical" href="{{- .Permalink | replaceRE "/$" "" -}}">
+  {{- if eq .Page.Kind "404" -}}
   <meta name="robots" content="noindex">
   <meta name="googlebot" content="noindex">
   {{- end -}}
-  <link rel="preload" href="/styles/style-{{ .Site.Params.Version }}.min.css" as="style">
-  {{- if .Store.Get "hasTwic" -}}
-  <link rel="preconnect" href="https://{{ .Site.Params.twic }}.twic.pics/?v">
-  <link rel="preload" href="https://{{ .Site.Params.twic }}.twic.pics/?v1" as="script">
+  <link rel="preload" href="/styles/style-{{- .Site.Params.Version -}}.min.css" as="style">
+  
+  {{ if .Params.hasTwic }}
+  <link rel="preconnect" href="https://{{- .Site.Params.twic -}}.twic.pics/?v">
+  <link rel="preload" href="https://{{- .Site.Params.twic -}}.twic.pics/?v1" as="script">
   {{- end -}}
-  <link rel="stylesheet" href="/styles/style-{{ .Site.Params.Version }}.min.css" type="text/css">
+  <link rel="stylesheet" href="/styles/style-{{- .Site.Params.Version -}}.min.css" type="text/css">
   <noscript>
     <style>.script { display: none; visibility: hidden }</style>
   </noscript>
-  {{- if .Store.Get "hasTwic" -}}
-  <script src="https://{{ .Site.Params.twic }}.twic.pics/?v1" defer></script>
+  {{- if .Page.Params.hasTwic -}}
+  <script src="https://{{- .Site.Params.twic -}}.twic.pics/?v1" defer></script>
   {{- end -}}
   {{- if .Store.Get "hasCode" -}}
-  <script src="/scripts/prism-{{ .Site.Params.Version }}.min.js" async></script>
+  <script src="/scripts/prism-{{- .Site.Params.Version -}}.min.js" async></script>
   {{- end -}} 
   <!-- Light Mode Favicon -->
   <link rel="icon" type="image/png" href="/favicon-light.svg" media="(prefers-color-scheme: light)">
@@ -37,27 +38,27 @@
   <meta name="theme-color" content="#0d1117">
   {{- $iso := "2006-01-02T15:04:05Z07:00" -}}
   <meta property="fb:app_id" content="384650276688740">
-  <meta property="og:url" content="{{ .Permalink | replaceRE "/$" "" }}">
+  <meta property="og:url" content="{{- .Permalink | replaceRE "/$" "" -}}">
   <meta property="og:type" content="website">
   {{- if .IsHome -}}
-  <meta property="og:title" content="{{ .Site.Title }} | Web Designer | Nassau, Bahamas">
+  <meta property="og:title" content="{{- .Site.Title -}} | Web Designer | Nassau, Bahamas">
   {{- else -}}
-  <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}">
+  <meta property="og:title" content="{{- .Title -}} | {{- .Site.Title -}}">
   {{- end -}}
   {{- $image := .Params.share | default .Site.Params.share -}}
-  <meta property="og:description" content="{{ .Description }}">
-  <meta property="og:image" content="{{ $image | absURL }}">
+  <meta property="og:description" content="{{- .Description -}}">
+  <meta property="og:image" content="{{- $image | absURL -}}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@jsphpndr">
   <meta name="twitter:creator" content="@jsphpndr">
   {{- if .IsHome -}}
-  <meta name="twitter:title" content="{{ .Site.Title }} | Web Designer | Nassau, Bahamas">
+  <meta name="twitter:title" content="{{- .Site.Title -}} | Web Designer | Nassau, Bahamas">
   {{- else -}}
-  <meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}">
+  <meta name="twitter:title" content="{{- .Title -}} | {{- .Site.Title -}}">
   {{- end -}}
-  <meta name="twitter:description" content="{{ .Description }}">
-  <meta name="twitter:image" content="{{ $image | absURL }}">
+  <meta name="twitter:description" content="{{- .Description -}}">
+  <meta name="twitter:image" content="{{- $image | absURL -}}">
   <meta name="author" content="Joseph Pinder">
-  <meta name="publish_date" property="og:publish_date" content="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">
+  <meta name="publish_date" property="og:publish_date" content="{{- .Date.Format "2006-01-02T15:04:05Z0700" -}}">
 </head>
-<!-- {{ .Site.Title }} -->
+<!-- {{- .Site.Title -}} -->

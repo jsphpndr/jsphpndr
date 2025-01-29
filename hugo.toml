@@ -9,11 +9,11 @@ disableKinds = [ "taxonomy", "term" ]
 [pagination]
   pagerSize = 6
 
-
 [ params ]
-  version = "1738109400909"
+  version = "1738105447757"
   twic = "jsphpndr"
   share = "/uploads/joseph-pinder-share.jpg"
+  error = true
 
 [menus]
   [[menus.main]]

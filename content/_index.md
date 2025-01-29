@@ -3,13 +3,16 @@ date = '2025-01-27T10:06:46-05:00'
 draft = false
 title = 'Homepage'
 [cover]
-  image = "home/smiling-woman-drinking-coffee.jpg"
+  image = "uploads/smiling-woman-drinking-coffee.jpg"
   alt = "My wife, Garnell and I"
 [avatar]
-  image = "home/smiling-woman-drinking-coffee.jpg"
+  image = "uploads/joseph-pinder.jpg"
   alt = "Joseph Pinder"
   # Author Snippet - This is at the bottom of every post.
   snippet = 'Joseph is a web designer based in Nassau, Bahamas passionate about creating websites that look great and perform even better.'
+
+[params]
+  hasTwic = true
 
 +++
 
