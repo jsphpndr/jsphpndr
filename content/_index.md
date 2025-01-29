@@ -3,7 +3,7 @@ date = '2025-01-27T10:06:46-05:00'
 draft = false
 title = 'Homepage'
 [cover]
-  image = "uploads/smiling-woman-drinking-coffee.jpg"
+  image = "uploads/joseph-garnell-pinder.jpg"
   alt = "My wife, Garnell and I"
 [avatar]
   image = "uploads/joseph-pinder.jpg"
