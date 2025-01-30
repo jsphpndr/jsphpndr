@@ -9,11 +9,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta http-equiv="Content-Security-Policy" content="
   default-src 'self'; 
-  script-src 'self' https://twicpics.com; 
-  img-src 'self' https://twicpics.com data:; 
+  script-src 'self' https://{{- .Site.Params.twic -}}.twic.pics/?v1; 
+  img-src 'self' https://{{- .Site.Params.twic -}}.twic.pics/?v1 data:; 
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
   font-src 'self' https://fonts.gstatic.com;
-  connect-src 'self' https://twicpics.com;
+  connect-src 'self' https://{{- .Site.Params.twic -}}.twic.pics/?v1;
   frame-ancestors 'none';">
   <title>{{ $pageTitle }}</title>
   <meta name="description" content="{{- .Description -}}">
@@ -25,7 +25,7 @@
   <link rel="preload" href="/styles/style-{{- .Site.Params.Version -}}.min.css" as="style">
   
   {{ if .Params.hasTwic }}
-  <link rel="preconnect" href="https://{{- .Site.Params.twic -}}.twic.pics/?v">
+  <link rel="preconnect" href="https://{{- .Site.Params.twic -}}.twic.pics/?v1">
   <link rel="preload" href="https://{{- .Site.Params.twic -}}.twic.pics/?v1" as="script">
   {{- end -}}
   <link rel="stylesheet" href="/styles/style-{{- .Site.Params.Version -}}.min.css" type="text/css">
