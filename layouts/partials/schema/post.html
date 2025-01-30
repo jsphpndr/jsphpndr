@@ -2,46 +2,46 @@
 {{- $feature := .Params.feature -}}
 {{- $image := $feature.image | default .Site.Params.share -}}
 {{- $alt := $feature.alt | default "Default share image of Joseph Pinder's logo" -}}
+
 {{- if .Params.post -}}
 <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": {{ .Permalink | replaceRE "/$" "" }}
-      },
-      "headline": "{{ .Title }}",
-      "description": "{{ .Description }}"
-      "image": {
-        "@type": "ImageObject",
-        "url": {{ $image | absURL }},
-        "width": 1200,
-        "height": 1200
-      },
-      "datePublished": "{{ .Date.Format $iso }}",
-      "dateModified": "{{ (.GitInfo.AuthorDate | default .Date) | time.Format $iso }}",
-      "wordCount": "{{ .WordCount }}",
-      "author": {
-        "@type": "Person",
-        "name": "Joseph Pinder"
-      },
-      "publisher": {
-        "@type": "Person",
-        "name": "Joseph Pinder",
-        "logo": {
-          "@type": "ImageObject",
-          "url": {{ .Site.Params.logo | absURL }},
-          "width": 512,
-          "height": 512
-      }
-    },
-    "articleSection": [
-      {{ range $index, $category := .Params.categories }}
-        {{- if $index }},{{ end }}"{{ $category }}"
-      {{ end }}
-    ],
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink | replaceRE "/$" "" }}"
+  },
+  "headline": "{{ .Title }}",
+  "description": "{{ .Description }}",
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ $image | absURL }}",
+    "width": 1200,
+    "height": 1200
+  },
+  "datePublished": "{{ .Date.Format $iso }}",
+  "dateModified": "{{ (.GitInfo.AuthorDate | default .Date) | time.Format $iso }}",
+  "wordCount": "{{ .WordCount }}",
+  "author": {
+    "@type": "Person",
+    "name": "Joseph Pinder"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Joseph Pinder",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ .Site.Params.logo | absURL }}",
+      "width": 512,
+      "height": 512
+    }
+  },
+  "articleSection": [
+    {{ range $index, $category := .Params.categories -}}
+      {{- if $index }}, {{ end }}"{{ $category }}"
+    {{- end }}
   ]
+}
 </script>
 {{- end -}}
