@@ -127,8 +127,8 @@
 <p>Don’t do this!</p>
 <figure class="[  pb--1 ]">
   
-  <picture id="picture-b4b14b18d7157e43fec7c5cbb146c0b7" class="[ bg ]">
-    <style>#picture-b4b14b18d7157e43fec7c5cbb146c0b7 {background-image: url('https://jsphpndr.twic.pics/uploads/joseph-pinder-gt-metrix-facebook-pixel-before-results.jpeg?twic=v1/output=preview');}</style>
+  <picture id="picture-206a7dcde1e3a766911e9608810bad08" class="[ bg ]">
+    <style>#picture-206a7dcde1e3a766911e9608810bad08 {background-image: url('https://jsphpndr.twic.pics/uploads/joseph-pinder-gt-metrix-facebook-pixel-before-results.jpeg?twic=v1/output=preview');}</style>
     <img class="[ r--10 ]" data-twic-src="image:/uploads/joseph-pinder-gt-metrix-facebook-pixel-before-results.jpeg" data-twic-focus="auto" alt="Facebook Pixel GT Metrix Before Results"/>
     <noscript><img class="[ script ]" src="https://jsphpndr.twic.pics/uploads/joseph-pinder-gt-metrix-facebook-pixel-before-results.jpeg?twic=v1/output=preview" alt="Facebook Pixel GT Metrix Before Results"/></noscript>
   </picture><figcaption class="[ pt--0.5 ]">Fig.1.1 Facebook Pixel GT Metrix Before Results</figcaption></figure><p>Unedited, Facebook’s little code snippet can add anywhere from 1.3–1.5 seconds to your page’s load time. To make matters worse, the script is loaded, four HTTP requests made and 170KB added to your <a href="https://web.archive.org/web/20240103080305/https://whatdoesmysitecost.com/" rel="noopener" target="_blank">page weight</a> (or page size) all before your page’s First Paint—that’s before the first pixel is even visible on the screen.</p>
@@ -144,7 +144,7 @@
 <p>This site uses a strong Content Security Policy and internal styles and scripts require either a hash or nonce to be loaded and executed.</p>
 <p>For those who are keeping up with the latest in website security and best practices, this solution won’t work.</p>
 <h2 id="enter-the-fix">Enter The Fix</h2>
-<p>To fix our problem, we need to first place the Facebook Pixel snippet at the end of our document, just before the closing <code>&lt;body&gt;</code> tag.</p>
+<p>To fix our problem, we need to first place the Facebook Pixel snippet at the end of our document, just before the closing <code><body></code> tag.</p>
 <p>Next, we need to delay the snippet’s execution until after the page has loaded by wrapping our script with the following code:</p>
 <pre class="[ language-js ]">
   <code class="[ language-js ]">  setTimeout(function(){
@@ -157,27 +157,27 @@
 <p>We’re going to add a nonce to our opening script tag.</p>
 <p>Note: If you’re not generating nonces dynamically, for the purposes of this article, you can head over to random.org and generate a random string.</p>
 <pre class="[ language-html ]">
-  <code class="[ language-html ]">&lt;script nonce=&#34;4yZwhMbBbX&#34;&gt;&lt;/script&gt;
+  <code class="[ language-html ]"><script nonce="4yZwhMbBbX"></script>
   </code>
 </pre>
 <p>The Facebook Pixel image uses an inline style. Unfortunately, nonces don’t work for inline styles. So, how do we get around this?</p>
-<p>First let’s add a class to our <code>&lt;img&gt;</code> tag like “pixel”.</p>
+<p>First let’s add a class to our <code><img></code> tag like “pixel”.</p>
 <pre class="[ language-html ]">
-  <code class="[ language-html ]">&lt;noscript&gt;&lt;img height=&#34;1&#34; width=&#34;1&#34; class=&#34;pixel&#34; src=&#34;https://www.facebook.com/tr?id=YOUR_FACEBOOK_APP_ID&amp;ev=PageView&amp;noscript=1&#34;/&gt;&lt;/noscript&gt;
+  <code class="[ language-html ]"><noscript><img height="1" width="1" class="pixel" src="https://www.facebook.com/tr?id=YOUR_FACEBOOK_APP_ID&ev=PageView&noscript=1"/></noscript>
   </code>
 </pre>
-<p>To apply our styles, we can either place the inline CSS in a <code>&lt;style&gt;</code> tag or use an external stylesheet. For the purposes of this article, we will use an internal style.</p>
+<p>To apply our styles, we can either place the inline CSS in a <code><style></code> tag or use an external stylesheet. For the purposes of this article, we will use an internal style.</p>
 <pre class="[ language-html ]">
-  <code class="[ language-html ]">&lt;style nonce=&#34;4yZwhMbBbX&#34;&gt;.pixel{display:none}&lt;/style&gt;
+  <code class="[ language-html ]"><style nonce="4yZwhMbBbX">.pixel{display:none}</style>
   </code>
 </pre>
 <p>If we put it all together, you should have something that looks like this:</p>
 <pre class="[ language-html ]">
-  <code class="[ language-html ]">&lt;/footer&gt;
-	&lt;!-- End Footer --&gt;
+  <code class="[ language-html ]"></footer>
+	<!-- End Footer -->
 
-	&lt;!-- Facebook Pixel Code --&gt;
-	&lt;script nonce=&#34;4yZwhMbBbX&#34;&gt;
+	<!-- Facebook Pixel Code -->
+	<script nonce="4yZwhMbBbX">
 		setTimeout(function() {
 			! function(f, b, e, v, n, t, s) {
 				if (f.fbq) return;
@@ -187,45 +187,45 @@
 				if (!f._fbq) f._fbq = n;
 				n.push = n;
 				n.loaded = !0;
-				n.version = &#39;2.0&#39;;
+				n.version = '2.0';
 				n.queue = [];
 				t = b.createElement(e);
 				t.async = !0;
 				t.src = v;
 				s = b.getElementsByTagName(e)[0];
 				s.parentNode.insertBefore(t, s)
-			}(window, document, &#39;script&#39;, &#39;https://connect.facebook.net/en_US/fbevents.js&#39;);
-			fbq(&#39;init&#39;, &#39;XXXXXXXXXX&#39;);
-			fbq(&#39;track&#39;, &#39;PageView&#39;);
+			}(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+			fbq('init', 'XXXXXXXXXX');
+			fbq('track', 'PageView');
 		}, 3000);
-	&lt;/script&gt;
-	&lt;noscript&gt;&lt;img height=&#34;1&#34; width=&#34;1&#34; class=&#34;pixel&#34; src=&#34;https://www.facebook.com/tr?id=XXXXXXXXXX&amp;ev=PageView&amp;noscript=1&#34;/&gt;&lt;/noscript&gt;
-	&lt;style nonce=&#34;4yZwhMbBbX&#34;&gt;.pixel{display:none}&lt;/style&gt;
-	&lt;!-- End Facebook Pixel Code --&gt;
+	</script>
+	<noscript><img height="1" width="1" class="pixel" src="https://www.facebook.com/tr?id=XXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
+	<style nonce="4yZwhMbBbX">.pixel{display:none}</style>
+	<!-- End Facebook Pixel Code -->
 
-&lt;/body&gt;
-&lt;!-- Closing Body Tag --&gt;
+</body>
+<!-- Closing Body Tag -->
 
-&lt;/html&gt;
-&lt;!-- End Document --&gt;
+</html>
+<!-- End Document -->
   </code>
 </pre>
 <h2 id="security--server-side">Security — Server Side</h2>
 <p>Last, but not least, we need to modify our Content Security Policy header to allow external scripts from Facebook’s domains. So, we’ll make the following changes to our .htaccess—or whatever your configuration—file:</p>
 <pre class="[ language- ]">
-  <code class="[ language- ]">Header add Content-Security-Policy &#34; \
-  style-src &#39;self&#39; &#39;nonce-2IRI4BAdMt&#39; ; \
-  script-src &#39;self&#39; &#39;nonce-4yZwhMbBbX&#39; *.facebook.net; \
-  connect-src &#39;self&#39; www.facebook.com; \
-  &#34;
+  <code class="[ language- ]">Header add Content-Security-Policy " \
+  style-src 'self' 'nonce-2IRI4BAdMt' ; \
+  script-src 'self' 'nonce-4yZwhMbBbX' *.facebook.net; \
+  connect-src 'self' www.facebook.com; \
+  "
   </code>
 </pre>
 <p>Note: connect-src is required to allow these scripts to work in the Safari browser.</p>
 <h2 id="results">Results</h2>
 <figure class="[  pb--1 ]">
   
-  <picture id="picture-cdb80f77d8d38de8aca302deed6efd32" class="[ bg ]">
-    <style>#picture-cdb80f77d8d38de8aca302deed6efd32 {background-image: url('https://jsphpndr.twic.pics/uploads/joseph-pinder-gt-metrix-facebook-pixel-after-results.jpg?twic=v1/output=preview');}</style>
+  <picture id="picture-5a5be2d16b121e5684276263e50d61a0" class="[ bg ]">
+    <style>#picture-5a5be2d16b121e5684276263e50d61a0 {background-image: url('https://jsphpndr.twic.pics/uploads/joseph-pinder-gt-metrix-facebook-pixel-after-results.jpg?twic=v1/output=preview');}</style>
     <img class="[ r--10 ]" data-twic-src="image:/uploads/joseph-pinder-gt-metrix-facebook-pixel-after-results.jpg" data-twic-focus="auto" alt="Facebook Pixel GT Metrix After Results"/>
     <noscript><img class="[ script ]" src="https://jsphpndr.twic.pics/uploads/joseph-pinder-gt-metrix-facebook-pixel-after-results.jpg?twic=v1/output=preview" alt="Facebook Pixel GT Metrix After Results"/></noscript>
   </picture><figcaption class="[ pt--0.5 ]">Fig.1.2 — Facebook Pixel GT Metrix After Results</figcaption></figure><ol>
@@ -274,17 +274,18 @@
           <a class="[ post__link ]" href="/blog/the-need-to-be-remembered/" data-prefetch>
             <h3 class="[ font--2 ]">The Need to Be Remembered</h3>
             <time datetime="2025-01-30T09:46:56-05:00">January 30, 2025</time>
-            <p>I&amp;rsquo;m going to die.
-No, I&amp;rsquo;m not sick.
-I don&amp;rsquo;t know if it&amp;rsquo;s today or tomorrow, ten years from now, or ten years after that.
-The Beginning of This Blog When I originally started th[...]</p>
+            <p>I&rsquo;m going to die.
+No, I&rsquo;m not sick.
+I don&rsquo;t know if it&rsquo;s today or tomorrow, ten years from now, or ten years after that.[...]
+</p>
           </a>
         </li><li class="[ post ]">
           <a class="[ post__link ]" href="/blog/stop-email-spam-with-obscurejs-hide-your-email-address-from-spammers/" data-prefetch>
             <h3 class="[ font--2 ]">Stop Email Spam With Obscurejs Hide Your Email Address From Spammers</h3>
             <time datetime="2021-05-28T00:00:00-04:00">May 28, 2021</time>
             <p>Did you know that spambots scan websites looking to harvest emails all the time? I didn’t. At least, not starting out.
-When I first started programming, I didn’t know that it was a bad idea to hardcod[...]</p>
+When I first started[...]
+</p>
           </a>
         </li></ul>
     </section></footer>
