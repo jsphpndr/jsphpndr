@@ -172,9 +172,11 @@ Note: connect-src is required to allow these scripts to work in the Safari brows
 1. By placing the Facebook Pixel at the end of our document, we allow our script to be loaded without interrupting our page’s first paint.
 
 2. Delaying the execution of the script by 3 seconds:
-  - reduces our page weight by 170Kb,
-  - and delays our HTTP requests so that it’s not counted towards our page load time.
+    
+    - reduces our page weight by 170Kb,  
+    - and delays our HTTP requests so that it’s not counted towards our page load time.
 
 3. By using a Content Security Policy, we ensure that the only scripts running are those we want to run.
+
 
 You can check your results over at [GT Metrix](https://web.archive.org/web/20240103080305/https://gtmetrix.com/) or with your browser’s developer tools.
