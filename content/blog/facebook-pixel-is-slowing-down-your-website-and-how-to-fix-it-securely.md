@@ -44,7 +44,7 @@ If you’re following [Facebook’s instructions on installing Facebook Pixel](h
 
 Don’t do this!
 
-![Facebook Pixel GT Metrix Before Results](/uploads/joseph-pinder-gt-metrix-facebook-pixel-before-results.jpeg "Facebook Pixel GT Metrix Before Results")
+![Facebook Pixel GT Metrix Before Results](/uploads/joseph-pinder-gt-metrix-facebook-pixel-before-results.jpeg "Fig.1.1 Facebook Pixel GT Metrix Before Results")
 
 Unedited, Facebook’s little code snippet can add anywhere from 1.3–1.5 seconds to your page’s load time. To make matters worse, the script is loaded, four HTTP requests made and 170KB added to your [page weight](https://web.archive.org/web/20240103080305/https://whatdoesmysitecost.com/) (or page size) all before your page’s First Paint—that’s before the first pixel is even visible on the screen.
 
