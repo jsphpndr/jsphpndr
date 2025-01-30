@@ -10,7 +10,7 @@ disableKinds = [ "taxonomy", "term" ]
   pagerSize = 6
 
 [ params ]
-  version = "1738105447757"
+  version = "1738215593506"
   twic = "jsphpndr"
   share = "/uploads/joseph-pinder-share.jpg"
   logo = "/uploads/joseph-pinder-logo.png"
