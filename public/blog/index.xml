@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Joseph Pinder</title>
-    <link>https://josephpinder.com/blog.html</link>
+    <link>https://josephpinder.com/blog/</link>
     <description>Recent content in Blog on Joseph Pinder</description>
     <generator>Hugo</generator>
     <language>en-us</language>
@@ -10,30 +10,30 @@
     <atom:link href="https://josephpinder.com/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Need to Be Remembered</title>
-      <link>https://josephpinder.com/blog/the-need-to-be-remembered.html</link>
+      <link>https://josephpinder.com/blog/the-need-to-be-remembered/</link>
       <pubDate>Thu, 30 Jan 2025 09:46:56 -0500</pubDate>
-      <guid>https://josephpinder.com/blog/the-need-to-be-remembered.html</guid>
+      <guid>https://josephpinder.com/blog/the-need-to-be-remembered/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m going to die.&lt;br&gt;&#xA;No, I&amp;rsquo;m not sick.&lt;br&gt;&#xA;I don&amp;rsquo;t know if it&amp;rsquo;s today or tomorrow, ten years from now, or ten years after that.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-beginning-of-this-blog&#34;&gt;The Beginning of This Blog&lt;/h2&gt;&#xA;&lt;p&gt;When I originally started this blog, it was to be like any other developer blog, really. Demonstrate my knowledge, share information, and act as a memory bank for whatever bits of my experience I found useful.&lt;br&gt;&#xA;The standard bit.&lt;/p&gt;&#xA;&lt;p&gt;My first real post (&lt;a href=&#34;https://josephpinder.com/blog/facebook-pixel-is-slowing-down-your-website-and-how-to-fix-it-securely&#34;data-prefetch&gt;Facebook Pixel Is Slowing Down Your Website (And How To Fix It, Securely)&lt;/a&gt;) was five years ago on Sunday, July 19th, 2020. And while I was developing websites before this time, I was so happy about the damned thing, I couldn&amp;rsquo;t wait to show my wife my own little corner of the web. I couldn&amp;rsquo;t wait to share it.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Stop Email Spam With Obscurejs Hide Your Email Address From Spammers</title>
-      <link>https://josephpinder.com/blog/stop-email-spam-with-obscurejs-hide-your-email-address-from-spammers.html</link>
+      <link>https://josephpinder.com/blog/stop-email-spam-with-obscurejs-hide-your-email-address-from-spammers/</link>
       <pubDate>Fri, 28 May 2021 00:00:00 -0400</pubDate>
-      <guid>https://josephpinder.com/blog/stop-email-spam-with-obscurejs-hide-your-email-address-from-spammers.html</guid>
+      <guid>https://josephpinder.com/blog/stop-email-spam-with-obscurejs-hide-your-email-address-from-spammers/</guid>
       <description>&lt;p&gt;Did you know that spambots scan websites looking to harvest emails all the time? I didn’t. At least, not starting out.&lt;/p&gt;&#xA;&lt;p&gt;When I first started programming, I didn’t know that it was a bad idea to hardcode email addresses into my HTML. Needless to say, I got a lot of spam. Lots and lots of it.&lt;/p&gt;&#xA;&lt;p&gt;When I first started looking around for a solution, this was what I found:&lt;/p&gt;</description>
     </item>
     <item>
       <title>File Naming Conventions for Web Developers</title>
-      <link>https://josephpinder.com/blog/file-naming-conventions-for-web-developers.html</link>
+      <link>https://josephpinder.com/blog/file-naming-conventions-for-web-developers/</link>
       <pubDate>Wed, 19 Aug 2020 00:00:00 -0400</pubDate>
-      <guid>https://josephpinder.com/blog/file-naming-conventions-for-web-developers.html</guid>
+      <guid>https://josephpinder.com/blog/file-naming-conventions-for-web-developers/</guid>
       <description>&lt;p&gt;Whenever I mention naming conventions to my students for the first time, there’s just a slight confusion that seems to fill their minds.&lt;/p&gt;&#xA;&lt;p&gt;Naming conventions are helpful tools for organizing and structuring directories (or folders) and files. In web development, this includes filenames, directory names, and project structures.&lt;/p&gt;&#xA;&lt;p&gt;For the purposes of this article, we’ll just focus on best practices when naming directories and files.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-are-naming-conventions&#34;&gt;What are naming conventions?&lt;/h2&gt;&#xA;&lt;p&gt;According to Wikipedia, “a naming convention is a convention (generally agreed scheme) for naming things.”&lt;/p&gt;</description>
     </item>
     <item>
       <title>Facebook Pixel Is Slowing Down Your Website (And How To Fix It, Securely)</title>
-      <link>https://josephpinder.com/blog/facebook-pixel-is-slowing-down-your-website-and-how-to-fix-it-securely.html</link>
+      <link>https://josephpinder.com/blog/facebook-pixel-is-slowing-down-your-website-and-how-to-fix-it-securely/</link>
       <pubDate>Sun, 19 Jul 2020 00:00:00 -0400</pubDate>
-      <guid>https://josephpinder.com/blog/facebook-pixel-is-slowing-down-your-website-and-how-to-fix-it-securely.html</guid>
+      <guid>https://josephpinder.com/blog/facebook-pixel-is-slowing-down-your-website-and-how-to-fix-it-securely/</guid>
       <description>&lt;p&gt;Analytical tools are ubiquitous with the modern web. Even the most basic website has at least one of these analytical tools (most, likely Google Analytics) running in the background. Why not Facebook?&lt;/p&gt;&#xA;&lt;p&gt;In this article, we will find out how Facebook Pixel slows down your website and how to resolve this problem securely.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-facebook-pixel&#34;&gt;What is Facebook Pixel?&lt;/h2&gt;&#xA;&lt;p&gt;Facebook Pixel is an analytics tool that helps you:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;track conversions from Facebook ads,&lt;/li&gt;&#xA;&lt;li&gt;optimize Facebook Ads,&lt;/li&gt;&#xA;&lt;li&gt;build targeted audiences for future ads,&lt;/li&gt;&#xA;&lt;li&gt;and remarket to people who have taken some kind of action on your website.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;It’s a great tool, but it’s a tool that might be slowing your website down, costing you leads and money.&lt;/p&gt;</description>
     </item>
   </channel>

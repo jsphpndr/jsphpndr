@@ -6,8 +6,6 @@ upload_dir = "static/uploads"
 public_path = "/uploads"
 disableKinds = [ "taxonomy", "term" ]
 
-uglyURLs = true
-
 [pagination]
   pagerSize = 6
 
