@@ -2,7 +2,7 @@
 date = '2025-01-30T09:46:56-05:00'
 draft = false
 title = 'The Need to Be Remembered'
-description = ''
+description = "I'm writing again, for small, selfish, human reasons. It might sound bad, but I want to use this little corner of the web not just to share technical stuff, but to be remembered and to remember."
 
 [feature]
   image = ""
