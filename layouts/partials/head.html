@@ -41,9 +41,9 @@
   <meta property="og:url" content="{{- .Permalink | replaceRE "/$" "" -}}">
   <meta property="og:type" content="website">
   {{- if .IsHome -}}
-  <meta property="og:title" content="{{- .Site.Title -}} | Web Designer | Nassau, Bahamas">
+  <meta property="og:title" content="{{ .Site.Title -}} | Web Designer | Nassau, Bahamas">
   {{- else -}}
-  <meta property="og:title" content="{{- .Title -}} | {{- .Site.Title -}}">
+  <meta property="og:title" content="{{ .Title -}} | {{ .Site.Title }}">
   {{- end -}}
   {{- $feature := .Params.feature -}}
   {{- $image := $feature.image | default .Site.Params.share -}}
