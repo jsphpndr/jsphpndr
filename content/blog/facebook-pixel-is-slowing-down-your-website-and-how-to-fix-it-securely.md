@@ -178,5 +178,11 @@ Note: connect-src is required to allow these scripts to work in the Safari brows
 
 3. By using a Content Security Policy, we ensure that the only scripts running are those we want to run.
 
-
 You can check your results over at [GT Metrix](https://web.archive.org/web/20240103080305/https://gtmetrix.com/) or with your browser’s developer tools.
+
+## Resources  
+
+- [8WebDesign](https://web.archive.org/web/20220410113927/https://www.8webdesign.com.au/website-speed/facebook-pixel-making-website-slower/)  
+- [Shay Toder](https://web.archive.org/web/20220410113927/https://www.shaytoder.com/improving-page-speed-when-using-facebook-pixel/)  
+- [Hootsuite](https://web.archive.org/web/20220410113927/https://blog.hootsuite.com/facebook-pixel/)  
+- [MDN](https://developer.mozilla.org/)  
