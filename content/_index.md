@@ -2,9 +2,12 @@
 date = '2025-01-27T10:06:46-05:00'
 draft = false
 title = 'Homepage'
+description = "I'm a web designer, developer, educator, and business owner based in Nassau, Bahamas. I'm passionate about creating websites that look great and perform even better."
+
 [cover]
   image = "uploads/joseph-garnell-pinder.jpg"
   alt = "My wife, Garnell and I"
+
 [avatar]
   image = "uploads/joseph-pinder.jpg"
   alt = "Joseph Pinder"
@@ -14,7 +17,6 @@ title = 'Homepage'
 [params]
   hasTwic = true
   hasObscure = true
-
 +++
 
 I'm a web designer, developer, educator, and business owner based in Nassau, Bahamas. I'm passionate about creating websites that look great and perform even better.

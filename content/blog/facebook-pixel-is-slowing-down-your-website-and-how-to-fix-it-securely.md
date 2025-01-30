@@ -2,8 +2,7 @@
 date = '2020-07-19T00:00:00-04:00'
 draft = false
 title = 'Facebook Pixel Is Slowing Down Your Website (And How To Fix It, Securely)'
-description = ''
-lastMod = '2025-01-29T06:43:45-05:00'
+description = 'Facebook Pixel is slowing down your website. Learn how you can use this amazing analytics tool without hurting your page speed and keeping your site secure.'
 
 [feature]
   image = "uploads/gt-metrix-score.jpg"
@@ -19,6 +18,10 @@ lastMod = '2025-01-29T06:43:45-05:00'
 [params]
   hasTwic = true
   hasObscure = false
+  post = true
+  categories = ['SEO', 'Web Performance']
+  tags = ['Google', 'Speed Optimization']
+
 
 +++
 

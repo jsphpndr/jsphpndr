@@ -17,6 +17,6 @@ description = ''
 
 [params]
   hasTwic = true
+  post = true
   hasObscure = false
-
 +++
