@@ -7,7 +7,7 @@
   {{- end -}}
   <meta name="description" content="{{- .Description -}}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <link rel="canonical" href="{{- .Permalink | replaceRE "/$" "" -}}">
+  <link rel="canonical" href="{{- .Permalink -}}">
   {{- if eq .Page.Kind "404" -}}
   <meta name="robots" content="noindex">
   <meta name="googlebot" content="noindex">
@@ -38,7 +38,7 @@
   <meta name="theme-color" content="#0d1117">
   {{- $iso := "2006-01-02T15:04:05Z07:00" -}}
   <meta property="fb:app_id" content="384650276688740">
-  <meta property="og:url" content="{{- .Permalink | replaceRE "/$" "" -}}">
+  <meta property="og:url" content="{{- .Permalink -}}">
   <meta property="og:type" content="website">
   {{- if .IsHome -}}
   <meta property="og:title" content="{{ .Site.Title -}} | Web Designer | Nassau, Bahamas">
