@@ -19,13 +19,17 @@ description = "I'm writing again, for small, selfish, human reasons. It might so
   hasTwic = true
   post = true
   hasObscure = false
+  categories = ['Random']
+  tags = ['Life', 'Thoughts']
 +++
 
-I'm going to die.  
-No, I'm not sick.  
+I'm going to die.
+
+No, I'm not sick.
+
 I don't know if it's today or tomorrow, ten years from now, or ten years after that.
 
-## The Beginning of This Blog
+## Starting Out
 
 When I originally started this blog, it was to be like any other developer blog, really. Demonstrate my knowledge, share information, and act as a memory bank for whatever bits of my experience I found useful.  
 The standard bit.
