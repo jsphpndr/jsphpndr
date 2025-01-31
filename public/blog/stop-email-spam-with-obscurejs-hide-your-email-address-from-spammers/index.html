@@ -2,15 +2,7 @@
 <html id="page" lang="en-us" prefix="og: https://ogp.me/ns#">
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="
-  default-src 'self'; 
-  script-src 'self' https://jsphpndr.twic.pics/?v1; 
-  img-src 'self' https://jsphpndr.twic.pics/?v1 data:; 
-  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-  font-src 'self' https://fonts.gstatic.com;
-  connect-src 'self' https://jsphpndr.twic.pics/?v1;
-  frame-ancestors 'none';">
-  <title>Stop Email Spam With Obscurejs Hide Your Email Address From Spammers | Joseph Pinder</title>
+  <title>Stop Email Spam With Obscure.js Hide Your Email Address From Spammers | Joseph Pinder</title>
   <meta name="description" content="">
   <link rel="canonical" href="http://localhost:1313/blog/stop-email-spam-with-obscurejs-hide-your-email-address-from-spammers/"><link rel="preload" href="/styles/style-1738220434631.min.css" as="style">
   
@@ -18,7 +10,7 @@
   <link rel="preconnect" href="https://jsphpndr.twic.pics/?v1">
   <link rel="preload" href="https://jsphpndr.twic.pics/?v1" as="script"><link rel="stylesheet" href="/styles/style-1738220434631.min.css" type="text/css">
   
-  <link rel="stylesheet" href="/styles/main.min.ddf60e2931c13ef5c37a4818d76b48a29d8aa61e54cfa269ea1da8d81f94f2e2.css">
+  
   <noscript>
     <style>.script { display: none; visibility: hidden }</style>
   </noscript><script src="https://jsphpndr.twic.pics/?v1" defer></script><script src="/scripts/prism-1738220434631.min.js" async></script>
@@ -31,14 +23,14 @@
   <meta name="theme-color" content="#0d1117"><meta property="fb:app_id" content="384650276688740">
   <meta property="og:url" content="http://localhost:1313/blog/stop-email-spam-with-obscurejs-hide-your-email-address-from-spammers/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Stop Email Spam With Obscurejs Hide Your Email Address From Spammers | Joseph Pinder"><meta property="og:description" content="">
+  <meta property="og:title" content="Stop Email Spam With Obscure.js Hide Your Email Address From Spammers | Joseph Pinder"><meta property="og:description" content="">
   <meta property="og:image" content="http://localhost:1313/uploads/joseph-pinder-share.jpg">
   <meta property="og:image:alt" content="Default share image of Joseph Pinder&#39;s logo">
   <meta property="fb:app_id" content="223848628924279">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@jsphpndr">
   <meta name="twitter:creator" content="@jsphpndr">
-  <meta name="twitter:title" content="Stop Email Spam With Obscurejs Hide Your Email Address From Spammers | Joseph Pinder">
+  <meta name="twitter:title" content="Stop Email Spam With Obscure.js Hide Your Email Address From Spammers | Joseph Pinder">
   <meta name="twitter:description" content="">
   <meta name="twitter:image" content="http://localhost:1313/uploads/joseph-pinder-share.jpg">
   <meta name="author" content="Joseph Pinder">
@@ -55,7 +47,7 @@
     "@type": "WebPage",
     "@id": "http:\/\/localhost:1313\/blog\/stop-email-spam-with-obscurejs-hide-your-email-address-from-spammers"
   },
-  "headline": "Stop Email Spam With Obscurejs Hide Your Email Address From Spammers",
+  "headline": "Stop Email Spam With Obscure.js Hide Your Email Address From Spammers",
   "description": "",
   "image": {
     "@type": "ImageObject",
@@ -103,7 +95,7 @@
     </header>
     <main class="[ main ]" id="main"><article class="[ post-single ]">
   <div class="[ post-single__header ]">
-    <h1>Stop Email Spam With Obscurejs Hide Your Email Address From Spammers</h1><p class="[ meta ][ font--small ]">Written by Joseph on <time datetime="2021-05-28T00:00:00-04:00">May 28, 2021 at 12:00AM</time>
+    <h1>Stop Email Spam With Obscure.js Hide Your Email Address From Spammers</h1><p class="[ meta ][ font--small ]">Written by Joseph on <time datetime="2021-05-28T00:00:00-04:00">May 28, 2021 at 12:00AM</time>
        | 2 min read
     </p></div>
   <div class="[ content ]">
@@ -111,12 +103,12 @@
 <p>When I first started programming, I didn’t know that it was a bad idea to hardcode email addresses into my HTML. Needless to say, I got a lot of spam. Lots and lots of it.</p>
 <p>When I first started looking around for a solution, this was what I found:</p>
 <pre class="[ language-html ]">
-  <code class="[ language-html ]"><script>
-	let user = 'name';
-	let site = 'domain.com';
-	document.write('<a href="mailto:' + user + '@' + site + '">');
-	document.write(user + '@' + site + '</a>');
-</script>
+  <code class="[ language-html ]">  &lt;script&gt;
+    let user = &#39;name&#39;;
+    let site = &#39;domain.com&#39;;
+    document.write(&#39;&lt;a href=&#34;mailto:&#39; + user + &#39;@&#39; + site + &#39;&#34;&gt;&#39;);
+    document.write(user + &#39;@&#39; + site + &#39;&lt;/a&gt;&#39;);
+  &lt;/script&gt;
   </code>
 </pre>
 <p>It worked great. Or, so I thought.</p>
@@ -127,25 +119,25 @@
 <h2 id="obscurejs">Obscure.js</h2>
 <p><strong>Obscure.js</strong> is a lightweight script that obscures — or hides — email addresses and telephone numbers from spammers.</p>
 <h3 id="how-does-it-work">How Does It Work?</h3>
-<p>Obscure.js uses data-attributes on the <code><template></code> tag to generate email addresses and telephone numbers.</p>
-<p>This is a great approach because the <code><template></code> tag is a non-semantic element designed specifically to render its content with JavaScript. When JavaScript isn’t available, the content in our <code><template></code> tag isn’t rendered, and we get a quiet fail.</p>
+<p>Obscure.js uses data-attributes on the <code>template</code> tag to generate email addresses and telephone numbers.</p>
+<p>This is a great approach because the <code>&lt;template&gt;</code> tag is a non-semantic element designed specifically to render its content with JavaScript. When JavaScript isn’t available, the content in our <code>&lt;template&gt;</code> tag isn’t rendered, and we get a quiet fail.</p>
 <h3 id="attributes">Attributes</h3>
-<p>The <code>obscure</code> data-attribute is required on the <code><template></code> tag in order to work.</p>
-<p>Values for email addresses and numbers utilize the <code>data-pX</code> data-attribute, wherein <code>X</code> represents an integer (i.e. <code>data-p1="val"</code>, <code>data-p2="val"</code>).</p>
-<p>ID and class attributes can also be added to <code><template></code> tags.</p>
+<p>The <code>obscure</code> data-attribute is required on the <code>&lt;template&gt;</code> tag in order to work.</p>
+<p>Values for email addresses and numbers utilize the <code>data-pX</code> data-attribute, wherein <code>X</code> represents an integer (i.e. <code>data-p1=&quot;val&quot;</code>, <code>data-p2=&quot;val&quot;</code>).</p>
+<p>ID and class attributes can also be added to <code>&lt;template&gt;</code> tags.</p>
 <pre class="[ language-html ]">
-  <code class="[ language-html ]"><template id="val" class="val" data-p1="val" data-p2="val" obscure></template>
+  <code class="[ language-html ]">  &lt;template id=&#34;val&#34; class=&#34;val&#34; data-p1=&#34;val&#34; data-p2=&#34;val&#34; obscure&gt;&lt;/template&gt;
   </code>
 </pre>
 <h3 id="patterns">Patterns</h3>
-<p>Patterns are determined by the content configuration nested in the <code><template></code> tag.</p>
+<p>Patterns are determined by the content configuration nested in the <code>&lt;template&gt;</code> tag.</p>
 <p>To call a value in a pattern, use <code>%X</code> wherein <code>X</code> represents a corresponding integer (i.e. <code>%1</code>, <code>%2</code>).</p>
 <pre class="[ language-plaintext ]">
   <code class="[ language-plaintext ]">%1@%2
   </code>
 </pre>
 <h3 id="adding-an-email-address">Adding an Email Address</h3>
-<p>To add an email address, create a <code><template></code> tag with the following attributes:</p>
+<p>To add an email address, create a <code>&lt;template&gt;</code> tag with the following attributes:</p>
 <ul>
 <li><code>data-p1</code></li>
 <li><code>data-p2</code></li>
@@ -153,19 +145,19 @@
 </ul>
 <p>The <code>data-p1</code> data-attribute will contain the username, and <code>data-p2</code> the relevant domain (i.e. <code>hotmail.com</code> or <code>mycustomurl.com</code>).</p>
 <pre class="[ language-html ]">
-  <code class="[ language-html ]"><template obscure data-p1="hello" data-p2="example.com">
-  <a href="mailto:%1@%2">%1@%2</a>
-</template>
+  <code class="[ language-html ]">&lt;template obscure data-p1=&#34;hello&#34; data-p2=&#34;example.com&#34;&gt;
+  &lt;a href=&#34;mailto:%1@%2&#34;&gt;%1@%2&lt;/a&gt;
+&lt;/template&gt;
   </code>
 </pre>
 <p>This will render the following:</p>
 <pre class="[ language-html ]">
-  <code class="[ language-html ]"><span><a href="mailto:hello@example.com">hello@example.com</a></span>
+  <code class="[ language-html ]">&lt;span&gt;&lt;a href=&#34;mailto:hello@example.com&#34;&gt;hello@example.com&lt;/a&gt;&lt;/span&gt;
   </code>
 </pre>
 <h3 id="adding-telephone-numbers">Adding Telephone Numbers</h3>
 <p>There’s not only a need to hide emails, but phone numbers as well.</p>
-<p>To add a US-pattern telephone number, create a <code><template></code> tag with the following attributes:</p>
+<p>To add a US-pattern telephone number, create a <code>&lt;template&gt;</code> tag with the following attributes:</p>
 <ul>
 <li><code>data-p1</code></li>
 <li><code>data-p2</code></li>
@@ -175,33 +167,33 @@
 </ul>
 <p>The <code>data-p1</code> data-attribute represents the country code, <code>data-p2</code> the area code, <code>data-p3</code> the prefix code, and <code>data-p4</code> the line code.</p>
 <pre class="[ language-html ]">
-  <code class="[ language-html ]"><template obscure data-p1="+1" id="test2" class="test1" data-p2="481" data-p3="914" data-p4="1124">
+  <code class="[ language-html ]">&lt;template obscure data-p1=&#34;+1&#34; id=&#34;test2&#34; class=&#34;test1&#34; data-p2=&#34;481&#34; data-p3=&#34;914&#34; data-p4=&#34;1124&#34;&gt;
   (%2) %3-%4
-</template>
+&lt;/template&gt;
   </code>
 </pre>
 <p>This will render the following:</p>
 <pre class="[ language-html ]">
-  <code class="[ language-html ]"><span>(481) 914-1124</span>
+  <code class="[ language-html ]">&lt;span&gt;(481) 914-1124&lt;/span&gt;
   </code>
 </pre>
 <p>If not already apparent, Obscure.js allows numbers to be rendered in any pattern as well.</p>
 <pre class="[ language-html ]">
-  <code class="[ language-html ]"><template id="france" class="french pattern" data-p1="+33" data-p2="1" data-p3="22" data-p4="33" data-p5="44" data-p6="55" obscure>
-  <a href="tel:%1%2%3%4%5%6">%1 %2 %3 %4 %5 %6</a>
-</template>
+  <code class="[ language-html ]">&lt;template id=&#34;france&#34; class=&#34;french pattern&#34; data-p1=&#34;+33&#34; data-p2=&#34;1&#34; data-p3=&#34;22&#34; data-p4=&#34;33&#34; data-p5=&#34;44&#34; data-p6=&#34;55&#34; obscure&gt;
+  &lt;a href=&#34;tel:%1%2%3%4%5%6&#34;&gt;%1 %2 %3 %4 %5 %6&lt;/a&gt;
+&lt;/template&gt;
 
-<span id="france" class="french pattern"><a href="tel:+33122334455">+33 1 22 33 44 55</a></span>
+&lt;span id=&#34;france&#34; class=&#34;french pattern&#34;&gt;&lt;a href=&#34;tel:+33122334455&#34;&gt;+33 1 22 33 44 55&lt;/a&gt;&lt;/span&gt;
   </code>
 </pre>
 <h3 id="initialize-obscurejs">Initialize Obscure.js</h3>
-<p>Just before the closing <code></body></code> tag, include the <code>obscure.js</code> external script and initialize:</p>
+<p>Just before the closing <code>&lt;/body&gt;</code> tag, include the <code>obscure.js</code> external script and initialize:</p>
 <pre class="[ language-html ]">
-  <code class="[ language-html ]"><script src="/path/to/obscure.min.js"></script>
+  <code class="[ language-html ]">&lt;script src=&#34;/path/to/obscure.min.js&#34;&gt;&lt;/script&gt;
 
-<script>
+&lt;script&gt;
   var obscure = new Obscure();
-</script>
+&lt;/script&gt;
   </code>
 </pre>
 <h2 id="special-thanks">Special Thanks</h2>

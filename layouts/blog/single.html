@@ -32,7 +32,7 @@
     {{- end -}}
   </div>
   <div class="[ content ]">
-    {{ htmlUnescape .Content | safeHTML }}
+    {{ .Content }}
   </div>
   <footer>
     {{- if gt $hourDiff 1 -}}

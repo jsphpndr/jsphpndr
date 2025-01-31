@@ -7,14 +7,6 @@
     {{- $pageTitle = printf "%s | %s" .Title .Site.Title -}}
   {{- end -}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="
-  default-src 'self'; 
-  script-src 'self' https://{{- .Site.Params.twic -}}.twic.pics/?v1; 
-  img-src 'self' https://{{- .Site.Params.twic -}}.twic.pics/?v1 data:; 
-  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-  font-src 'self' https://fonts.gstatic.com;
-  connect-src 'self' https://{{- .Site.Params.twic -}}.twic.pics/?v1;
-  frame-ancestors 'none';">
   <title>{{ $pageTitle }}</title>
   <meta name="description" content="{{- .Description -}}">
   <link rel="canonical" href="{{ .Permalink  }}">

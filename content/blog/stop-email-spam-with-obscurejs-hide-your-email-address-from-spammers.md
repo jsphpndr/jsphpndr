@@ -1,7 +1,7 @@
 +++
 date = '2021-05-28T00:00:00-04:00'
 draft = false
-title = 'Stop Email Spam With Obscurejs Hide Your Email Address From Spammers'
+title = 'Stop Email Spam With Obscure.js Hide Your Email Address From Spammers'
 description = ''
 
 [feature]
@@ -28,12 +28,12 @@ When I first started programming, I didn’t know that it was a bad idea to hard
 When I first started looking around for a solution, this was what I found:  
 
 ```html
-<script>
-	let user = 'name';
-	let site = 'domain.com';
-	document.write('<a href="mailto:' + user + '@' + site + '">');
-	document.write(user + '@' + site + '</a>');
-</script>
+  <script>
+    let user = 'name';
+    let site = 'domain.com';
+    document.write('<a href="mailto:' + user + '@' + site + '">');
+    document.write(user + '@' + site + '</a>');
+  </script>
 ```
 
 It worked great. Or, so I thought.  
@@ -52,7 +52,7 @@ So, I wrote a plugin…
 
 ### How Does It Work?  
 
-Obscure.js uses data-attributes on the `<template>` tag to generate email addresses and telephone numbers.  
+Obscure.js uses data-attributes on the `template` tag to generate email addresses and telephone numbers.  
 
 This is a great approach because the `<template>` tag is a non-semantic element designed specifically to render its content with JavaScript. When JavaScript isn’t available, the content in our `<template>` tag isn’t rendered, and we get a quiet fail.  
 
@@ -65,7 +65,7 @@ Values for email addresses and numbers utilize the `data-pX` data-attribute, whe
 ID and class attributes can also be added to `<template>` tags.  
 
 ```html
-<template id="val" class="val" data-p1="val" data-p2="val" obscure></template>
+  <template id="val" class="val" data-p1="val" data-p2="val" obscure></template>
 ```
 
 ### Patterns  
