@@ -14,9 +14,6 @@ description = "I'm a web designer, developer, educator, and business owner based
   # Author Snippet - This is at the bottom of every post.
   snippet = 'Joseph is a web designer based in Nassau, Bahamas passionate about creating websites that look great and perform even better.'
 
-[params]
-  hasTwic = true
-  hasObscure = true
 +++
 
 I'm a web designer, developer, educator, and business owner based in Nassau, Bahamas. I'm passionate about creating websites that look great and perform even better.
