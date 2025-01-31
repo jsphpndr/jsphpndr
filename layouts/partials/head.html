@@ -16,7 +16,7 @@
   <meta name="googlebot" content="noindex">
   {{- end -}}
   <link rel="preload" href="/styles/style-{{- .Site.Params.Version -}}.min.css" as="style">
-  {{ if .Store.Get "hasTwic" }}
+  {{ if .Params.hasTwic }}
   <link rel="preconnect" href="https://{{- .Site.Params.twic -}}.twic.pics/?v1">
   <link rel="preload" href="https://{{- .Site.Params.twic -}}.twic.pics/?v1" as="script">
   {{ end }}
@@ -29,7 +29,7 @@
   <noscript>
     <style>.script { display: none; visibility: hidden }</style>
   </noscript>
-  {{ if .Store.Get "hasTwic" }}
+  {{ if .Params.hasTwic }}
   <script src="https://{{- .Site.Params.twic -}}.twic.pics/?v1" async defer></script>
   {{- end -}}
   {{- if .Store.Get "hasCode" -}}

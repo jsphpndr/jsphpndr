@@ -16,6 +16,8 @@ description = 'Facebook Pixel is slowing down your website. Learn how you can us
 #   content = ""
 
 [params]
+	hasTwic = true
+	post = true
   categories = ['SEO', 'Web Performance']
   tags = ['Google', 'Speed Optimization']
 

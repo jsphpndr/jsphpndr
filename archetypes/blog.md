@@ -16,6 +16,8 @@ description = ''
 #   content = ""
 
 [params]
+  hasTwic = true
+  post = true
   categories = []
   tags = []
 +++

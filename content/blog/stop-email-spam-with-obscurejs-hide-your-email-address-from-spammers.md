@@ -15,6 +15,11 @@ description = ''
 #   id = 1
 #   content = ""
 
+[params]
+	hasTwic = true
+	post = true
+  categories = []
+  tags = []
 +++
 
 Did you know that spambots scan websites looking to harvest emails all the time? I didn’t. At least, not starting out.  
