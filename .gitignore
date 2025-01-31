@@ -1,2 +1,5 @@
 /public
+/resources
+/node_modules
+/node_moudless
 .DS_Store
