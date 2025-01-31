@@ -30,7 +30,7 @@
   {{- end -}}
   <link rel="stylesheet" href="/styles/style-{{- .Site.Params.Version -}}.min.css" type="text/css">
   {{ $style := resources.Get "styles/main.sass" | toCSS | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  <!-- <link rel="stylesheet" href="{{ $style.RelPermalink }}"> -->
   <noscript>
     <style>.script { display: none; visibility: hidden }</style>
   </noscript>
