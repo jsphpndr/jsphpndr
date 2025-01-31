@@ -18,6 +18,7 @@
     </header>
     <main class="[ main ]{{- if eq .Page.Kind "404" -}}[ error ]{{- end -}}" id="main">
       {{- block "main" . -}}{{- end -}}
+      {{ "I&rsquo;m not sick." | plainify }}
     </main>
     {{- partial "footer.html" . -}}
     <script src="/scripts/app-{{ .Site.Params.Version }}.min.js" defer></script>
