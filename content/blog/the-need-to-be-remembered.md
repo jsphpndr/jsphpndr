@@ -16,9 +16,6 @@ description = "I'm writing again, for small, selfish, human reasons. It might so
 #   content = ""
 
 [params]
-  hasTwic = true
-  post = true
-  hasObscure = false
   categories = ['Random']
   tags = ['Life', 'Thoughts']
 +++

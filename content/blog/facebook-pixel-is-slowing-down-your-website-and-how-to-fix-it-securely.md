@@ -19,7 +19,6 @@ description = 'Facebook Pixel is slowing down your website. Learn how you can us
   categories = ['SEO', 'Web Performance']
   tags = ['Google', 'Speed Optimization']
 
-
 +++
 
 

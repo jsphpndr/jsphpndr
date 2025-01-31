@@ -14,11 +14,6 @@ description = ''
 # [[footnotes]]
 #   id = 1
 #   content = ""
-
-[params]
-  hasTwic = true
-  post = true
-  hasObscure = false
 +++
 
 Whenever I mention naming conventions to my students for the first time, there’s just a slight confusion that seems to fill their minds.  

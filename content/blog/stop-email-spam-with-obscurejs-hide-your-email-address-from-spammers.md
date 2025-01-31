@@ -15,10 +15,6 @@ description = ''
 #   id = 1
 #   content = ""
 
-[params]
-  hasTwic = true
-  post = true
-  hasObscure = false
 +++
 
 Did you know that spambots scan websites looking to harvest emails all the time? I didn’t. At least, not starting out.  

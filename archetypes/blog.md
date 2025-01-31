@@ -15,4 +15,7 @@ description = ''
 #   id = 1
 #   content = ""
 
+[params]
+  categories = []
+  tags = []
 +++
