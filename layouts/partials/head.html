@@ -29,7 +29,7 @@
   <noscript>
     <style>.script { display: none; visibility: hidden }</style>
   </noscript>
-  {{ if .Site.Store.Get "hasTwic" }}
+  {{ if .Store.Get "hasTwic" }}
   <script src="https://{{- .Site.Params.twic -}}.twic.pics/?v1" async defer></script>
   {{- end -}}
   {{- if .Store.Get "hasCode" -}}
