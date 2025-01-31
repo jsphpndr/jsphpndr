@@ -21,7 +21,7 @@
     </main>
     {{- partial "footer.html" . -}}
     <script src="/scripts/app-{{ .Site.Params.Version }}.min.js" defer></script>
-    {{- if or .IsHome (.Params.hasObscure ) }}
+    {{- if or .IsHome ( .Store.Get "hasObscure" ) }}
     <script src="/scripts/obscure-{{ .Site.Params.Version }}.min.js"></script>
     {{- end -}}
     {{- if .Store.Get "hasCode" -}}

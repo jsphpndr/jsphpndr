@@ -2,10 +2,11 @@
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   {{- $pageTitle := "" -}}
   {{- if .IsHome -}}
-    {{- $pageTitle = printf "%s | Web Designer | Nassau, Bahamas" .Site.Title -}}
+  {{- $pageTitle = printf "%s | Web Designer | Nassau, Bahamas" .Site.Title -}}
   {{- else -}}
-    {{- $pageTitle = printf "%s | %s" .Title .Site.Title -}}
+  {{- $pageTitle = printf "%s | %s" .Title .Site.Title -}}
   {{- end -}}
+  {{- $feature := .Params.feature -}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>{{ $pageTitle }}</title>
   <meta name="description" content="{{- .Description -}}">
@@ -15,18 +16,20 @@
   <meta name="googlebot" content="noindex">
   {{- end -}}
   <link rel="preload" href="/styles/style-{{- .Site.Params.Version -}}.min.css" as="style">
-  
-  {{ if .Params.hasTwic }}
+  {{ if .Store.Get "hasTwic" }}
   <link rel="preconnect" href="https://{{- .Site.Params.twic -}}.twic.pics/?v1">
   <link rel="preload" href="https://{{- .Site.Params.twic -}}.twic.pics/?v1" as="script">
   {{- end -}}
+  {{ if $feature.image }}
+  <link rel="preload" href="https://{{- .Site.Params.twic -}}.twic.pics/{{- $feature.image -}}?twic=v1/focus=auto/resize=700" as="image">
+  {{end}}
   <link rel="stylesheet" href="/styles/style-{{- .Site.Params.Version -}}.min.css" type="text/css">
   {{ $style := resources.Get "styles/main.sass" | toCSS | minify | fingerprint }}
   <!-- <link rel="stylesheet" href="{{ $style.RelPermalink }}"> -->
   <noscript>
     <style>.script { display: none; visibility: hidden }</style>
   </noscript>
-  {{- if .Params.hasTwic -}}
+  {{ if .Store.Get "hasTwic" }}
   <script src="https://{{- .Site.Params.twic -}}.twic.pics/?v1" defer></script>
   {{- end -}}
   {{- if .Store.Get "hasCode" -}}
@@ -45,7 +48,6 @@
   <meta property="og:url" content="{{ .Permalink  }}">
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ $pageTitle }}">
-  {{- $feature := .Params.feature -}}
   {{- $image := $feature.image | default .Site.Params.share -}}
   {{- $alt := $feature.alt | default "Default share image of Joseph Pinder's logo" -}}
   <meta property="og:description" content="{{- .Description -}}">

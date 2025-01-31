@@ -5,7 +5,7 @@ title = 'Facebook Pixel Is Slowing Down Your Website (And How To Fix It, Securel
 description = 'Facebook Pixel is slowing down your website. Learn how you can use this amazing analytics tool without hurting your page speed and keeping your site secure.'
 
 [feature]
-  image = "uploads/gt-metrix-score.jpg"
+  image = "gt-metrix-score.jpg"
   alt= "GT Metrix Page Speed results for josephpinder.com"
   figcaption = ""
 
@@ -16,9 +16,6 @@ description = 'Facebook Pixel is slowing down your website. Learn how you can us
 #   content = ""
 
 [params]
-  hasTwic = true
-  hasObscure = false
-  post = true
   categories = ['SEO', 'Web Performance']
   tags = ['Google', 'Speed Optimization']
 
@@ -47,7 +44,7 @@ If you’re following [Facebook’s instructions on installing Facebook Pixel](h
 
 Don’t do this!
 
-![Facebook Pixel GT Metrix Before Results](/uploads/joseph-pinder-gt-metrix-facebook-pixel-before-results.jpeg "Fig.1.1 Facebook Pixel GT Metrix Before Results")
+![Facebook Pixel GT Metrix Before Results](joseph-pinder-gt-metrix-facebook-pixel-before-results.jpg "Fig.1.1 Facebook Pixel GT Metrix Before Results")
 
 Unedited, Facebook’s little code snippet can add anywhere from 1.3–1.5 seconds to your page’s load time. To make matters worse, the script is loaded, four HTTP requests made and 170KB added to your [page weight](https://web.archive.org/web/20240103080305/https://whatdoesmysitecost.com/) (or page size) all before your page’s First Paint—that’s before the first pixel is even visible on the screen.
 
@@ -167,7 +164,7 @@ Note: connect-src is required to allow these scripts to work in the Safari brows
 
 ## Results
 
-![Facebook Pixel GT Metrix After Results](/uploads/joseph-pinder-gt-metrix-facebook-pixel-after-results.jpg "Fig.1.2 — Facebook Pixel GT Metrix After Results")
+![Facebook Pixel GT Metrix After Results](joseph-pinder-gt-metrix-facebook-pixel-after-results.jpg "Fig.1.2 — Facebook Pixel GT Metrix After Results")
 
 1. By placing the Facebook Pixel at the end of our document, we allow our script to be loaded without interrupting our page’s first paint.
 

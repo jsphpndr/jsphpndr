@@ -4,8 +4,4 @@ draft = true
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
 description = ''
 
-[params]
-  hasTwic = false
-  hasObscure = false
-  
 +++

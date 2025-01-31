@@ -15,8 +15,4 @@ description = ''
 #   id = 1
 #   content = ""
 
-[params]
-  hasTwic = true
-  post = true
-  hasObscure = false
 +++

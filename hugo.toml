@@ -2,7 +2,7 @@ baseURL = 'https://josephpinder.com/'
 languageCode = 'en-us'
 title = 'Joseph Pinder'
 
-upload_dir = "static/uploads"
+upload_dir = "assets/uploads"
 public_path = "/uploads"
 disableKinds = [ "taxonomy", "term" ]
 
