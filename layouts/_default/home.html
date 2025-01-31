@@ -63,7 +63,7 @@
       {{- $iso := "2006-01-02T15:04:05Z07:00" -}}
       {{- range sort (where .Site.RegularPages "Section" "blog") "Date" "desc" | first 3  -}}
       <li class="[ post ]">
-        <a class="[ post__link ]" href="{{ .RelPermalink | replaceRE "/$" "" }}" data-prefetch>
+        <a class="[ post__link ]" href="{{ .RelPermalink }}" data-prefetch>
           <h3 class="[ font--2 ]">{{ .LinkTitle }}</h3>
           <time datetime="{{ .Date.Format $iso }}">{{ .Date.Format $format }}</time>
           <p>{{ .Summary | strings.Truncate 145 "[...]" | plainify }}</p>

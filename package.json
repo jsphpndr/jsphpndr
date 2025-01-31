@@ -1,0 +1,17 @@
+{
+  "name": "jsphpndr",
+  "version": "1.0.0",
+  "description": "[![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fjosephpinder.com)](https://josephpinder.com)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.83.4"
+  }
+}

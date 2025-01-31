@@ -1,6 +1,26 @@
 [build]
-  command = "hugo"
   publish = "public"
+  command = "hugo --gc --minify"
 
 [build.environment]
   HUGO_VERSION = "0.142.0"
+  HUGO_ENV = "production"
+  DART_SASS_VERSION = "1.83.4"
+  HUGO_ENABLEGITINFO = "true"
+  NODE_VERSION = "22"  # Ensure only one version is defined
+  GO_VERSION = "1.23.5"
+  TZ = "America/New_York"
+
+[context.production.environment]
+  HUGO_VERSION = "0.142.0"
+
+[context.deploy-preview.environment]
+  HUGO_VERSION = "0.142.0"
+
+[context.branch-deploy.environment]
+  HUGO_VERSION = "0.142.0"
+
+[dev]
+  command = "hugo server"
+  port = 8888
+  targetPort = 1313
