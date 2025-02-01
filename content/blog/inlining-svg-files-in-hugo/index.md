@@ -2,7 +2,7 @@
 date = '2025-02-01T00:40:07-05:00'
 draft = false
 title = 'Inlining SVG Files in HUGO'
-description = ''
+description = "Learn how to inline SVG files in HUGO with simple solutions ranging from static files to dynamic shortcodes. This guide covers everything you need to style and manage SVGs efficiently in your HUGO projects."
 
 [feature]
   image = ""
