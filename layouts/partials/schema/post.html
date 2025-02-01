@@ -10,13 +10,13 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "{{ .Permalink | replaceRE "/$" "" }}"
+    "@id": {{ .Permalink }}
   },
   "headline": "{{ .Title }}",
   "description": "{{ .Description }}",
   "image": {
     "@type": "ImageObject",
-    "url": "{{ $image | absURL }}",
+    "url": {{ $image | absURL }},
     "width": 1200,
     "height": 1200
   },
@@ -32,7 +32,7 @@
     "name": "Joseph Pinder",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ .Site.Params.logo | absURL }}",
+      "url": {{ .Site.Params.logo | absURL }},
       "width": 512,
       "height": 512
     }

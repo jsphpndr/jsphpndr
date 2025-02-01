@@ -24,7 +24,7 @@
   <link rel="preload" href="https://{{- .Site.Params.twic -}}.twic.pics{{- resources.Get (printf "uploads/%s" $feature.image) -}}?twic=v1/focus=auto/resize=700" as="image">
   {{ end }}
   <link rel="stylesheet" href="/styles/style-{{- .Site.Params.Version -}}.min.css" type="text/css">
-  {{ $style := resources.Get "styles/main.sass" | toCSS | minify | fingerprint }}
+  {{ $style := resources.Get "styles/main.sass" | toCSS | minify }}
   <!-- <link rel="stylesheet" href="{{ $style.RelPermalink }}"> -->
   <noscript>
     <style>.script { display: none; visibility: hidden }</style>
