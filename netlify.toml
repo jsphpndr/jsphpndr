@@ -24,3 +24,21 @@
   command = "hugo server"
   port = 8888
   targetPort = 1313
+
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about-me"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/get-in-touch"
+  to = "/"
+  status = 301
+  force = true
