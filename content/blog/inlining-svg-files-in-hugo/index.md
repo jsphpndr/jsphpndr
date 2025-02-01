@@ -18,8 +18,8 @@ description = "Learn how to inline SVG files in HUGO with simple solutions rangi
 [params]
   hasTwic = true
   post = true
-  categories = []
-  tags = []
+  categories = ['HUGO', 'Web Development']
+  tags = ['hugo', 'svg', 'web development']
 +++
 
 This site is [built with HUGO](https://gohugo.io/). 
