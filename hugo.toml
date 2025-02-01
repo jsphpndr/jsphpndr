@@ -37,3 +37,8 @@ disableKinds = [ "taxonomy", "term" ]
         enableDefault = true        
 
 enableGitInfo = true
+
+[sitemap]
+  filename = "sitemap"  # Remove .xml
+  changefreq = "monthly"
+  priority = 0.5
