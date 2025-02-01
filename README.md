@@ -34,7 +34,7 @@ I believe in using modern tools and approaches to solve problems and help indivi
 
 ### 📘 Latest Projects:
 
-- **[My Website](https://josephpinder.com/)
+- **[My Website](https://josephpinder.com/)**
 
 Feel free to explore my repositories and articles. I’m always open to collaborating on interesting projects or sharing ideas!
 
