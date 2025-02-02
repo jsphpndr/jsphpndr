@@ -48,6 +48,7 @@
         "@type": "Person",
         "@id": {{ .Site.BaseURL }},
         "name": "{{ .Site.Title }}",
+        {{- with .Site.Params.social -}}
         "sameAs": [
           {{- with .facebook }}"https://www.facebook.com/{{ . }}",{{ end }}
           {{- with .instagram }}"https://www.instagram.com/{{ . }}",{{ end }}
