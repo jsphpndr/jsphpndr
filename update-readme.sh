@@ -1,16 +1,10 @@
 #!/bin/bash
 
-# Build the Hugo site to generate content
-hugo --minify || { echo "❌ Hugo build failed"; exit 1; }
+# Build the Hugo site to generate the content
+hugo
 
-# Extract dynamic content
-if [ -f public/rss/index.xml ]; then
-  DYNAMIC_CONTENT=$(cat public/rss/index.xml)
-else
-  echo "❌ RSS file not found!"
-  exit 1
-fi
-
+# Extract dynamic content from the generated file
+DYNAMIC_CONTENT=$(cat public/rss/index.xml)
 
 # Replace content in README.md
 sed -i.bak "/<!-- START_DYNAMIC_CONTENT -->/,/<!-- END_DYNAMIC_CONTENT -->/c\

@@ -6,7 +6,7 @@ on:
       - main
   schedule:
     - cron: '0 0 * * *'  # Runs daily at midnight
-
+    
 permissions:
   contents: write  # 👈 Grants permission to push changes
 
@@ -17,14 +17,11 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Set Up Hugo (Extended)
+      - name: Set Up Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.142.0'
-          extended: true
 
       - name: Run Update Script
         run: bash update-readme.sh
