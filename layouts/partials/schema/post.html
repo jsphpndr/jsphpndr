@@ -1,47 +1,79 @@
 {{- $iso := "2006-01-02T15:04:05Z07:00" -}}
 {{- $feature := .Params.feature -}}
 {{- $image := $feature.image | default .Site.Params.share -}}
-{{- $alt := $feature.alt | default "Default share image of Joseph Pinder's logo" -}}
-
+{{- $alt := $feature.alt | default "Default share image of {{ .Site.Title }}'s logo" -}}
+{{- $tag := .Params.tags  -}}
+{{- $category := .Params.categories  -}}
 {{- if .Params.post -}}
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "mainEntityOfPage": {
+  {
+    "@context": "https://schema.org",
     "@type": "WebPage",
+    "name": "{{ .Title }}",
+    "description": "{{ .Description }}",
+    "publisher": {
+        "@type": "Person",
+        "name": "{{ .Site.Title }}"
+    },
+    "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
     "@id": {{ .Permalink }}
-  },
-  "headline": "{{ .Title }}",
-  "description": "{{ .Description }}",
-  "image": {
-    "@type": "ImageObject",
-    "url": {{ $image | absURL }},
-    "width": 1200,
-    "height": 1200
-  },
-  "datePublished": "{{ .Date.Format $iso }}",
-  "dateModified": "{{ (.GitInfo.AuthorDate | default .Date) | time.Format $iso }}",
-  "wordCount": "{{ .WordCount }}",
-  "author": {
-    "@type": "Person",
-    "name": "Joseph Pinder"
-  },
-  "publisher": {
-    "@type": "Person",
-    "name": "Joseph Pinder",
-    "logo": {
+    "mainEntityOfPage": {{ .Permalink }},
+    "headline": {{ .Title }},
+    "name": {{ .Title }},
+    "description": {{ .Description }},
+    "datePublished": "{{ .Date.Format $iso }}",
+    "dateModified": "{{ (.GitInfo.AuthorDate | default .Date) | time.Format $iso }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ .Site.Title }}"
+    },
+    "image": {
       "@type": "ImageObject",
-      "url": {{ .Site.Params.logo | absURL }},
-      "width": 512,
-      "height": 512
-    }
-  },
-  "articleSection": [
-    {{ range $index, $category := .Params.categories -}}
-      {{- if $index }}, {{ end }}"{{ $category }}"
-    {{- end }}
-  ]
-}
+      "url": {{ $image | absURL }},
+      "width": 1200,
+      "height": 1200
+    },
+    "url": {{ .Permalink }},
+    "isPartOf": {
+      "@type" : "Blog",
+      {{ with .Parent }}
+      "@id": {{ .RelPermalink }},
+      "name": "{{ .Title }}",
+      {{ end }}
+      "publisher": {
+        "@type": "Person",
+        "@id": {{ .Site.BaseURL }},
+        "name": "{{ .Site.Title }}",
+        "sameAs": [
+          {{- with .facebook }}"https://www.facebook.com/{{ . }}",{{ end }}
+          {{- with .instagram }}"https://www.instagram.com/{{ . }}",{{ end }}
+          {{- with .linkedin }}"https://www.linkedin.com/in/{{ . }}",{{ end }}
+          {{- with .github }}"https://github.com/{{ . }}",{{ end }}
+          {{- with .x }}"https://x.com/{{ . }}"{{ end }}
+        ]
+        {{- end -}}
+      }
+     },
+    "wordCount": "{{ .WordCount }}",
+    {{- if $tag -}}
+    "keywords": [
+      {{ range $index, $tag -}}
+        {{- if $index }}, {{ end }}"{{ $tag }}"
+      {{- end }}
+    ],
+    {{- end -}}
+    {{- if .Params.categories -}}
+    "articleSection": [
+      {{ range $index, $category -}}
+        {{- if $index }}, {{ end }}"{{ $category }}"
+      {{- end }}
+    ]
+    {{- end -}}
+
+  }
 </script>
 {{- end -}}

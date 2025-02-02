@@ -18,6 +18,14 @@ disableKinds = [ "taxonomy", "term" ]
   app_id = "223848628924279"
   error = true
 
+  [params.social]
+    facebook = "jsphpndr"
+    instagram = "jsphpndr"
+    linkedin = "jsphpndr"
+    github = "jsphpndr"
+    x = "jsphpndr"
+
+
 [menus]
   [[menus.main]]
     name = 'Blog'

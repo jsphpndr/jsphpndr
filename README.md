@@ -3,9 +3,18 @@
 [![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fjosephpinder.com)](https://josephpinder.com)
 
 
-Hey! I'm Joseph, a web deisgner and developer based in The Bahamas, with a passion for creating clean, efficient and accessible websites. 
+Hey! I'm Joseph, a web designer and developer based in The Bahamas, with a passion for creating clean, efficient and accessible websites. 
 
 I believe in using modern tools and approaches to solve problems and help individuals and businesses succeed online.
+
+### 🔧 Technologies & Tools I Use:
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Laravel, Node.js, PHP
+- **Static Site Generators:** HUGO, Jekyll
+- **Desktop Apps:** Wails
+- **Version Control:** Git, GitHub
+- **Design Tools:** Adobe CC, Figma
+- **Content Management Systems (CMS):** Kirby CMS, Decap CMS, WordPress (if I have to)
 
 ---
 
@@ -17,24 +26,21 @@ I believe in using modern tools and approaches to solve problems and help indivi
 
 ## 📝 Blog
 
+<!-- START_DYNAMIC_CONTENT -->
+
+<!-- END_DYNAMIC_CONTENT -->
+
+### 📘 Latest Projects:
+
+- **[My Website](https://josephpinder.com/)**
+
 ## 📫 How to Reach Me
 
 - [Email Me](mailto:hello@josephpinder.com)
 - [LinkedIn](https://www.linkedin.com/in/jsphpndr/)
 - [X (Twitter)](https://x.com/jsphpndr)
 
-### 🔧 Technologies & Tools I Use:
-- **Frontend:** HTML, CSS, JavaScript
-- **Backend:** Laravel, Node.js, PHP
-- **Static Site Generators:** HUGO, Jekyll
-- **Desktop Apps:** Wails
-- **Version Control:** Git, GitHub
-- **Design Tools:** Adobe CC, Figma
-- **Content Management Systems (CMS):** Kirby CMS, Decap CMS, WordPress (if I have to)
 
-### 📘 Latest Projects:
-
-- **[My Website](https://josephpinder.com/)**
 
 Feel free to explore my repositories and articles. I’m always open to collaborating on interesting projects or sharing ideas!
 
