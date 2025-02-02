@@ -12,8 +12,8 @@ sed -i.bak "/<!-- START_DYNAMIC_CONTENT -->/,/<!-- END_DYNAMIC_CONTENT -->/c\
 " README.md
 
 # Commit the updated README.md to GitHub
-git config --global user.email "you@example.com"
-git config --global user.name "GitHub Action"
+git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+git config --global user.name "github-actions[bot]"
 git add README.md
 git commit -m "Update README with latest blog posts 🚀"
 git push
