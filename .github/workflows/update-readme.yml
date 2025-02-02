@@ -6,6 +6,9 @@ on:
       - main
   schedule:
     - cron: '0 0 * * *'  # Runs daily at midnight
+    
+permissions:
+  contents: write  # 👈 Grants permission to push changes
 
 jobs:
   update-readme:
