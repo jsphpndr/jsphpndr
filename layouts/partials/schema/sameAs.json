@@ -1,5 +1,0 @@
-"sameAs": [
-  "https://www.linkedin.com/in/{{ .Site.Params.social.linkedin }}",
-  "https://github.com/jsphpndr",
-  "https://twitter.com/jsphpndr"
-]
