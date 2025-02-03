@@ -28,7 +28,11 @@ I believe in using modern tools and approaches to solve problems and help indivi
 ## 📝 Blog
 
 <!-- START_DYNAMIC_CONTENT -->
-Placeholder content to trigger Git.
+- [Inlining SVG Files in HUGO](https://josephpinder.com/blog/inlining-svg-files-in-hugo/) - Feb 1, 2025
+- [The Need to Be Remembered](https://josephpinder.com/blog/the-need-to-be-remembered/) - Jan 30, 2025
+- [Stop Email Spam With Obscure.js Hide Your Email Address From Spammers](https://josephpinder.com/blog/stop-email-spam-with-obscurejs-hide-your-email-address-from-spammers/) - May 28, 2021
+- [File Naming Conventions for Web Developers](https://josephpinder.com/blog/file-naming-conventions-for-web-developers/) - Aug 19, 2020
+- [Facebook Pixel Is Slowing Down Your Website (And How To Fix It, Securely)](https://josephpinder.com/blog/facebook-pixel-is-slowing-down-your-website-and-how-to-fix-it-securely/) - Jul 19, 2020
 <!-- END_DYNAMIC_CONTENT -->
 
 
