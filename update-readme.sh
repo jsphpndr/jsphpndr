@@ -70,10 +70,10 @@ git config --global user.name "github-actions[bot]"
 # ✅ Stage changes
 git add "$ROOT_README"
 
-# ✅ Commit changes if detected
-echo "📦 Committing changes..."
-git commit -m "Update README with latest posts" || echo "⚠️ No changes detected to commit."
+# ✅ Force commit regardless of changes
+echo "📦 Forcing commit..."
+git commit --allow-empty -m "Force update README with latest posts"
 
 # ✅ Push changes to GitHub
 echo "🚀 Pushing changes to GitHub..."
-git push origin main || echo "⚠️ No changes to push."
+git push origin main || echo "⚠️ No changes to push.""
