@@ -22,6 +22,7 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.142.0'
+          extended: true
 
       - name: Run Update Script
         run: bash update-readme.sh
