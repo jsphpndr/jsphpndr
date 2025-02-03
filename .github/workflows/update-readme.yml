@@ -15,15 +15,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # ✅ Step 1: Checkout Repository
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      # ✅ Step 2: Set Up Hugo
       - name: Set Up Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.142.0'
-          extended: true
+          extended: true  # Ensure extended version is used
 
+      # ✅ Step 3: Clear Hugo Cache (optional but recommended)
+      - name: Clear Hugo Cache
+        run: hugo mod clean
+
+      # ✅ Step 4: Build the Hugo Site
+      - name: Build with Hugo
+        run: hugo --minify --enableGitInfo
+
+      # ✅ Step 5: Debug - List Generated Files
+      - name: List Public Directory
+        run: ls -R public/  # Helps verify RSS file generation
+
+      # ✅ Step 6: Run Update Script
       - name: Run Update Script
         run: bash update-readme.sh
 

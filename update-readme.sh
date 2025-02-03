@@ -4,6 +4,8 @@
 echo "🚀 Building the Hugo site..."
 hugo --minify || { echo "❌ Hugo build failed"; exit 1; }
 
+ls -R public/
+
 # ✅ Check if RSS file exists
 RSS_FILE="public/rss/index.xml"
 if [ -f "$RSS_FILE" ]; then
