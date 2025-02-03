@@ -22,15 +22,20 @@ echo "-----------------------------"
 echo "$DYNAMIC_CONTENT"
 echo "-----------------------------"
 
-# ✅ Replace placeholder content in README.md
-echo "🔄 Updating README.md..."
-sed -i.bak "/<!-- START_DYNAMIC_CONTENT -->/,/<!-- END_DYNAMIC_CONTENT -->/c\
-<!-- START_DYNAMIC_CONTENT -->\n$DYNAMIC_CONTENT\n<!-- END_DYNAMIC_CONTENT -->
-" README.md
+# ✅ Explicit path to the root README.md
+ROOT_README="./README.md"
+
+# Replace content in the root README.md
+sed -i.bak '/<!-- START_DYNAMIC_CONTENT -->/,/<!-- END_DYNAMIC_CONTENT -->/c\
+<!-- START_DYNAMIC_CONTENT -->\
+'"$DYNAMIC_CONTENT"'\
+<!-- END_DYNAMIC_CONTENT -->
+' $ROOT_README
+
 
 # ✅ Debug: Show diff to confirm changes
 echo "🔍 Git Diff:"
-git diff README.md
+git diff $ROOT_README
 
 # ✅ Clean up the backup file
 rm -f README.md.bak
@@ -41,10 +46,9 @@ git config --global user.email "41898282+github-actions[bot]@users.noreply.githu
 git config --global user.name "github-actions[bot]"
 git add README.md
 
-# ✅ Check if there's anything to commit
-if git diff --cached --quiet; then
-  echo "⚠️ No changes detected to commit."
-else
-  git commit -m "Automated update of README 🚀"
-  git push
-fi
+# ✅ Stage changes
+git add $ROOT_README
+
+# ✅ Commit if there are changes
+git commit -m "Update README with latest posts" || echo "⚠️ No changes detected to commit."
+
