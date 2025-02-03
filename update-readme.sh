@@ -4,7 +4,7 @@
 echo "🚀 Building the Hugo site..."
 hugo --minify || { echo "❌ Hugo build failed"; exit 1; }
 
-# ✅ List the contents of the public folder for debugging
+# ✅ List generated files for verification
 echo "📂 Listing Generated Files:"
 ls -R public/
 
@@ -24,16 +24,10 @@ if [ -z "$DYNAMIC_CONTENT" ]; then
   DYNAMIC_CONTENT="No recent posts available."
 fi
 
-# ✅ Debug: Display dynamic content
-echo "🔍 Dynamic Content Extracted:"
-echo "-----------------------------"
-echo "$DYNAMIC_CONTENT"
-echo "-----------------------------"
-
 # ✅ Explicit path to the root README.md
 ROOT_README="./README.md"
 
-# ✅ Ensure the README.md has dynamic content markers
+# ✅ Ensure README.md has dynamic content markers
 if ! grep -q "<!-- START_DYNAMIC_CONTENT -->" "$ROOT_README"; then
   echo "❌ START_DYNAMIC_CONTENT marker not found in README.md!"
   exit 1
@@ -44,22 +38,19 @@ if ! grep -q "<!-- END_DYNAMIC_CONTENT -->" "$ROOT_README"; then
   exit 1
 fi
 
-# ✅ Replace content between markers in README.md
-sed -i.bak '/<!-- START_DYNAMIC_CONTENT -->/,/<!-- END_DYNAMIC_CONTENT -->/c\
-<!-- START_DYNAMIC_CONTENT -->\
-'"$DYNAMIC_CONTENT"'\
-<!-- END_DYNAMIC_CONTENT -->
-' "$ROOT_README"
+# ✅ Replace content between markers using safer approach
+echo "📝 Updating README.md..."
 
-# ✅ Debug: Show the content before and after the update
-echo "📋 Updated Content:"
-grep -A5 "<!-- START_DYNAMIC_CONTENT -->" "$ROOT_README"
+# Escape double quotes in dynamic content to avoid syntax issues
+ESCAPED_CONTENT=$(echo "$DYNAMIC_CONTENT" | sed 's/"/\\"/g')
 
-# ✅ Show Git diff to confirm changes
-echo "🔍 Git Diff:"
-git diff "$ROOT_README"
+awk -v new_content="$ESCAPED_CONTENT" '
+  /<!-- START_DYNAMIC_CONTENT -->/ {print; print new_content; skip=1; next}
+  /<!-- END_DYNAMIC_CONTENT -->/ {skip=0}
+  skip==0
+' "$ROOT_README" > temp_readme.md && mv temp_readme.md "$ROOT_README"
 
-# ✅ Clean up the backup file
+# ✅ Clean up backup files
 rm -f README.md.bak
 
 # ✅ Configure Git for GitHub Actions
@@ -76,4 +67,4 @@ git commit --allow-empty -m "Force update README with latest posts"
 
 # ✅ Push changes to GitHub
 echo "🚀 Pushing changes to GitHub..."
-git push origin main || echo "⚠️ No changes to push.""
+git push origin main || echo "⚠️ No changes to push."
