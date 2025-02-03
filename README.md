@@ -27,8 +27,9 @@ I believe in using modern tools and approaches to solve problems and help indivi
 ## 📝 Blog
 
 <!-- START_DYNAMIC_CONTENT -->
-
+Old content here
 <!-- END_DYNAMIC_CONTENT -->
+
 
 ### 📘 Latest Projects:
 
