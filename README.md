@@ -7,7 +7,9 @@ Hey! I'm Joseph, a web designer and developer based in The Bahamas, with a passi
 
 I believe in using modern tools and approaches to solve problems and help individuals and businesses succeed online.
 
-### 🔧 Technologies & Tools I Use:
+---
+
+## 🔧 Technologies & Tools I Use:
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** Laravel, Node.js, PHP
 - **Static Site Generators:** HUGO, Jekyll
@@ -16,7 +18,6 @@ I believe in using modern tools and approaches to solve problems and help indivi
 - **Design Tools:** Adobe CC, Figma
 - **Content Management Systems (CMS):** Kirby CMS, Decap CMS, WordPress (if I have to)
 
----
 
 ## 🌱 What I’m Working On:
 - Building websites with [HUGO](https://gohugo.io/)
@@ -31,7 +32,7 @@ Placeholder content to trigger Git.
 <!-- END_DYNAMIC_CONTENT -->
 
 
-### 📘 Latest Projects:
+## 📘 Latest Projects:
 
 - **[My Website](https://josephpinder.com/)**
 
