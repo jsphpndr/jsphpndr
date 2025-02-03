@@ -7,7 +7,7 @@ hugo --minify || { echo "❌ Hugo build failed"; exit 1; }
 ls -R public/
 
 # ✅ Check if RSS file exists
-RSS_FILE="public/rss/index.xml"
+RSS_FILE="public/index.xml"
 if [ -f "$RSS_FILE" ]; then
   echo "✅ RSS file found."
   DYNAMIC_CONTENT=$(cat "$RSS_FILE")
