@@ -66,22 +66,24 @@
       
     },
     "wordCount": "{{ .WordCount }}"
-    {{- if or $hasTags $hasCategories -}},{{ end }}
-    {{- if $hasTags -}}
+    {{- if or $hasTags $hasCategories }},{{ end }}  
+    {{- if $hasTags }}
     "keywords": [
       {{- range $index, $tag -}}
-        {{- if $index -}}, {{ end }}"{{ . }}"
-      {{- end -}}
+        {{- if $index }}, {{ end }}"{{ . }}"
+      {{- end }}
     ]
-    {{- if $hasCategories -}},{{ end }}
-    {{- end -}}
-    {{- if $hasCategories -}}
+    {{- if $hasCategories }},{{ end }}  
+    {{- end }}
+
+    {{- if $hasCategories }}
     "articleSection": [
       {{- range $index, $category -}}
-        {{- if $index -}}, {{ end }}"{{ . }}"
-      {{- end -}}
+        {{- if $index }}, {{ end }}"{{ . }}"
+      {{- end }}
     ]
-    {{- end -}}
+    {{- end }}
+
   }
 ]
 </script>
