@@ -6,7 +6,7 @@ title = 'Facebook Pixel Is Slowing Down Your Website (And How To Fix It, Securel
 description = 'Facebook Pixel is slowing down your website. Learn how you can use this amazing analytics tool without hurting your page speed and keeping your site secure.'
 
 [feature]
-  image = "gt-metrix-score.jpg"
+  image = "joseph-pinder-gt-metrix-score.jpg"
   alt= "GT Metrix Page Speed results for josephpinder.com"
   figcaption = ""
 
