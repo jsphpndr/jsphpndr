@@ -30,6 +30,9 @@ jobs:
       - name: Clear Hugo Cache
         run: hugo mod clean
 
+      - name: Install Dart Sass
+        run: npm install -g sass
+
       # ✅ Step 4: Build the Hugo Site
       - name: Build with Hugo
         run: hugo --minify --enableGitInfo
