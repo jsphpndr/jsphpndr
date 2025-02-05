@@ -32,9 +32,6 @@ jobs:
 
       - name: Install Dart Sass
         run: sudo snap install dart-sass
-        
-      - name: Ensure Dart Sass has execute permissions
-        run: chmod +x $(which sass)
 
       # ✅ Step 4: Build the Hugo Site
       - name: Build with Hugo

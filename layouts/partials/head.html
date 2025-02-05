@@ -32,7 +32,7 @@
     {{- with . | toCSS $opts -}}
       {{- if hugo.IsProduction -}}
         {{- with . | fingerprint -}}
-  <link rel="preload" href="{{ .RelPermalink }}" as="style">
+  <link rel="preload" href="{{ .RelPermalink }}" as="style" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
         {{- end -}}
       {{- else -}}
