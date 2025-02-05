@@ -36,13 +36,15 @@ How does this tie into the conundrum of me facing my own fears and inadequacies?
 
 ## The Flash
 
-I have a particular style about me. I’m not the guy for flare.
+I have a particular way about me.
 
-My favorite colors are black, black, and black. I’m minimalist. I prefer subtlety in my design—a quieter approach. Odd, considering that I’m usually the loudest person in the room.
+My code is disorganized. My design? Clean. Simple. Minimal. I prioritize functionality and efficiency in my code, and I aim for a user experience that’s intuitive and unobtrusive.
 
-It takes a while to accept yourself. I’m just shy of forty, and I’m still learning to accept things about myself. But that’s just part and parcel of this process called life.
+I’m not flashy.
 
-And it’s not just me—everyone has their own way of doing things and getting there. Enter Exhibit A:
+I had to come to terms with that about myself. But that’s just part and parcel of this process called life.
+
+And it’s not just me—everyone has their own way of doing things and getting there. But can we accept it? Enter Exhibit A:
 
 ![Capture of Lorenzo Gibson's message in the Bahamas Tech Group WhatsApp](bahamas-tech-group-lorenzo-gibson.jpg "Capture of Lorenzo Gibson's message in the Bahamas Tech Group on WhatsApp")
 
@@ -63,7 +65,7 @@ In the end, we all need to be reminded of a simple fact: It’s the basics.
 
 All the pressure we put on ourselves is totally meaningless. At the end of the day, whether your code is pretty or ugly, organized or disorganized, the question remains: does it work?
 
-![Capture of Javano Collin's response in the Bahamas Tech Group on WhatsApp](bahamas-tech-group-lorenzo-gibson.jpg "Capture of Javano Collin's response in the Bahamas Tech Group on WhatsApp")
+![Capture of Javano Collin's response in the Bahamas Tech Group on WhatsApp](bahamas-tech-group-javano-collins.jpg "Capture of Javano Collin's response in the Bahamas Tech Group on WhatsApp")
 
 > The way you loop through an array in a small project is the same as in a huge project because the fundamentals of programming don’t change with scale—only the complexity around them does.
 >
@@ -84,13 +86,23 @@ You have to start somewhere. Perfection is an ongoing practice, not a one-time e
 
 If we didn’t start with the sad horses from the front, no one could have said something else might work better. The artist would never have improved, and, an even greater tragedy, we wouldn’t have it to laugh at today.
 
+In programming, failure isn’t a sign of incompetence—it’s the foundation for growth.
+
+## Get Some Help
+
+All of this is easier said than done and it can be hard to come to terms, sometimes.
+
+If you're stuck, get some help. Find fellow developers, mentors, and community members. These are the people that can help you through, provide valuable insight, and relevant feedback.
+
+Getting involved with others who have been through the same struggles is a reminder that you're not alone in this journey.
+
 ## Someone Likes Your Horse From The Front
 
-In the end, your horse is good enough for someone. Just like relationships, people see things that work for them.
+In the end, your horse from the front might be their horse from the side. And vice versa.
 
-Your horse from the front might be their horse from the side. And vice versa.
+Just like in relationships, someone will find value in the work you've done.
 
-It’s good enough. And so are you.
+Your horse is good enough. And so are you.
 
 Happy coding!
 
