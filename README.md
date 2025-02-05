@@ -26,11 +26,11 @@ I believe in using modern tools and approaches to solve problems and help indivi
 ## 📝 Blog
 
 <!-- START_DYNAMIC_CONTENT -->
+- [Horses From The Front (Dealing With Imposter Syndrome)](https://josephpinder.com/blog/horses-from-the-front-dealing-with-imposter-syndrome/) - Feb 5, 2025
 - [Escape Shortcodes in HUGO](https://josephpinder.com/blog/escape-shortcodes-in-hugo/) - Feb 3, 2025
 - [Inline SVG Files in HUGO](https://josephpinder.com/blog/inline-svg-files-in-hugo/) - Feb 1, 2025
 - [The Need to Be Remembered](https://josephpinder.com/blog/the-need-to-be-remembered/) - Jan 30, 2025
 - [Stop Email Spam With Obscure.js (Hide Your Email Address From Spammers)](https://josephpinder.com/blog/stop-email-spam-with-obscurejs-hide-your-email-address-from-spammers/) - May 28, 2021
-- [File Naming Conventions for Web Developers](https://josephpinder.com/blog/file-naming-conventions-for-web-developers/) - Aug 19, 2020
 <!-- END_DYNAMIC_CONTENT -->
 
 
