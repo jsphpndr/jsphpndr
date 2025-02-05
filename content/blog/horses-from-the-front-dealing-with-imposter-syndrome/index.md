@@ -1,6 +1,6 @@
 +++
 date = '2025-02-05T11:00:20-05:00'
-lastMod = '2025-02-05T11:00:20-05:00'
+# lastMod = '2025-02-05T11:00:20-05:00'
 draft = false
 title = "Horses From The Front (Dealing With Imposter Syndrome)"
 description = "Imposter syndrome is something every developer faces—you're not alone. In this post, I share how a simple meme, 'Horses From the Front,' helped me realize that perfection isn’t the goal. It’s good enough to just start, and sometimes that’s all that matters."

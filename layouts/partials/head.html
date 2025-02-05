@@ -7,6 +7,7 @@
   {{- $pageTitle = printf "%s | %s" .Title .Site.Title -}}
   {{- end -}}
   {{- $feature := .Params.feature -}}
+  {{- $cover := .Params.cover -}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>{{ $pageTitle }}</title>
   <meta name="description" content="{{- .Description -}}">
@@ -43,6 +44,11 @@
   </noscript>
   {{ if .Params.hasTwic -}}
   <script src="https://{{- .Site.Params.twic -}}.twic.pics/?v1" async defer></script>
+  {{- end -}}
+  {{- if .IsHome -}}
+  {{- if $cover.image -}}
+  <link rel="preload" href="https://{{- .Site.Params.twic -}}.twic.pics{{- (printf "/uploads/%s" $cover.image) -}}?twic=v1/focus=auto/cover=700x300" as="image">
+  {{- end }}
   {{- end -}}
   {{- if $feature.image -}}
   <link rel="preload" href="https://{{- .Site.Params.twic -}}.twic.pics{{- (printf "/uploads/%s" $feature.image) -}}?twic=v1/focus=auto/resize=700" as="image">

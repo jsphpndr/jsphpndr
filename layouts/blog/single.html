@@ -13,7 +13,7 @@
     
     <p class="[ meta{{ if .Params.feature.image }} meta--spaced{{ end }} ][ font--small ]">
       {{- if gt $hourDiff 1 -}}
-        Updated by Joseph on 
+        Updated by {{.Lastmod}} Joseph on 
         <time datetime="{{ $lastModified.Format $iso }}">
           {{ $lastModified.Format $format }} at {{ $lastModified.Format $timeFormat }}
         </time>
