@@ -31,8 +31,8 @@ jobs:
         run: hugo mod clean
 
       - name: Install Dart Sass
-        run: npm install -g sass
-
+        run: sudo snap install dart-sass
+        
       - name: Ensure Dart Sass has execute permissions
         run: chmod +x $(which sass)
 
