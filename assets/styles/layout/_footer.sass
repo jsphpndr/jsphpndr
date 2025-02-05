@@ -1,0 +1,43 @@
+@use 'abstracts' as *
+  
+.cta
+  color: var(--white)
+  padding: 1em
+  border: em(1) solid hsl(0 0% 14.9%)
+  border-radius: em(5)
+  
+.footer
+  display: grid
+  gap: 3em
+  color: #949494
+  padding-bottom: 2em
+
+.copy
+  flex-direction: column
+  gap: 2em
+
+  +device(desktop)
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+
+  > small
+    order: 2
+
+    +device(desktop)
+      order: 1
+
+  > nav
+    order: 1
+
+    +device(desktop)
+      order: 2
+
+    > ul
+      display: flex
+      flex-direction: column
+      column-gap: 1em
+      row-gap: 0.5em
+
+      +device(desktop)
+        flex-direction: row

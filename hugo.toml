@@ -2,6 +2,9 @@ baseURL = 'https://josephpinder.com/'
 languageCode = 'en-us'
 title = 'Joseph Pinder'
 
+[sass]
+  use_dart_sass = true
+
 upload_dir = "assets/uploads"
 public_path = "/uploads"
 disableKinds = [ "taxonomy", "term" ]

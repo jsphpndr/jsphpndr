@@ -1,8 +1,9 @@
 +++
 date = '{{ .Date }}'
+lastMod = '{{ .Date }}'
 draft = true
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
-description = ''
+description = ""
 
 [feature]
   image = ""

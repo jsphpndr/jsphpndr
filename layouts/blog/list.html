@@ -10,9 +10,8 @@
       <li class="[ post ]">
         <a class="[ post__link ]" href="{{ .RelPermalink }}" data-prefetch>
           <h2>{{ .LinkTitle }}</h2>
-          <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
-          <p>{{ .Summary | truncate 145 "[...]" | plainify }}</p>
-
+          <time class="[ font--small ]" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
+          <p>{{ .Description | truncate 145 "[...]" | plainify }}</p>
         </a>
       </li>
       {{ end }}

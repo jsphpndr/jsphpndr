@@ -1,0 +1,189 @@
+
+@use 'sass:meta'
+@use 'functions' as *
+
+=interpolate($property, $min-size, $max-size, $min-vw, $max-vw)
+  #{$property}: clamp($min-size, calc-interpolation($min-vw, $min-size, $max-vw, $max-size), $max-size)
+
+
+=fluid($val, $sm, $lg)
+  +interpolate($val, $min-viewport-width-in-rem, $max-viewport-width-in-rem, m($sm), d($lg))
+
+=breakpoint($size)
+  @if $size == phone
+    @media (min-width: 640px)
+      @content
+  @else if $size == tablet
+    @media (min-width: 768px)
+      @content
+  @else if $size == desktop
+    @media (min-width: 1025px)
+      @content
+  @else if $size == xl
+    @media (min-width: 1280px)
+      @content
+
+=device($size)
+  @if $size == phone
+    @media (max-width: 799px)
+      @content
+  @else if $size == tablet
+    @media (max-width: 1024px), (max-width: 1366px) and (hover: none)
+      @content
+  @else if $size == desktop
+    @media (min-width: 1025px) and (hover: hover), (min-width: 1367px) and (hover: none)
+      @content
+  @else if $size == xl
+    @media (min-width: 1280px)
+      @content
+
+=hover
+
+  &:focus-visible
+    @content
+
+  @media (hover:hover)
+    &:hover
+      @content
+
+  &:active
+    @content
+
+  &:focus-within
+    @content
+
+=ignore
+  /* purgecss ignore */
+  @content
+  /* purgecss ignore */
+
+=padding($value, $prop: null)
+  $side: null
+
+  @if $prop == 'top'
+    $side: 't'
+
+  @if $prop == 'right'
+    $side: 'r'
+
+  @if $prop == 'bottom'
+    $side: 'b'
+
+  @if $prop == 'left'
+    $side: 'l'
+
+  $escaped-value: if(meta.type-of($value) == 'number' and $value % 1 != 0, #{$value} + '\\', $value)
+
+  @if $side
+    .p#{$side}--#{$escaped-value}
+      padding-#{$prop}: #{$value}em
+
+      @supports (padding: max(0px))
+        padding-#{$prop}: max(#{$value}em, env(safe-area-inset-#{$prop}))
+
+  @else if $prop == 'x'
+    .px--#{$escaped-value}
+      padding-inline: #{$value}em
+
+      @supports (padding: max(0px))
+        padding-right: max(#{$value}em, env(safe-area-inset-right))
+        padding-left: max(#{$value}em, env(safe-area-inset-left))
+
+  @else if $prop == 'y'
+    .py--#{$escaped-value}
+      padding-block: #{$value}em
+
+      @supports (padding: max(0px))
+        padding-top: max(#{$value}em, env(safe-area-inset-top))
+        padding-bottom: max(#{$value}em, env(safe-area-inset-bottom))
+
+  @else
+    .p--#{$escaped-value}
+      padding: #{$value}em
+
+      @supports (padding: max(0px))
+        padding: max(#{$value}em, env(safe-area-inset-top)) max(#{$value}em, env(safe-area-inset-right)) max(#{$value}em, env(safe-area-inset-bottom)) max(#{$value}em, env(safe-area-inset-left))
+
+
+=margin($value, $prop: null)
+  $side: null
+
+  @if $prop == 'top'
+    $side: 't'
+
+  @if $prop == 'right'
+    $side: 'r'
+
+  @if $prop == 'bottom'
+    $side: 'b'
+
+  @if $prop == 'left'
+    $side: 'l'
+
+  $escaped-value: if(meta.type-of($value) == 'number' and $value % 1 != 0, #{$value} + '\\', $value)
+
+  @if $side
+    .m#{$side}--#{$escaped-value}
+      margin-#{$prop}: #{$value}em
+
+      @supports (margin: max(0px))
+        margin-#{$prop}: max(#{$value}em, env(safe-area-inset-#{$prop}))
+
+  @else if $prop == 'x'
+    .mx--#{$escaped-value}
+      margin-right: #{$value}em
+      margin-left: #{$value}em
+
+      @supports (margin: max(0px))
+        margin-right: max(#{$value}em, env(safe-area-inset-right))
+        margin-left: max(#{$value}em, env(safe-area-inset-left))
+
+  @else if $prop == 'y'
+    .my--#{$escaped-value}
+      margin-top: #{$value}em
+      margin-bottom: #{$value}em
+
+      @supports (margin: max(0px))
+        margin-top: max(#{$value}em, env(safe-area-inset-top))
+        margin-bottom: max(#{$value}em, env(safe-area-inset-bottom))
+
+  @else
+    .m--#{$escaped-value}
+      margin: #{$value}em
+
+      @supports (margin: max(0px))
+        margin: max(#{$value}em, env(safe-area-inset-top)) max(#{$value}em, env(safe-area-inset-right)) max(#{$value}em, env(safe-area-inset-bottom)) max(#{$value}em, env(safe-area-inset-left))
+
+=block($width, $height)
+  aspect-ratio: $width/$height
+
+  picture
+    display: block
+    height: 100%
+
+    > img, > noscript > img
+      height: inherit
+      object-fit: cover
+
+  @supports not (aspect-ratio: auto)
+    padding-top: $width/$height
+    position: relative
+
+    > img, > noscript > img
+      position: absolute
+      top: 0
+      left: 0
+      
+=ratio($width, $height)
+
+  +util('ratio--#{$width}\\:#{$height}')
+    +block($width, $height)
+
+=transition($properties, $duration: null)
+  @if $duration
+    transition: #{($duration * 100)}ms
+  @else 
+    transition-duration: 300ms
+  transition-timing-function: ease-in-out
+  transition-property: $properties
+  will-change: $properties

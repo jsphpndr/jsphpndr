@@ -16,28 +16,40 @@
   <meta name="googlebot" content="noindex">
   {{- end -}}
   <link rel="preload" href="/styles/style-{{- .Site.Params.Version -}}.min.css" as="style">
-  {{ if .Params.hasTwic }}
+  {{- if .Params.hasTwic }}
   <link rel="preconnect" href="https://{{- .Site.Params.twic -}}.twic.pics/?v1">
   <link rel="preload" href="https://{{- .Site.Params.twic -}}.twic.pics/?v1" as="script">
-  {{ end }}
-  {{ if $feature.image }}
+  {{- end }}
+  {{- if $feature.image -}}
   <link rel="preload" href="https://{{- .Site.Params.twic -}}.twic.pics{{- resources.Get (printf "uploads/%s" $feature.image) -}}?twic=v1/focus=auto/resize=700" as="image">
-  {{ end }}
-  <link rel="stylesheet" href="/styles/style-{{- .Site.Params.Version -}}.min.css" type="text/css">
-  {{ $style := resources.Get "styles/main.sass" | toCSS | minify }}
-  <!-- <link rel="stylesheet" href="{{ $style.RelPermalink }}"> -->
+  {{- end }}
+  {{- with resources.Get "styles/style.sass" -}}
+    {{- $opts := dict
+      "enableSourceMap" (not hugo.IsProduction)
+      "outputStyle" (cond hugo.IsProduction "compressed" "expanded")
+      "targetPath" "styles/style.css"
+      "transpiler" "dartsass"
+    -}}
+    {{- with . | toCSS $opts -}}
+      {{- if hugo.IsProduction -}}
+        {{- with . | fingerprint -}}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        {{- end -}}
+      {{- else -}}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
   <noscript>
     <style>.script { display: none; visibility: hidden }</style>
   </noscript>
-  {{ if .Params.hasTwic }}
+  {{ if .Params.hasTwic -}}
   <script src="https://{{- .Site.Params.twic -}}.twic.pics/?v1" async defer></script>
   {{- end -}}
   {{- if .Store.Get "hasCode" -}}
   <script src="/scripts/prism-{{- .Site.Params.Version -}}.min.js" async></script>
   {{- end -}} 
-  <!-- Light Mode Favicon -->
   <link rel="icon" type="image/png" href="/favicon-light.svg" media="(prefers-color-scheme: light)">
-  <!-- Dark Mode Favicon -->
   <link rel="icon" type="image/png" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)">
   <link rel="mask-icon" href="/favicon-light.svg" color="#9395A1">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">

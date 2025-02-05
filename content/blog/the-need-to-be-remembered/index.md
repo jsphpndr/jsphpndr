@@ -1,5 +1,6 @@
 +++
 date = '2025-01-30T09:46:56-05:00'
+lastMod = '2025-01-30T09:46:56-05:00'
 draft = false
 title = 'The Need to Be Remembered'
 description = "I'm writing again, for small, selfish, human reasons. It might sound bad, but I want to use this little corner of the web not just to share technical stuff, but to be remembered and to remember."
@@ -19,7 +20,7 @@ description = "I'm writing again, for small, selfish, human reasons. It might so
 	hasTwic = true
 	post = true
   categories = ['Random']
-  tags = ['Life', 'Thoughts']
+  tags = ['life', 'thoughts']
 +++
 
 I'm going to die.

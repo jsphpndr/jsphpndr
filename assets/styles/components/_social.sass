@@ -1,0 +1,36 @@
+@use 'abstracts' as *
+
+.social
+  padding-left: 0.5em
+  gap: 1.5em
+
+  &__item
+    width: 1em
+
+  &__link
+    display: block
+    fill: var(--color)
+    position: relative
+    z-index: 1
+
+    &::after
+      content: ''
+      width: 175%
+      height: 175%
+      // background-color: var(--white)
+
+      border-radius: em(5)
+      position: absolute
+      top: 50%
+      left: 50%
+      z-index: -1
+      transform: translate(-50%, -50%)
+      +transition('background-color')
+
+    
+    +hover
+
+      &::after
+        background-color: var(--background)
+
+    

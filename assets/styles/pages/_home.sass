@@ -1,0 +1,203 @@
+@use '../abstracts' as *
+
+figure
+
+  > picture
+    height: auto
+    border-radius: inherit
+
+    > img
+      height: inherit
+      object-fit: cover
+      border-radius: inherit
+
+  &:has(figcaption)
+    
+    > picture
+      margin-bottom: 0.5em
+
+.cover
+  background-color: var(--white)
+  height: em(250)
+  position: relative
+  overflow: hidden
+
+  &:after
+    content: ''
+    width: 100%
+    height: 100%
+    background: linear-gradient(transparent,#18181b73 60%,var(--black))
+    position: absolute
+    top: 0
+    left: 0
+
+  > picture
+    height: inherit
+
+.profile__avatar
+  width: 5em
+  height: 5em
+  border-radius: 50%
+
+  > picture
+    height: inherit
+
+.deets
+  gap: 1.5em
+
+  h1 
+    gap: 0.5em
+    padding-bottom: 0
+
+    > svg
+      width: 1em
+      fill: currentcolor
+  
+  small
+    display: inline-block
+    margin-bottom: 0.5em
+
+.tag-header
+  display: inline-block
+  font:
+    size: 0.8em
+    weight: 300
+  color: var(--white)
+  background-color: var(--background)
+  padding: 0.5em 0.5em
+  border-radius: em(5)
+  margin-bottom: 2em
+
+
+.link
+  color: #949494
+  +transition('color')
+
+  +hover
+    color: var(--white)
+
+  &--arrow
+    gap: 0.5em
+    font-weight: 600
+    color: var(--white)
+    +transition('color, gap')
+
+    > svg
+      width: 1em
+      fill: currentcolor
+
+    +hover
+      color: var(--color)
+      gap: 1em
+
+  &--contact
+    gap: 0.5em
+
+    > svg
+      width: 1em
+      fill: currentcolor
+
+.profile
+  
+  &__status
+    height: em(25)
+    align-items: center
+    gap: 0.5em
+    color: hsl(0 0% 63.9%)
+    position: relative
+    overflow: hidden
+
+    &-indicator
+      width: 0.5em
+      height: 0.5em
+      background-color: rgb(34 197 94/var(--tw-bg-opacity,1))
+      border-radius: 50%
+
+.reel
+  display: grid
+  color: var(--color)
+  cursor: pointer
+  position: absolute
+  top: -15%
+  left: 1em
+  +transition('transform')
+  
+  span 
+    gap: 0.5em
+
+    > svg
+      width: 1em
+      fill: currentcolor
+
+  +hover 
+    transform: translateY(-50%)
+
+.availability
+  border-bottom: 0.15em dashed var(--border)
+      
+.codebase 
+  display: grid
+  grid-template-columns: repeat(3, 1fr) 
+  gap: 0.5em
+  
+
+.set
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 0.5em
+  border: 0.1em solid var(--border)
+  border-radius: em(5)
+  padding: 1em
+
+  > svg
+    width: 2em
+    fill: var(--white)
+
+.line
+  display: block
+  height: em(1)
+  background-color: var(--border)
+  margin-bottom: 1em
+
+
++padding(5,'bottom')
+
+.reflink
+  display: inline-block
+  margin-right: 0.2em
+  color: currentColor
+  border-bottom: 0.1em solid currentColor
+
+.visually-hidden 
+  position: absolute
+  clip: rect(0 0 0 0)
+  visibility: hidden
+  opacity: 0
+
+.error
+  height: 100%
+  align-content: center
+
+  > div
+    gap: 1.5em
+
+  h1, p
+    padding-bottom: 0
+
+  h1
+    position: relative
+
+    &::after
+      content: ''
+      width: 0.1em
+      height: 100%
+      background-color: var(--border)
+      position: absolute
+      top: 0
+      right: -0.5em
+      z-index: 1
+      
+
+  p
+    color: var(--color)

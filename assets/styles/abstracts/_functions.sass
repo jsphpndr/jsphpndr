@@ -1,0 +1,24 @@
+@use 'sass:math'
+@use 'variables' as *
+@use 'config' as *
+
+@function calc-interpolation($min-screen, $min-value, $max-screen, $max-value)
+  $a: math.div(($max-value - $min-value), ($max-screen - $min-screen))
+  $b: $min-value - $a * $min-screen
+  $sign: "+"
+  @if $b < 0
+    $sign: "-"
+    $b: abs($b)
+  @return calc(#{$a * 100}vw #{$sign} #{$b})
+
+// Mobile
+@function m($m)
+  @return math.div($m, $min-font-size) * 1rem
+
+// Desktop
+@function d($d)
+  @return math.div($d, $max-font-size) * 1rem
+
+// Ems
+@function em($em)
+  @return math.div($em, $max-font-size) * 1em

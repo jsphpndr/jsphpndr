@@ -1,0 +1,42 @@
+@use 'abstracts' as *
+
+.posts
+  display: grid
+  grid-template-rows: max-content
+  gap: 2em
+  margin-bottom: 2em
+
+  > li
+    position: relative
+    
+    &::before
+      content: ''
+      width: 104%
+      height: 120%
+      border-radius: em(5)
+      position: absolute
+      top: -10%
+      left: -2%
+      z-index: -1
+      +transition('background-color')
+
+    &:has(.post__link:hover), &:has(.post__link:focus-visible), &:has(.post__link:active)
+      
+      &::before
+        background-color: var(--background)
+
+.post
+  
+  &__link
+    color: var(--white)
+
+    > h2
+      padding-bottom: 0
+
+    > time
+      display: inline-block
+      color: var(--color)
+      margin-bottom: 1em
+
+// time
+//   font-size: 0.9em

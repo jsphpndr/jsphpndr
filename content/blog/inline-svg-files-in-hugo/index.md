@@ -1,7 +1,8 @@
 +++
 date = '2025-02-01T00:40:07-05:00'
+lastmod = '2025-02-03T09:00:52-05:00'
 draft = false
-title = 'Inlining SVG Files in HUGO'
+title = 'Inline SVG Files in HUGO'
 description = "Learn how to inline SVG files in HUGO with simple solutions ranging from static files to dynamic shortcodes. This guide covers everything you need to style and manage SVGs efficiently in your HUGO projects."
 
 [feature]
@@ -145,4 +146,6 @@ And call it in your markdown like you would any other shortcode.
 
 There’s a more dynamic option if you’re up for doing a bit more work, but honestly, I think this solution will cover most use cases.
 
-If you’ve made it to the end, I hope you found this helpful! Happy coding!
+If you’ve made it to the end, I hope you found this helpful! 
+
+Happy coding!

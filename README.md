@@ -7,15 +7,13 @@ Hey! I'm Joseph, a web designer and developer based in The Bahamas, with a passi
 
 I believe in using modern tools and approaches to solve problems and help individuals and businesses succeed online.
 
----
-
 ## 🔧 Technologies & Tools I Use:
-- **Frontend:** HTML, CSS, JavaScript
+- **Frontend:** HTML, CSS/SASS, JavaScript
 - **Backend:** Laravel, Node.js, PHP
-- **Static Site Generators:** HUGO, Jekyll
+- **Static Site Generators:** HUGO
 - **Desktop Apps:** Wails
 - **Version Control:** Git, GitHub
-- **Design Tools:** Adobe CC, Figma
+- **Design Tools:** Adobe CC
 - **Content Management Systems (CMS):** Kirby CMS, Decap CMS, WordPress (if I have to)
 
 

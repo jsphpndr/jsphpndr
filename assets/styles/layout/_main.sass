@@ -1,0 +1,57 @@
+@use '../abstracts' as *
+
+@view-transition
+  navigation: auto
+
+::view-transition-group(*)
+  animation-duration: 1000ms
+
+header
+  view-transition-name: --navbar
+
+body
+  height: 100svh
+  display: grid
+  // grid-template-columns: 2em [navbar-start main-start footer-start] 1fr [navbar-end main-end footer-end] 2em
+  grid-template-rows: [ navbar-start ] max-content [ navbar-end main-start ] 1fr [main-end footer-start] max-content [footer-end]
+  row-gap: 3em
+  
+  // @media (min-width: #{em(701)})
+  grid-template-columns: minmax(1em, 1fr) [navbar-start main-start footer-start] minmax(#{em(200)}, #{em(700)}) [navbar-end main-end footer-end] minmax(1em, 1fr)
+  
+  @supports not (height: 100vh)
+    height: 100vh
+
+.navbar
+  grid-area: navbar
+
+.main
+  grid-area: main
+
+.footer
+  grid-area: footer
+
+.flex
+  display: flex
+
+.between
+  justify-content: space-between
+
+.middle
+  align-items: center
+
+.main 
+  display: grid
+  grid-template-rows: max-content
+  gap: 2em
+
+  > header
+    display: inherit
+    gap: 0.5em
+
+  > .profile
+    gap: 2em
+
+.grid
+  display: grid
+

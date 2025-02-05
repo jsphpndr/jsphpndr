@@ -1,0 +1,42 @@
+@use '../abstracts' as *
+  
+.navbar
+  padding:
+    top: 1.5em
+    bottom: 1em
+
+  > .wrapper
+    height: inherit
+    z-index: 15
+  
+  .logo > svg
+    fill: var(--white)
+
+.logo
+  width: em(200)
+
+.nav
+  height: inherit
+
+.menu
+  gap: 2em
+
+  &__link
+    text-transform: lowercase
+    color: var(--color)
+    padding: 0.25em 0.5em
+    border: 0.2em
+    position: relative
+    +transition('color')
+
+    +hover
+      color: var(--white)
+      background-color: var(--background)
+
+
+
+    &.current
+      // color: var(--white)
+      background-color: var(--background)
+      position: relative      
+
