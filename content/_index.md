@@ -5,11 +5,11 @@ title = 'Homepage'
 description = "I'm a web designer, developer, educator, and business owner based in Nassau, Bahamas. I'm passionate about creating websites that look great and perform even better."
 
 [cover]
-  image = "uploads/joseph-garnell-pinder.jpg"
+  image = "joseph-garnell-pinder.jpg"
   alt = "My wife, Garnell and I"
 
 [avatar]
-  image = "uploads/joseph-pinder.jpg"
+  image = "joseph-pinder.jpg"
   alt = "Joseph Pinder"
   # Author Snippet - This is at the bottom of every post.
   snippet = 'Joseph is a web designer based in Nassau, Bahamas passionate about creating websites that look great and perform even better.'

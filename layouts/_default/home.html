@@ -5,11 +5,12 @@
   <div class="[ profile ][ grid ]">
     <!-- Cover Image — START -->
     {{- with .Params.cover -}}
+    {{- $image := (printf "/uploads/%s" .image) -}}
     <figure class="[ profile__cover cover ]">
       <picture id="cover" class="[ bg ]">
-        <style>picture {background-image: url('https://{{ $.Site.Params.twic }}.twic.pics/{{ .image }}?twic=v1/output=preview'); }</style>
-        <img data-twic-src="image:{{ .image }}" data-twic-focus="auto" alt="{{ .alt }}" width="683" height="385"/>
-        <noscript><img class="[ script ]" src="https://{{ $.Site.Params.twic }}.twic.pics/{{ .image }}?twic=v1/output=preview" alt="{{ .alt }}" width="683" height="385"/></noscript>
+        <style>picture {background-image: url('https://{{ $.Site.Params.twic }}.twic.pics{{ $image }}?twic=v1/output=preview'); }</style>
+        <img data-twic-src="image:{{ $image }}" data-twic-focus="auto" alt="{{ .alt }}" width="683" height="385"/>
+        <noscript><img class="[ script ]" src="https://{{ $.Site.Params.twic }}.twic.pics{{ $image }}?twic=v1/output=preview" alt="{{ .alt }}" width="683" height="385"/></noscript>
       </picture>
     </figure>
     {{- end -}}
@@ -17,11 +18,12 @@
     <div class="[ deets ][ flex ]">
       <!-- Avatar — START -->
       {{- with .Params.avatar -}}
+      {{- $image := (printf "/uploads/%s" .image) -}}
       <figure class="[ profile__avatar ]">
         <picture id="avatar" class="[ bg ]">
-          <style>#avatar {background-image: url('https://{{ $.Site.Params.twic }}.twic.pics/{{ .image }}?twic=v1/output=preview');}</style>
-          <img data-twic-src="image:{{ .image }}" data-twic-focus="auto" alt="{{ .alt }}" width="90" height="90"/>
-          <noscript><img class="[ script ]" src="https://{{ $.Site.Params.twic }}.twic.pics/{{ .image }}?twic=v1/output=preview" alt="{{ .alt }}" width="90" height="90"/></noscript>
+          <style>#avatar {background-image: url('https://{{ $.Site.Params.twic }}.twic.pics{{ $image }}?twic=v1/output=preview');}</style>
+          <img data-twic-src="image:{{ $image }}" data-twic-focus="auto" alt="{{ .alt }}" width="90" height="90"/>
+          <noscript><img class="[ script ]" src="https://{{ $.Site.Params.twic }}.twic.pics{{ $image }}?twic=v1/output=preview" alt="{{ .alt }}" width="90" height="90"/></noscript>
         </picture>
       </figure>
       {{- end -}}
