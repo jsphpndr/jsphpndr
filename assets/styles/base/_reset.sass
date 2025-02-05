@@ -160,17 +160,23 @@ img, svg:not([width])
 
 
 +ignore
-  picture, img
-    display: block
-  
-  picture
-    background-color: var(--grey--600)
+  figure
 
-  img
-    height: auto
-    object-fit: cover
-    opacity: 0
-    +transition('opacity')
+    > picture
+      height: auto
+      border-radius: inherit
 
-    &.twic-done, &.twic-error
-      opacity: 1 
+      > img
+        height: inherit
+        object-fit: cover
+        border-radius: inherit
+        opacity: 0
+        +transition(opacity)
+
+        &.twic-done, &.twic-error
+          opacity: 1 
+
+      &:has(figcaption)
+      
+        > picture
+          margin-bottom: 0.5em

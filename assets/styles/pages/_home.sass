@@ -1,20 +1,5 @@
 @use '../abstracts' as *
 
-figure
-
-  > picture
-    // height: auto
-    border-radius: inherit
-
-    > img
-      height: auto
-      object-fit: cover
-      border-radius: inherit
-
-  &:has(figcaption)
-    
-    > picture
-      margin-bottom: 0.5em
 
 .cover
   background-color: var(--white)
@@ -34,6 +19,9 @@ figure
   > picture
     height: inherit
 
+    > img
+      height: inherit
+
 .profile__avatar
   width: 5em
   height: 5em
@@ -41,6 +29,9 @@ figure
 
   > picture
     height: inherit
+
+    > img
+      height: inherit
 
 .deets
   gap: 1.5em

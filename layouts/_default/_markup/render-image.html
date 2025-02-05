@@ -16,7 +16,7 @@
   <picture id="picture-{{$uniqueID}}" class="[ bg ]">
     {{ if $image }}
       <style>#picture-{{$uniqueID}} {background-image: url('https://{{ .Page.Site.Params.twic }}.twic.pics{{ $image.RelPermalink }}?twic=v1/output=preview');}</style>
-      <img class="[ r--10 ]" 
+      <img
            width="{{ $width }}" 
            height="{{ $height }}" 
            data-twic-src="image:{{ $image.RelPermalink }}" 
@@ -31,7 +31,7 @@
       </noscript>
     {{ else }}
       <!-- Fallback for missing images -->
-      <img class="[ r--10 ]" 
+      <img
            src="https://{{ .Page.Site.Params.twic }}.twic.pics/{{ .Destination | safeURL }}?twic=v1/focus=auto/" 
            alt="{{ .PlainText | default "Image" }}"/>
     {{ end }}
