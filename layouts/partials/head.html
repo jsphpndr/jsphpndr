@@ -19,9 +19,6 @@
   <link rel="preconnect" href="https://{{- .Site.Params.twic -}}.twic.pics/?v1">
   <link rel="preload" href="https://{{- .Site.Params.twic -}}.twic.pics/?v1" as="script">
   {{- end }}
-  {{- if $feature.image -}}
-  <link rel="preload" href="https://{{- .Site.Params.twic -}}.twic.pics{{- resources.Get (printf "uploads/%s" $feature.image) -}}?twic=v1/focus=auto/resize=700" as="image">
-  {{- end }}
   {{- with resources.Get "styles/style.sass" -}}
     {{- $opts := dict
       "enableSourceMap" (not hugo.IsProduction)
@@ -47,6 +44,9 @@
   {{ if .Params.hasTwic -}}
   <script src="https://{{- .Site.Params.twic -}}.twic.pics/?v1" async defer></script>
   {{- end -}}
+  {{- if $feature.image -}}
+  <link rel="preload" href="https://{{- .Site.Params.twic -}}.twic.pics{{- (printf "/uploads/%s" $feature.image) -}}?twic=v1/focus=auto/cover=700x700" as="image">
+  {{- end }}
   {{- if .Store.Get "hasCode" -}}
   <script src="/scripts/prism-{{- .Site.Params.Version -}}.min.js" async></script>
   {{- end -}} 

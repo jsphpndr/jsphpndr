@@ -18,13 +18,13 @@
     </p>
     {{- with .Params.feature -}}
     {{- if .image -}}
-    {{- $image := (printf "uploads/%s" .image) -}}
+    {{- $image := (printf "/uploads/%s" .image) -}}
     <figure class="[ pb--2 ]">
       <picture id="feature" class="[ bg ]">
-        <style>#feature { background-image: url('https://{{ $.Site.Params.twic }}.twic.pics{{ $image }}?twic=v1/output=preview'); }</style>
+        <style>#feature { background-image: url('https://{{ $.Site.Params.twic }}.twic.pics/{{ $image }}?twic=v1/output=preview'); }</style>
         <img data-twic-src="image:{{ $image }}" data-twic-focus="auto" alt="{{ if .alt }}{{ .alt }}{{ end }}" width="700" height="700"/>
         <noscript>
-        <img class="[ script ]" src="https://{{ $.Site.Params.twic }}.twic.pics{{ $image }}?twic=v1/output=preview" alt="{{ if .alt }}{{ .alt }}{{ end }}" width="683" height="385"/></noscript>
+        <img class="[ script ]" src="https://{{ $.Site.Params.twic }}.twic.pics/{{ $image }}?twic=v1/output=preview" alt="{{ if .alt }}{{ .alt }}{{ end }}" width="683" height="385"/></noscript>
       </picture>
       {{- if .figcaption -}}
       <figcaption class="[ pt--0.5 ]">{{ .figcaption }}</figcaption>
