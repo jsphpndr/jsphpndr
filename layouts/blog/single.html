@@ -67,8 +67,8 @@
         <li class="[ post ]">
           <a class="[ post__link ]" href="{{ .RelPermalink }}" data-prefetch>
             <h3 class="[ font--2 ]">{{ .LinkTitle }}</h3>
-            <time datetime="{{ .Date.Format $iso }}">{{ .Date.Format $format }}</time>
-            <p>{{ (.Summary | plainify)| strings.Truncate 145 "[...]" | htmlUnescape }}</p>
+            <time class="[ font--small ]" datetime="{{ .Date.Format $iso }}">{{ .Date.Format $format }}</time>
+            <p>{{ (.Description | plainify)| strings.Truncate 145 "[...]" | htmlUnescape }}</p>
           </a>
         </li>
         {{- end -}}
