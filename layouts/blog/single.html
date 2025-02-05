@@ -18,7 +18,7 @@
     </p>
     {{- with .Params.feature -}}
     {{- if .image -}}
-    {{- $image := resources.Get (printf "uploads/%s" .Params.feature.image) -}}
+    {{- $image := (printf "uploads/%s" .image) -}}
     <figure class="[ pb--2 ]">
       <picture id="feature" class="[ bg ]">
         <style>#feature { background-image: url('https://{{ $.Site.Params.twic }}.twic.pics{{ $image }}?twic=v1/output=preview'); }</style>
