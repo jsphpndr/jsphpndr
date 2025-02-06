@@ -1,4 +1,6 @@
 /*
+  X-Frame-Options: DENY
+  Access-Control-Allow-Origin: *
   X-Content-Type-Options: nosniff
   Referrer-Policy: same-origin
   X-Permitted-Cross-Domain-Policies: none
