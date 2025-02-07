@@ -5,23 +5,16 @@
     <h1>{{ .Title }}</h1>
     {{- $format := "January 2, 2006" -}}
     {{- $iso := "2006-01-02T15:04:05Z07:00" -}}
-    {{- $timeFormat := "3:04PM" -}}
+    {{- $timeFormat := "3:04pm" -}}
     
     {{- $published := .Date -}}
     {{- $lastModified := .Lastmod | default .Date -}}
     {{- $hourDiff := div (sub $lastModified.Unix $published.Unix) 3600 -}}
     <p class="[ meta{{ if .Params.feature.image }} meta--spaced{{ end }} ][ font--small ]">
-      {{- if gt $hourDiff 1 -}}
-        Updated by {{.Lastmod}} Joseph on 
-        <time datetime="{{ $lastModified.Format $iso }}">
-          {{ $lastModified.Format $format }} at {{ $lastModified.Format $timeFormat }}
-        </time>
-      {{- else -}}
-        Written by Joseph on 
+        Joseph Pinder |  
         <time datetime="{{ $published.Format $iso }}">
-          {{ $published.Format $format }} at {{ $published.Format $timeFormat }}
+          {{ $published.Format $format }} | {{ $published.Format $timeFormat }}
         </time>
-      {{- end }} 
       | {{ .ReadingTime }} min read
     </p>
     {{- with .Params.feature -}}
@@ -47,18 +40,21 @@
   <footer>
     {{- if gt $hourDiff 1 -}}
     <div class="[ original-publish-date ]"> 
-      <p class="[ font--small ]">Originally published on <time datetime="{{ $published.Format $iso }}">{{ $published.Format $format }} at {{ $published.Format $timeFormat }}</time></p>
+      <p class="[ font--small ]">Last Updated: 
+        <time datetime="{{ $lastModified.Format $iso }}">{{ $lastModified.Format $format }} at {{ $lastModified.Format $timeFormat }}</time>
+      </p>
     </div>
     {{ end }}
     {{- partial "footnotes.html" . -}}
     {{- with .Site.Home.Params.avatar -}}
+    {{- $image := (printf "/uploads/%s" .image) -}}
     <section class="[ bio ]">
       <div>
         <figure class="[ profile__avatar ]">
           <picture id="avatar" class="[ bg ]">
-            <style>#avatar {background-image: url('https://{{ $.Site.Params.twic }}.twic.pics/{{ .image }}?twic=v1/output=preview');}</style>
-            <img data-twic-src="image:{{ .image }}" data-twic-focus="auto" alt="Joseph Pinder" width="90" height="90"/>
-            <noscript><img class="[ script ]" src="https://{{ $.Site.Params.twic }}.twic.pics/{{ .image }}?twic=v1/output=preview" alt="Joseph Pinder" width="90" height="90"/></noscript>
+            <style>#avatar {background-image: url('https://{{ $.Site.Params.twic }}.twic.pics{{ $image }}?twic=v1/output=preview');}</style>
+            <img data-twic-src="image:{{ $image }}" data-twic-focus="auto" alt="Joseph Pinder" width="90" height="90"/>
+            <noscript><img class="[ script ]" src="https://{{ $.Site.Params.twic }}.twic.pics{{ $image }}?twic=v1/output=preview" alt="Joseph Pinder" width="90" height="90"/></noscript>
           </picture>
         </figure>
       </div>
