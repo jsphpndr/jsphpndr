@@ -1,36 +1,41 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-
-  <div>
-    <ul class="[ posts ]">
-      {{- $format := "January 2, 2006" -}}
-      {{- $iso := "2006-01-02T15:04:05Z07:00" -}}
+  <header>
+    <h1>{{ .Title }}</h1>
+  </header>
+  
+  <div class="[ loop-wrap ][ grid ]">
+    <div>
+      <ul class="[ posts ]">
+        {{- $format := "January 2, 2006" -}}
+        {{- $iso := "2006-01-02T15:04:05Z07:00" -}}
+        {{ $paginator := .Paginator }}
+        {{ range $paginator.Pages }}
+        <li class="[ post ]">
+          <a class="[ post__link ]" href="{{ .RelPermalink }}" data-prefetch>
+            <h2>{{ .LinkTitle }}</h2>
+            <time class="[ font--small ]" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            <p>{{ .Description | truncate 145 "[...]" | plainify }}</p>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    <nav>
       {{ $paginator := .Paginator }}
-      {{ range $paginator.Pages }}
-      <li class="[ post ]">
-        <a class="[ post__link ]" href="{{ .RelPermalink }}" data-prefetch>
-          <h2>{{ .LinkTitle }}</h2>
-          <time class="[ font--small ]" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
-          <p>{{ .Description | truncate 145 "[...]" | plainify }}</p>
-        </a>
-      </li>
-      {{ end }}
-    </ul>
+      <ul class="[ pagination ]">
+        {{ if $paginator.HasPrev }}
+        <li class="[ newer ]">
+          <a href="{{ $paginator.Prev.URL }}">Newer Posts</a>
+        </li>
+        {{ end }}
+        {{ if $paginator.HasNext }}
+        <li class="[ older ]">
+          <a href="{{ $paginator.Next.URL }}">Older Posts</a>
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
+
   </div>
-  <nav>
-    {{ $paginator := .Paginator }}
-    <ul class="[ pagination ]">
-      {{ if $paginator.HasPrev }}
-      <li class="[ newer ]">
-        <a href="{{ $paginator.Prev.URL }}">Newer Posts</a>
-      </li>
-      {{ end }}
-      {{ if $paginator.HasNext }}
-      <li class="[ older ]">
-        <a href="{{ $paginator.Next.URL }}">Older Posts</a>
-      </li>
-      {{ end }}
-    </ul>
-  </nav>
   
 {{ end }}

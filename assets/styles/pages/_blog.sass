@@ -1,5 +1,8 @@
 @use 'abstracts' as *
 
+.loop-wrap
+  grid-template-rows: 1fr max-content
+
 .posts
   display: grid
   grid-template-rows: max-content
@@ -26,6 +29,7 @@
         background-color: var(--background)
 
 .post
+
   
   &__link
     color: var(--white)
@@ -40,3 +44,13 @@
 
 // time
 //   font-size: 0.9em
+.pagination
+  display: grid
+  grid-template-columns: [newer-start] max-content [newer-end] 1fr [older-start] max-content [older-end]
+  column-gap: 1em
+  
+.newer
+  grid-area: newer
+
+.older
+  grid-area: older

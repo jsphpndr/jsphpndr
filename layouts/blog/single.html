@@ -1,7 +1,7 @@
 {{- define "main" -}}
 {{- .Store.Set "hasTwic" true -}}
 <article class="[ post-single h-entry]">
-  <div class="[ post-single__header ]">
+  <header class="[ post-single__header ]">
     <h1>{{ .Title }}</h1>
     {{- $format := "January 2, 2006" -}}
     {{- $iso := "2006-01-02T15:04:05Z07:00" -}}
@@ -33,7 +33,7 @@
     </figure>
     {{- end -}}
     {{- end -}}
-  </div>
+  </header>
   <div class="[ content ]">
     {{ .Content }}
   </div>
