@@ -2,23 +2,35 @@
 @use 'variables' as *
 @use 'config' as *
 
-@function calc-interpolation($min-screen, $min-value, $max-screen, $max-value)
-  $a: math.div(($max-value - $min-value), ($max-screen - $min-screen))
-  $b: $min-value - $a * $min-screen
-  $sign: "+"
-  @if $b < 0
-    $sign: "-"
-    $b: abs($b)
-  @return calc(#{$a * 100}vw #{$sign} #{$b})
+// Fluid Typography — 2025 Update
+// Utilize for fonts and element dimensions like width and height
+
+$min-font: math.div($min-font-size, 16)
+$max-font: math.div($max-font-size, 16)
+
+$min-vw: math.div($min-screen-size, 16)
+$max-vw: math.div($max-screen-size, 16)
+
+// Type Scale Function
+@function type-scale($step, $base, $scale)
+  @return $base * math.pow($scale, $step)
+
+// Slope Function
+@function slope($min-size, $max-size, $min-viewport, $max-viewport)
+  @return math.div(($max-size - $min-size), ($max-viewport - $min-viewport))
+
+// Intercept Function
+@function intercept($min-size, $slope, $min-viewport)
+  @return $min-size - ($slope * $min-viewport)
+
+$slope: slope($min-font, $max-font, $min-vw, $max-vw)
+
+$intercept: intercept($min-font, $slope, $min-vw)
 
 // Mobile
-@function m($m)
-  @return math.div($m, $min-font-size) * 1rem
-
-// Desktop
-@function d($d)
-  @return math.div($d, $max-font-size) * 1rem
+@function rem($m)
+  @return #{math.div($m, 16)}rem
 
 // Ems
 @function em($em)
-  @return math.div($em, $max-font-size) * 1em
+  @return #{math.div($em, 16)}em

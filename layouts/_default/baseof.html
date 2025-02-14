@@ -17,6 +17,7 @@
       </div>
     </header>
     <main class="[ main ]{{- if eq .Page.Kind "404" -}}[ error ]{{- end -}}" id="main">
+      {{ time.Now }}
       {{- block "main" . -}}{{- end -}}
     </main>
     {{- partial "footer.html" . -}}
