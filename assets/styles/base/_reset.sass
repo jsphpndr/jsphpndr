@@ -16,14 +16,13 @@
   --code-background: rgb(35, 35, 35)
   --monospace: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace
   
-  --step--2: clamp(0.64rem, 0.7403rem + -0.2292vw, 0.6944rem)
-  --step--1: clamp(0.8rem, 0.8614rem + -0.1404vw, 0.8333rem)
-  --step-0: clamp(1rem, 1rem + 0vw, 1rem)
-  --step-1: clamp(1.2rem, 1.1579rem + 0.2105vw, 1.25rem)
-  --step-2: clamp(1.44rem, 1.3368rem + 0.5158vw, 1.5625rem)
-  --step-3: clamp(1.728rem, 1.5384rem + 0.9479vw, 1.9531rem)
-  --step-4: clamp(2.0736rem, 1.7639rem + 1.5487vw, 2.4414rem)
-  --step-5: clamp(2.4883rem, 2.0138rem + 2.3724vw, 3.0518rem)
+  $headings: (h1: 4, h2: 3, h3: 2, h4: 1, h5: 0, h6: -1)
+
+  @each $tag, $step in $headings
+    $min-size: type-scale($step, $min-font-size, $min-scale)
+    $max-size: type-scale($step, $max-font-size, $max-scale)
+
+    +clamp('--step-#{$step}', $min-size, $max-size)
 
   --color-fg-default:#c9d1d9
   --color-bg-code-block:#161b22
@@ -46,7 +45,7 @@ html
   -webkit-tap-highlight-color: rgba(black, 0)
   scroll-behavior: smooth
   scroll-padding-top: 10em
-  +interpolate(font-size, $min-font-size-in-px, $max-font-size-in-px, $min-viewport-width-in-px, $max-viewport-width-in-px)
+  +clamp(font-size, $min-font-size, $max-font-size)
 
 html, body
   overflow-x: hidden

@@ -1,13 +1,12 @@
 
 @use 'sass:meta'
+@use 'variables' as *
 @use 'functions' as *
 
-=interpolate($property, $min-size, $max-size, $min-vw, $max-vw)
-  #{$property}: clamp($min-size, calc-interpolation($min-vw, $min-size, $max-vw, $max-size), $max-size)
+// Clamp Mixin
+=clamp($property, $min, $max)
+  #{$property}: clamp(#{rem($min)}, calc(#{$slope * 100}vw + #{$intercept}rem), #{rem($max)})
 
-
-=fluid($val, $sm, $lg)
-  +interpolate($val, $min-viewport-width-in-rem, $max-viewport-width-in-rem, m($sm), d($lg))
 
 =breakpoint($size)
   @if $size == phone

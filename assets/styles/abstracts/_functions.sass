@@ -33,4 +33,4 @@ $intercept: intercept($min-font, $slope, $min-vw)
 
 // Ems
 @function em($em)
-  @return #{math.div($em, 16)}em
+  @return #{math.div($em, $max-font-size)}em
