@@ -64,7 +64,7 @@
   </header>
   <!-- Profile — END -->
   <!-- Posts — START -->
-  <div>
+  <section>
     <h2 class="[ tag-header ]">Recent posts </h2>
     <ul class="[ posts ]">
       {{- $format := "January 2, 2006" -}}
@@ -83,6 +83,38 @@
       <span>More posts</span>
       {{ readFile "static/long-arrow-left.svg" | safeHTML }}
     </a>
-  </div>
+  </section>
   <!-- Posts - END -->
+  <!-- Projects - START -->
+  <!--
+    <section>
+      <h2 class="[ tag-header ]">Recent projects</h2>
+      <ul class="[ projects ][ grid md:gx--2 ]">
+        <li>
+          <a class="[ project_link ][ grid ]" href="/projects">
+            <h3>Public Holiday API</h3>
+            <small>An API built to access Bahamian public holiday data.</small>
+            <figure class="[ cover ]">
+              <picture class="[ bg ]">
+                <style>
+                  picture {
+                    background-image: url('https://clvrmktg.twic.pics/home/smiling-woman-drinking-coffee.jpg?twic=v1/output=preview');
+                  }
+                </style>
+                <img data-twic-src="image:home/smiling-woman-drinking-coffee.jpg" data-twic-focus="auto" alt="My wife, Garnell and I"/>
+                <noscript>
+                <img class="[ script ]" src="https://clvrmktg.twic.pics/home/smiling-woman-drinking-coffee.jpg?twic=v1/output=preview"/></noscript>
+              </picture>
+            </figure>
+          </a>
+        </li>
+      </ul>
+      <a class="[ link link--arrow ][ flex ]" href="/projects">
+        <span>More projects</span>
+        {{ readFile "static/long-arrow-left.svg" | safeHTML }}
+      </a>
+    </section>
+  -->
+  <!-- Projects - END -->
+  
 {{- end -}}

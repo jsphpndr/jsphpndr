@@ -23,10 +23,6 @@ $max-vw: math.div($max-screen-size, 16)
 @function intercept($min-size, $slope, $min-viewport)
   @return $min-size - ($slope * $min-viewport)
 
-$slope: slope($min-font, $max-font, $min-vw, $max-vw)
-
-$intercept: intercept($min-font, $slope, $min-vw)
-
 // Mobile
 @function rem($m)
   @return #{math.div($m, 16)}rem

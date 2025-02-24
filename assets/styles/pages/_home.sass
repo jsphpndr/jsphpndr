@@ -199,3 +199,36 @@
   visibility: hidden
   clip: rect(0 0 0 0)
   overflow: hidden
+
+
+.projects
+  // grid-template-columns: repeat(auto-fit, minmax(#{em(280)}, 1fr))
+  grid-gap: 0.5em
+  margin-bottom: 1em
+
+.project_link
+  color: var(--white)
+  padding: 0.5em
+  border: em(1) solid hsl(0 0% 14.9%)
+  border-radius: em(5)
+  +transition('box-shadow')
+
+  +hover
+    box-shadow: inset 0 0 60px -10px #ffffff1f
+
+  > .cover
+    order: 1
+    margin-bottom: 0.5em
+
+  > h3
+    order: 2
+
+  > small
+    order: 3
+
+
+.note
+  display: inline-block
+  margin-bottom: 1em
+
+

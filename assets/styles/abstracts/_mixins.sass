@@ -1,11 +1,19 @@
 
+@use 'sass:math'
+@use 'sass:map'
 @use 'sass:meta'
 @use 'variables' as *
 @use 'functions' as *
 
 // Clamp Mixin
 =clamp($property, $min, $max)
-  #{$property}: clamp(#{rem($min)}, calc(#{$slope * 100}vw + #{$intercept}rem), #{rem($max)})
+  $min-rem: math.div($min, 16)
+  $max-rem: math.div($max, 16)
+
+  $slope: slope($min-rem, $max-rem, $min-vw, $max-vw)
+  $intercept: intercept($min-rem, $slope, $min-vw)
+
+  #{$property}: clamp(#{$min-rem}rem, #{$intercept}rem + #{$slope * 100}vw, #{$max-rem}rem)
 
 
 =breakpoint($size)
@@ -186,3 +194,28 @@
   transition-timing-function: ease-in-out
   transition-property: $properties
   will-change: $properties
+
+
+=gx($count, $breakpoint: null)
+  $breakpoints: (sm: phone, md: tablet, lg: desktop, xl: xl)
+
+  @if map.get($breakpoints, $breakpoint) != null
+    .#{$breakpoint}\:gx--#{$count}
+      +breakpoint(map.get($breakpoints, $breakpoint))
+        grid-template-columns: repeat(#{$count}, 1fr)
+
+  @else
+    .gx--#{$count}
+      grid-template-columns: repeat(#{$count}, 1fr)
+
+=gy($count, $breakpoint: null)
+  $breakpoints: (sm: phone, md: tablet, lg: desktop, xl: xl)
+
+  @if map.get($breakpoints, $breakpoint) != null
+    .#{$breakpoint}\:gy--#{$count}
+      +breakpoint(map.get($breakpoints, $breakpoint))
+        grid-template-rows: repeat(#{$count}, 1fr)
+
+  @else
+    .gy--#{$count}  // Fixed incorrect selector
+      grid-template-rows: repeat(#{$count}, 1fr)

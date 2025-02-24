@@ -25,12 +25,12 @@
       <ul class="[ pagination ]">
         {{ if $paginator.HasPrev }}
         <li class="[ newer ]">
-          <a href="{{ $paginator.Prev.URL }}">Newer Posts</a>
+          <a href="{{ $paginator.Prev.URL }}" data-prefetch>Newer Posts</a>
         </li>
         {{ end }}
         {{ if $paginator.HasNext }}
         <li class="[ older ]">
-          <a href="{{ $paginator.Next.URL }}">Older Posts</a>
+          <a href="{{ $paginator.Next.URL }}" data-prefetch>Older Posts</a>
         </li>
         {{ end }}
       </ul>
