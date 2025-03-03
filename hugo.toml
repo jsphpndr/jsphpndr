@@ -7,7 +7,7 @@ title = 'Joseph Pinder'
 
 upload_dir = "assets/uploads"
 public_path = "/uploads"
-disableKinds = [ "taxonomy", "term" ]
+# disableKinds = [ "taxonomy", "term" ]
 
 [pagination]
   pagerSize = 6

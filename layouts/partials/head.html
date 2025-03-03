@@ -27,16 +27,16 @@
       "targetPath" "styles/style.css"
       "transpiler" "dartsass"
     -}}
-    {{- $hash := now | hash -}}
+    {{- $hash := hash.XxHash now -}}
     {{- with . | toCSS $opts -}}
       {{- if hugo.IsProduction -}}
-        {{- with . | fingerprint -}}
+        {{- with . | fingerprint "sha256" -}}
   <link rel="preload" href="{{ .RelPermalink }}" as="style" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
         {{- end -}}
       {{- else -}}
-  <link rel="preload" href="{{ .RelPermalink }}?v={{ hash.XxHash now }}" as="style">
-  <link rel="stylesheet" href="{{ .RelPermalink }}?v={{ hash.XxHash now }}">
+  <link rel="preload" href="{{ .RelPermalink }}?v={{ $hash }}" as="style">
+  <link rel="stylesheet" href="{{ .RelPermalink }}?v={{ $hash }}">
       {{- end -}}
     {{- end -}}
   {{- end -}}

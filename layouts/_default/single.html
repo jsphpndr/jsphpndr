@@ -1,123 +1,15 @@
 {{ define "main" }}
-<article class="[ post-single ]">
-  <div class="[ post-single__header ]">
-    <h1>{{ .Title }}</h1>
-    <div class="[ meta ]">
-      <time class="[ font--small ]" datetime="2008-02-14 20:00">November 15, 2024</time><small>Joseph Pinder</small>
-    </div>
-    <figure class="[ pb--2 ]">
-      <picture class="[ bg ]">
-        <style>picture { background-image: url('https://clvrmktg.twic.pics/home/smiling-woman-drinking-coffee.jpg?twic=v1/output=preview'); }</style>
-        <img data-twic-src="image:home/smiling-woman-drinking-coffee.jpg" data-twic-focus="auto" alt="" width="683" height="385"/>
-        <noscript>
-        <img class="[ script ]" src="https://clvrmktg.twic.pics/home/smiling-woman-drinking-coffee.jpg?twic=v1/output=preview"/></noscript>
-      </picture>
-      <figcaption class="[ pt--0.5 ]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae voluptas quisquam sapiente, culpa voluptatem iure similique vel. Tenetur, qui! Accusantium assumenda fuga magni. Eaque, voluptates!</figcaption>
-    </figure>
-  </div>
-  <div class="[ content ]">
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut similique dolorum adipisci perferendis veniam ex iusto dolore tempora at saepe, voluptatum, quaerat, dolores sunt ipsum accusantium laborum quod voluptas possimus?</p>
-    <h2>Heading 2</h2>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut similique dolorum adipisci perferendis veniam ex iusto dolore tempora at saepe, voluptatum, quaerat, dolores sunt ipsum accusantium laborum quod voluptas possimus?</p>
-    <h3>Heading 3</h3>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut similique dolorum adipisci perferendis veniam ex iusto dolore tempora at saepe, voluptatum, quaerat, dolores sunt ipsum accusantium laborum quod voluptas possimus?</p>
-    <ul>
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-      <li>Item 4</li>
-      <li>Item 5</li>
-      <li>Item 6</li>
-    </ul>
-    <lite-youtube videoid="LEkFckg7sfw"></lite-youtube>
-    <p>This is some text with a first footnote reference<sup id="fnref-1"><a href="#fn-1" aria-describedby="footnote-label">1</a></sup> and a second footnote reference<sup id="fnref-2"><a href="#fn-2" aria-describedby="footnote-label">2</a></sup>.</p>
-    <ol>
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-      <li>Item 4</li>
-      <li>Item 5</li>
-      <li>Item 6</li>
-    </ol>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut similique dolorum adipisci perferendis veniam ex iusto dolore tempora at saepe, voluptatum, quaerat, dolores sunt ipsum accusantium laborum quod voluptas possimus?</p>
-    <pre class="[ language-html ]"><code class="[ language-html ]">&lt;h1&gt;Hello, World!&lt;/h1&gt;
-&lt;noscript&gt;&lt;img height=&quot;1&quot; width=&quot;1&quot; class=&quot;pixel&quot; src=&quot;https://www.facebook.com/tr?id=YOUR_FACEBOOK_APP_ID&amp;ev=PageView&amp;noscript=1&quot;/&gt;&lt;/noscript&gt;
-&lt;!DOCTYPE html&gt;</code></pre>
-    <pre class="language-css"><code class="language-css">.el { property: value; }</code></pre>
-    <pre class="language-js"><code class="language-js">const = &quot;Hello, World!&quot;</code></pre>
-    <pre class="language-php"><code class="language-php">&lt;?php</code></pre>
-    <p>Lorem ipsum dolor sit <a href="/">amet consectetur</a>, adipisicing elit. Aut similique dolorum adipisci perferendis veniam ex iusto dolore tempora at saepe, voluptatum, quaerat, dolores sunt ipsum accusantium laborum quod voluptas possimus?</p>
-    <figure class="[  pb--1 ]">
-      <picture class="[ bg ]">
-        <style>
-          picture {
-            background-image: url('https://clvrmktg.twic.pics/home/smiling-woman-drinking-coffee.jpg?twic=v1/output=preview');
-          }
-          
-        </style><img class="[ r--10 ]" data-twic-src="image:home/smiling-woman-drinking-coffee.jpg" data-twic-focus="auto" alt=""/>
-        <noscript><img class="[ script ]" src="https://clvrmktg.twic.pics/home/smiling-woman-drinking-coffee.jpg?twic=v1/output=preview"/></noscript>
-      </picture>
-      <figcaption class="[ color--blue-grey--600 pt--0.5 ]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum atque consequuntur minima ut explicabo fugiat, dolor necessitatibus. Hic aperiam consequuntur, illo fuga praesentium doloribus quisquam.
-      </figcaption>
-    </figure>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt blanditiis praesentium sequi impedit earum odio modi fugit hic labore nisi ab, minus veritatis facere veniam?</p>
-    <div class="[ blockquote ]">
-      <div>
-        <blockquote>
-          <p>Lorem ipsum dolor
-            <q>sit amet consectetur</q>, adipisicing elit. Aut similique dolorum adipisci perferendis veniam ex iusto dolore tempora at saepe, voluptatum, quaerat, dolores sunt ipsum accusantium laborum quod voluptas possimus?
-          </p>
-        </blockquote>
-        <p class="[ citation ]">John Doe,
-          <cite>Valerian Chronicles</cite>
-        </p>
-      </div>
-    </div>
-    <p>Lorem ipsum dolor 
-      <q>sit amet consectetur</q>, adipisicing elit. Aut <code>similique </code> dolorum adipisci perferendis veniam ex iusto dolore tempora at saepe, voluptatum, quaerat, dolores sunt ipsum accusantium laborum quod voluptas possimus?
-    </p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut similique dolorum adipisci perferendis veniam ex iusto dolore tempora at saepe, voluptatum, quaerat, dolores sunt ipsum accusantium laborum quod voluptas possimus?</p>
-  </div>
-  <footer>
-    <section class="[ footnotes ][ pb--5 ]"><b class="line"></b>
-      <h2 class="[ visually-hidden ]" id="footnote-label">Footnotes</h2>
-      <ol>
-        <li id="fn-1">This is the content of the first footnote.<a class="[ reflink ]" href="#fnref-1" aria-label="Back to content">↩</a></li>
-        <li id="fn-2">This is the content of the second footnote.<a class="[ reflink ]" href="#fnref-2" aria-label="Back to content">↩</a></li>
-      </ol>
-    </section>
-    <section class="[ bio ]">
-      <div>
-        <figure class="[ profile__avatar ]">
-          <picture class="[ bg ]">
-            <style>
-              picture {
-                background-image: url('https://clvrmktg.twic.pics/home/smiling-woman-drinking-coffee.jpg?twic=v1/output=preview');
-              }
-              
-            </style><img data-twic-src="image:home/smiling-woman-drinking-coffee.jpg" data-twic-focus="auto" alt="Joseph Pinder"/>
-            <noscript><img class="[ script ]" src="https://clvrmktg.twic.pics/home/smiling-woman-drinking-coffee.jpg?twic=v1/output=preview"/></noscript>
-          </picture>
-        </figure>
-      </div>
-      <div>
-        <h2 class="[ flex middle ]">About The Author</h2>
-        <p>Joseph Pinder is a web designer based in Nassau, Bahamas passionate about creating websites that look great and perform even better.</p>
-      </div>
-    </section>
-    <section>
-      <h2 class="[ tag-header ]">Related Posts</h2>
-      <ul class="[ posts ]">
-        <li class="[ post ]"><a class="[ post__link ]" href="/blog/post" data-prefetch>
-            <h3 class="[ font--2 ]">Cost, Price, Value And The Difference</h3>
-            <time datetime="">January 8, 2025 </time>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed sapiente libero ad, nobis consequatur eveniet aut, sint, accusamus rem iure ut harum hic ipsa magnam [...]</p></a></li>
-        <li class="[ post ]"><a class="[ post__link ]" href="/blog/post-copy" data-prefetch>
-            <h3 class="[ font--2 ]">FB Pixel is slowing your website down</h3>
-            <time datetime="">January 8, 2025 </time>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed sapiente libero ad, nobis consequatur eveniet aut, sint, accusamus rem iure ut harum hic ipsa magnam [...]</p></a></li>
-      </ul>
-    </section>
-  </footer>
-</article>
+<header>
+  <h1>Bahamas Web Design</h1>
+  {{ $steps := .Params.steps }}
+  <ul class="[ steps ][ grid ]">
+    {{ range $index, $step := $steps }}
+      <li class="[ grid ]">
+        <span>0{{add $index 1 }}</span>
+        <h2 class="[ font--4 ]">{{$step.title}}</h2>
+        <p>{{$step.description}}</p>
+      </li>
+    {{end}}
+  </ul>
+</header>
 {{ end }}

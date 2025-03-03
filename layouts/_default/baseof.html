@@ -21,14 +21,20 @@
     </main>
     {{- partial "footer.html" . -}}
     <script src="/scripts/app-{{ .Site.Params.Version }}.min.js" defer></script>
+    {{partial "script.html" (dict "path" "scripts/components/prefetch.js" "targetPath" "scripts/prefetch.js")}}
     {{- if or .IsHome ( .Store.Get "hasObscure" ) }}
-    <script src="/scripts/obscure-{{ .Site.Params.Version }}.min.js"></script>
+    {{ partial "script.html" (dict "path" "scripts/components/obscure.js" "targetPath" "scripts/obscure.js") }}
     {{- end -}}
     {{- if .Store.Get "hasCode" -}}
-    <script src="/scripts/prism-{{ .Site.Params.Version }}.min.js" defer></script>
+    {{ partial "script.html" (dict "path" "scripts/vendor/prism.js" "targetPath" "scripts/prism.js") }}
     {{- end -}}
     {{- if .Store.Get "hasYouTube" -}}
-    <script type="module" src="/scripts/lite-youtube-{{ .Site.Params.Version }}.min.js" defer></script>
+    {{
+      $attributes := dict
+        "module" true
+        "defer" true
+      }}
+      {{ partial "script.html" (dict "path" "scripts/vendor/lite-youtube.js" "targetPath" "scripts/lite-youtube.js" "attributes" $attributes) }}
     {{- end -}}
   </body>
 </html>
