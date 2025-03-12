@@ -1,0 +1,40 @@
+@use 'sass:math'
+@use '../abstracts' as *
+
+\:root
+
+  +oklch('white', #fcfcfc)
+  +oklch('black', rgb(13 17 23))
+  // --black: #191919
+  // --color: rgb(163, 163, 163)
+  // --color: rgb(145 152 161)
+  +oklch('text-grey', rgb(145 152 161))
+  --background: rgb(101 108 118 / 20%)
+  // --border: rgb(44, 44, 44)
+  --border: rgb(61 68 77)
+
+  --code-color: rgb(155, 157, 157)
+  --code-background: rgb(35, 35, 35)
+  --monospace: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace
+  
+  --sans-serif: system-ui, sans-serif
+
+  $headings: (h1: 4, h2: 3, h3: 2, h4: 1, h5: 0, h6: -1)
+
+  @each $tag, $step in $headings
+    $min-size: type-scale($step, $min-font-size, $min-scale)
+    $max-size: type-scale($step, $max-font-size, $max-scale)
+
+    // @debug "Step: #{$step}, Min Size: #{$min-size}, Max Size: #{$max-size}"
+    +clamp('--step-#{$step}', $min-size, $max-size)
+
+  --color-fg-default:#c9d1d9
+  --color-bg-code-block:#161b22
+  --color-bg-inline-code-block: #212830
+  --color-gray:#8b949e
+  --color-red:#ff7b72
+  --color-green:#7ee787
+  --color-blue:#79c0ff
+  --color-indigo:#a5d6ff
+  --color-purple:#d2a8ff
+  --color-brown:#ffa657

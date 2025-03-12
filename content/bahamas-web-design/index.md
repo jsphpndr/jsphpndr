@@ -1,8 +1,8 @@
 +++
 date = '2025-02-13T23:04:28-05:00'
-draft = false
+draft = true
 title = 'Bahamas Web Design'
-description = "I design and develop fast, secure and accessible websites and web applications for businesses in The Bahamas, the Caribbean and the US."
+description = "Are you looking for a web designer in The Bahamas for your next project? I design and develop fast, secure and accessible websites and web applications for businesses in The Bahamas, the Caribbean and the US."
 
 [params]
   hasTwic = true
@@ -21,4 +21,3 @@ description = "I design and develop fast, secure and accessible websites and web
   description = "Make dollars from clicks"
 
 +++
-

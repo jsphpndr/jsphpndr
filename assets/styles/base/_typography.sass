@@ -32,13 +32,13 @@ p
   padding-bottom: 1em
   
 a:not([class])
-  color: var(--white)
-  border-bottom: em(2) solid var(--white)
+  color: color('white')
+  border-bottom: em(2) solid color('white')
   +transition('color, background-color')
 
   +hover
-    color: var(--black)
-    background-color: var(--white)
+    color: color('black')
+    background-color: color('white')
 
 small, figcaption, .font--small
   font-size: var(--step--1)
@@ -46,7 +46,7 @@ small, figcaption, .font--small
 
 figcaption
   font-style: italic
-  color: var(--color)
+  color: color('text-grey')
 
 sup
   display: inline-block

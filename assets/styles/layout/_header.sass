@@ -10,7 +10,7 @@
     z-index: 15
   
   .logo > svg
-    fill: var(--white)
+    fill: color('white')
 
 .logo
   width: em(200)
@@ -23,20 +23,20 @@
 
   &__link
     text-transform: lowercase
-    color: var(--color)
+    color: color('text-grey')
     padding: 0.25em 0.5em
     border: 0.2em
     position: relative
     +transition('color')
 
     +hover
-      color: var(--white)
+      color: color('white')
       background-color: var(--background)
 
 
 
     &.current
-      // color: var(--white)
+      // color: color('white')
       background-color: var(--background)
       position: relative      
 

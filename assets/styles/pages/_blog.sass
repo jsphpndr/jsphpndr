@@ -21,7 +21,7 @@
       top: -10%
       left: -2%
       z-index: -1
-      +transition('background-color')
+      +transition(background-color)
 
     &:has(.post__link:hover), &:has(.post__link:focus-visible), &:has(.post__link:active)
       
@@ -32,14 +32,14 @@
 
   
   &__link
-    color: var(--white)
+    color: color('white')
 
     > h2
       padding-bottom: 0
 
     > time
       display: inline-block
-      color: var(--color)
+      color: color('text-grey')
       margin-bottom: 1em
 
 // time
