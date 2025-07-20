@@ -33,6 +33,6 @@
 {{- if .Params.hasTwic }}
   <script src="https://{{ .Site.Params.twic }}.twic.pics/?v1" async defer></script>
 {{- end }}
-{{- if .Store.Get "hasCode" }}
-  <script src="/scripts/prism-{{ .Site.Params.Version }}.min.js" async></script>
-{{- end }}
+{{- if .Store.Get "hasCode" -}}
+{{ partial "script.html" (dict "path" "scripts/vendor/prism.js" "targetPath" "scripts/prism.js") }}
+{{- end -}}
