@@ -2,6 +2,9 @@
 {{ with .Params.feature }}
 {{- .Store.Set "hasTwic" true -}}
 {{ end }}
+{{ with .Params.code }}
+{{- .Store.Set "hasTwic" true -}}
+{{ end }}
 {{- end -}}
 {{- define "main" -}}
 <article class="[ post-single h-entry]">
