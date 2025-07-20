@@ -1,0 +1,14 @@
+name: Trigger Netlify Deploy
+
+on:
+  schedule:
+    - cron: '0 12 * * 2'  # Every Tuesday at 8 AM Bahamas (12 PM UTC)
+  workflow_dispatch:
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Netlify Build Hook
+        run: curl -X POST -d '{}' https://api.netlify.com/build_hooks/687d796ab820d028b6b22ca0

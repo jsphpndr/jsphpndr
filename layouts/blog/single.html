@@ -1,5 +1,9 @@
-{{- define "main" -}}
+{{- define "variables" -}}
+{{ with .Params.feature }}
 {{- .Store.Set "hasTwic" true -}}
+{{ end }}
+{{- end -}}
+{{- define "main" -}}
 <article class="[ post-single h-entry]">
   <header class="[ post-single__header ]">
     <h1>{{ .Title }}</h1>
