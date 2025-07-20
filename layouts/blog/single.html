@@ -2,8 +2,8 @@
 {{ with .Params.feature }}
 {{- .Store.Set "hasTwic" true -}}
 {{ end }}
-{{ with .Params.code }}
-{{- .Store.Set "hasTwic" true -}}
+{{ if .Params.code }}
+{{- .Store.Set "hasCode" true -}}
 {{ end }}
 {{- end -}}
 {{- define "main" -}}
