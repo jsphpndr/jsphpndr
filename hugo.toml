@@ -29,6 +29,10 @@ public_path = "/uploads"
     x = "jsphpndr"
 
 
+[security.funcs]
+getenv = ['^HUGO_', '^GA_TRACKING_ID$']
+
+
 [menus]
   [[menus.main]]
     name = 'Blog'

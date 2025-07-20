@@ -36,3 +36,5 @@
 {{- if .Store.Get "hasCode" -}}
 {{ partial "script.html" (dict "path" "scripts/vendor/prism.js" "targetPath" "scripts/prism.js") }}
 {{- end -}}
+
+{{ partial "gtag.html" . }}
