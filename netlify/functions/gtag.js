@@ -14,8 +14,8 @@ export const handler = async () => {
   return {
     statusCode: 200,
     headers: {
-      'Content-Type': 'application/javascript',
-      'Cache-Control': 'public, max-age=31536000, immutable', // 1 year
+      'Content-Type': 'text/javascript; charset=UTF-8',
+      'Cache-Control': 'public, max-age=31536000, immutable',
     },
     body: js,
   };
