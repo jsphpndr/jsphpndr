@@ -4,7 +4,7 @@
 <script>
   function loadGA() {
     const script = document.createElement('script');
-    script.src = '/.netlify/functions/gtag.js?v={{ $version }}';
+    script.src = '/.netlify/functions/gtag?v={{ $version }}';
     script.async = true;
     document.head.appendChild(script);
 
