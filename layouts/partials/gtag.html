@@ -1,6 +1,6 @@
 {{ $gaID := getenv "GA_TRACKING_ID" }}
 {{ if and (eq hugo.Environment "production") $gaID }}
-{{ $version := now.Format "2006-01-02" }} <!-- Cachebusting key -->
+{{ $version := .GitInfo.Hash | default (now.Unix) }}
 <script>
   function loadGA() {
     const script = document.createElement('script');
