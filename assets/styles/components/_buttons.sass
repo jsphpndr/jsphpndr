@@ -1,14 +1,14 @@
 @use 'sass:math'
 @use '../abstracts' as *
 
-$border: 0.1em
+$border: 0.15em
 $block: 0.5em
 $inline: 2em
 %btn
   display: block
   font-weight: 500
   text-align: center
-  // border-radius: 100vh
+  border-radius: em(5)
   border: $border solid
   // margin-top: 0.5em
   // margin-bottom: 0.5em
@@ -46,3 +46,12 @@ $inline: 2em
       +hover
         color: color('black')
         background-color: color('white')
+
+  &--white
+    color: color('white')
+    background-color: color('black')
+    border-color: color('black')
+
+    +hover
+      color: color('black')
+      background-color: transparent

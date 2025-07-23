@@ -1,0 +1,33 @@
+{{ $pixelID := getenv "META_PIXEL_ID" }}
+{{ if and (eq hugo.Environment "production") $pixelID }}
+<script>
+  // Define a function to load the Facebook Pixel script
+  function loadFBPixel() {
+    // Standard Facebook Pixel snippet (unchanged)
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq) return;
+      n = f.fbq = function(){ n.callMethod ?
+        n.callMethod.apply(n,arguments) : n.queue.push(arguments) };
+      if(!f._fbq) f._fbq = n;
+      n.push = n; n.loaded = true; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = true;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s);
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+    // Initialize the pixel with your ID
+    fbq('init', '{{ $pixelID }}');
+    fbq('track', 'PageView');
+  }
+
+  // Defer loading with requestIdleCallback if supported, fallback to setTimeout
+  'requestIdleCallback' in window
+    ? requestIdleCallback(loadFBPixel, { timeout: 5000 }) // wait until browser is idle
+    : setTimeout(loadFBPixel, 3000); // fallback after 3s
+</script>
+
+<!-- Fallback image pixel for browsers with JS disabled -->
+<noscript>
+  <img height="1" width="1" class="[ none ]" src="https://www.facebook.com/tr?id={{ $pixelID }}&ev=PageView&noscript=1" />
+</noscript>
+{{ end }}

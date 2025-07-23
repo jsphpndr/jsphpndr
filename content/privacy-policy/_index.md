@@ -9,33 +9,37 @@ title = 'Privacy Policy'
   
 +++
 
+Hey, I’m Joseph, and this is my website, [https://josephpinder.com](/). I take your privacy seriously, and this page explains what data is collected when you visit and how it's used.
 
-Hey, I’m Joseph, and this is my website, [https://josephpinder.com](/). One of my main priorities is respecting the privacy of my visitors. This Privacy Policy explains my approach to data collection and use.
+## Data Collection
 
-## No Data Collection
+This site uses **Google Analytics** and **Meta Pixel** to better understand how visitors use the site and where they come from. These tools may collect basic information such as:
 
-I do not collect, track, or store any personal data from visitors at this time. My website does not use cookies, analytics tools, or any other tracking mechanisms.
+- Pages visited  
+- Time spent on the site  
+- Device and browser type  
+- Referring websites or ads  
+- Anonymized IP addresses  
 
-## General Data Protection Regulation (GDPR)
+This helps me improve the site and tailor content to what visitors find most useful.
 
-Since I’m not collecting or processing any personal information, no GDPR compliance measures are applicable at this time. If this policy changes in the future, I’ll update this page to reflect any new data collection practices.
+## Cookies and Tracking
 
-## Log Files
+Google Analytics and Meta Pixel may use cookies or similar technologies to track visitor activity. You can manage or disable cookies in your browser settings at any time.
 
-I do not log or store any visitor data. This means no information such as IP addresses, browser types, or referring pages is recorded when you visit my site.
+## No Personal Info Collected Directly
 
-## Children’s Information
+I do not collect names, emails, or any other personal details unless you choose to contact me directly. No forms or signups are currently used on the site.
 
-I do not knowingly collect any personally identifiable information from children under the age of 13. Since no data collection is performed, this policy serves as a safeguard. Should this change, I’ll ensure that protections for children’s privacy remain a priority.
+## Children’s Privacy
 
-## Online Privacy Policy Only
+This site is not intended for children under 13, and I do not knowingly collect any personal information from them.
 
-This Privacy Policy applies to your visit to [https://josephpinder.com](/). Since I’m not collecting any data, this policy outlines my minimal data usage practices.
+## Changes to This Policy
 
-## Consent
+If my data practices change, I’ll update this page to reflect any new tools or collection methods.
 
-By using my website, you acknowledge that no data is collected, tracked, or stored during your visit.
+## Contact
 
----
+Have a question? Feel free to {{<email text="reach out" local="hello" domain="josephpinder.com">}}.
 
-If you have any questions about this Privacy Policy, please feel free to {{<email text="contact me" local="hello" domain="josephpinder.com" >}}.
