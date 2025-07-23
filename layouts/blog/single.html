@@ -1,7 +1,5 @@
 {{- define "variables" -}}
-{{ with .Params.feature }}
 {{- .Store.Set "hasTwic" true -}}
-{{ end }}
 {{ if .Params.code }}
 {{- .Store.Set "hasCode" true -}}
 {{ end }}
