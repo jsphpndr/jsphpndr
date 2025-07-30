@@ -2,8 +2,8 @@
   {{ $uniqueID := (now.UnixNano | string | md5) }}
 
   <!-- Try to get the image from /assets/uploads/ -->
-  {{ $image := resources.Get (printf "uploads/%s" .Destination | safeURL) }}
-
+  {{ $image := .Page.Resources.GetMatch (.Destination | safeURL) }}
+  
   <!-- Set default width & height to prevent errors -->
   {{ $width := 0 }}
   {{ $height := 0 }}
