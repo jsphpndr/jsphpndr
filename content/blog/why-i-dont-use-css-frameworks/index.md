@@ -26,7 +26,7 @@ Like many developers, when I first started learning web development a decade ago
 
 Don't get me wrong, there was a lot of appeal in learning these tools, but I just couldn't get on board.
 
-The popularity of these tools stems from the fact that they provide standardized solutions for layout, typography, and UI elements, making development times faster and easier—especially for those who don’t yet have a full grasp of CSS.
+The popularity of these tools stems from the fact that they provide standardized solutions for layout, typography, and UI elements, making development times faster and easier—especially for those who don't yet have a full grasp of CSS.
 
 All of this is great, and while many developers may swear by their own tool of choice (Bootstrap, Tailwind, Foundation, et al), here's why I don't use CSS frameworks.
 

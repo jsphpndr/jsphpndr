@@ -143,8 +143,8 @@ And call it in your markdown like you would any other shortcode.
   
 ```
 
-There’s a more dynamic option if you’re up for doing a bit more work, but honestly, I think this solution will cover most use cases.
+There's a more dynamic option if you're up for doing a bit more work, but honestly, I think this solution will cover most use cases.
 
-If you’ve made it to the end, I hope you found this helpful! 
+If you've made it to the end, I hope you found this helpful! 
 
 Happy coding!

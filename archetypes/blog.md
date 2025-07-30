@@ -3,6 +3,8 @@ date = '{{ .Date }}'
 draft = true
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
 description = ""
+# categories = []
+# tags = []
 
 [feature]
   image = ""
@@ -17,6 +19,5 @@ description = ""
 
 [params]
   post = true
-  categories = []
-  tags = []
+  code = false
 +++

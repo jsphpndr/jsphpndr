@@ -2,7 +2,7 @@
 date = '2025-02-03T09:13:15-05:00'
 draft = false
 title = 'Escape Shortcodes in HUGO'
-description = "Learn how to escape shortcodes in HUGO and display them as raw text in your markdown files. This quick and easy workaround ensures your shortcodes don’t accidentally execute when you don’t want them to."
+description = "Learn how to escape shortcodes in HUGO and display them as raw text in your markdown files. This quick and easy workaround ensures your shortcodes don't accidentally execute when you don't want them to."
 
 [feature]
   image = ""

@@ -22,25 +22,20 @@ description = "Google Analytics can slow down your website with unnecessary Java
   tags = []
 +++
 
-Google Analytics (GA4) is an essential tool for website owners. It’s how we keep track of who’s visiting, where they’re coming from, what pages they’re reading, and whether they’re taking the actions we want — from filling out a form to making a purchase.
+Google Analytics (GA4) is an essential tool for website owners. It's how we keep track of who's visiting, where they're coming from, what pages they're reading, and whether they're taking the actions we want — from filling out a form to making a purchase.
 
-All of that is great, but it does come with a cost: slower load times and unnecessary bloat — especially when loaded directly from Google’s servers. Over time, those extra milliseconds add up, impacting both user experience and your site’s performance scores.
+All of that is great, but it does come with a cost: slower load times and unnecessary bloat — especially when loaded directly from Google's servers. Over time, those extra milliseconds add up, impacting both user experience and your site's performance scores.
 
-Obviously, that won’t work if you’re serious about performance, privacy, and future-proofing your site. The good news? There’s a fix.
+Obviously, that won't work if you're serious about performance, privacy, and future-proofing your site.
 
-In this article, I’ll show you how I optimized Google Analytics on my own site by:
-- **Proxying the `gtag.js` script** through Netlify Functions  
-- **Delaying its load** using `requestIdleCallback()`  
-- And **keeping everything environment-aware** 
+The good news?
 
-<!-- {{< advisory >}}
-This article focuses on a **Hugo, Netlify, and GitHub Actions** setup.  
-If your site runs on PHP, I’ve written a separate guide you can follow [here](/blog/google-analytics-php-performance-fix).
-{{< /advisory >}} -->
+There's a fix.
+
 
 ## The Problem with the Default GA4 Snippet
 
-Here’s what Google gives you by default:
+Here's what Google gives you by default:
 
 ```html
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -54,17 +49,17 @@ Here’s what Google gives you by default:
 
 That works — but:
 
-- It loads from Google’s domain, not yours
+- It loads from Google's domain, not yours
 - It fires immediately, delaying your site's render
-- Adds unnecessary JavaScript bloat most sites don’t even use
+- Adds unnecessary JavaScript bloat most sites don't even use
 
 ## How Do I Stop Google Analytics Slowing Down My Website?
 
-The solution isn’t to give up analytics — it’s to load it smarter.
+The solution isn't to give up analytics — it's to load it smarter.
 
-Here’s the approach I use on my own site:
+Here's the approach I use on my own site:
 
-- **Proxy `gtag.js`** through a Netlify Function, so it loads from your domain instead of Google’s  
+- **Proxy `gtag.js`** through a Netlify Function, so it loads from your domain instead of Google's  
 - **Delay loading** with `requestIdleCallback()` (or a `setTimeout()` fallback), so it never blocks your content  
 - **Keep the tracking ID secure** using a Netlify environment variable  
 - **Add cachebusting** to make sure you always serve a fresh copy, even if Google updates the script  
@@ -73,7 +68,7 @@ Here’s the approach I use on my own site:
 
 Before we get started with our code, one small but important piece of this setup is the tracking ID.
 
-Instead of hardcoding it in multiple places, we’ll keep things **DRY** by storing it in a single environment variable.  
+Instead of hardcoding it in multiple places, we'll keep things **DRY** by storing it in a single environment variable.  
 
 This way:
 - You only update the ID in one place if it changes  
@@ -96,25 +91,25 @@ const GA_ID = process.env.GA_TRACKING_ID;
 {{ getenv "GA_TRACKING_ID" }}
 ```
 
-With the environment variable in place, we’re ready to build the Netlify Function that will proxy the `gtag.js` script from Google and serve it from your own domain.
+With the environment variable in place, we're ready to build the Netlify Function that will proxy the `gtag.js` script from Google and serve it from your own domain.
 
 ## Step 2: The Netlify Function
 
-Now that your environment variable is set, the next step is to proxy Google’s gtag.js script through a Netlify Function.
+Now that your environment variable is set, the next step is to proxy Google's gtag.js script through a Netlify Function.
 
-Why do this? Because by default, the script is served from Google’s domain (`googletagmanager.com`). That creates a few problems:
+Why do this? Because by default, the script is served from Google's domain (`googletagmanager.com`). That creates a few problems:
 
 - **Extra DNS lookups:** Every new third‑party domain adds a delay.  
-- **Less control:** You can’t set your own cache rules or headers on a third‑party script.  
+- **Less control:** You can't set your own cache rules or headers on a third‑party script.  
 - **Privacy concerns:** Loading from a third‑party domain makes it easier for browsers to flag or block it.  
 
 By serving `gtag.js` from *your own domain*, you still gain important advantages:  
 - Faster DNS resolution (no extra lookup)  
 - Full cache control (so you can decide how long browsers should store it)  
 - The script itself loads in a first‑party context, which plays nicer with evolving privacy rules  
-- A consistent way to inject updates without touching Google’s snippet directly  
+- A consistent way to inject updates without touching Google's snippet directly  
 
-Now, let’s create the function that handles this proxying.
+Now, let's create the function that handles this proxying.
 
 Create a file at netlify/functions/gtag.js:
 
@@ -163,7 +158,7 @@ This fetches the latest Google tag script and serves it from your domain with a 
 
 The final piece is adding the script to your site — but only when it makes sense.
 
-We don’t want Google Analytics loading in every environment.  
+We don't want Google Analytics loading in every environment.  
 For example:
 - **In development:** It clutters your reports with test data.  
 - **In staging:** It may give a false picture of real users.  
@@ -171,7 +166,7 @@ For example:
 
 To handle this, Hugo allows us to check both the current environment and whether our GA tracking ID is set. 
 
-This ensures the script only loads when we’re in production and the environment variable exists.
+This ensures the script only loads when we're in production and the environment variable exists.
 
 In your `<head>` element (wherever it may be located), add:
 
@@ -189,7 +184,7 @@ In your `<head>` element (wherever it may be located), add:
     const script = document.createElement('script');
     // Point it to our Netlify Function with a cachebusting query string
     script.src = '/.netlify/functions/gtag?v={{ now.Unix }}';
-    script.async = true; // Load asynchronously so it doesn’t block rendering
+    script.async = true; // Load asynchronously so it doesn't block rendering
     // Append the script to the <head>
     document.head.appendChild(script);
 
@@ -216,10 +211,10 @@ In your `<head>` element (wherever it may be located), add:
 
 ## Step 4: GitHub Action for Weekly Updates
 
-The current setup will update your Google Analytics code on each deploy — which works fine as long as you’re actively updating your site.  
+The current setup will update your Google Analytics code on each deploy — which works fine as long as you're actively updating your site.  
 
-The problem is, most of us don’t push changes every day (or even every week).  
-That means your `gtag.js` could go stale if Google makes updates and you haven’t deployed recently.  
+The problem is, most of us don't push changes every day (or even every week).  
+That means your `gtag.js` could go stale if Google makes updates and you haven't deployed recently.  
 
 To solve this, we schedule a GitHub Action that **triggers a Netlify deploy once a week** — even if nothing has changed in your repo. This guarantees your proxied GA script is always up to date.  
 
@@ -228,7 +223,7 @@ I run mine every Tuesday at **8 AM EST (12 PM UTC)**. Why Tuesday?
 - Ensures the script is refreshed after the weekend, before the heaviest mid‑week traffic.  
 - Running it in the morning means the site is updated and cached for the rest of the day.  
 
-Here’s the workflow file:
+Here's the workflow file:
 
 ```yml
 # This is the name that will show up for the workflow in GitHub Actions
@@ -274,8 +269,8 @@ jobs:
 This ensures that:
 
 - Your GA script is refreshed once a week, automatically
-- You don’t have to remember to push a commit just to keep Analytics up to date
-- Your site is always serving the latest Google Analytics code, even if your content hasn’t changed
+- You don't have to remember to push a commit just to keep Analytics up to date
+- Your site is always serving the latest Google Analytics code, even if your content hasn't changed
 
 ## Why Lighthouse Still Flags “Unused JavaScript”
 
@@ -284,25 +279,24 @@ You might see a message like this:
 ![Reduce unused JavaScript (Est. savings: 51 KB)
 …functions/gtag?v=xxxxxxx (125.7 KB total)](unused-javascript.jpg "Pagespeed Insights warning")
 
-That’s because `gtag.js` loads everything GA might ever need — not just the parts you use. Even though it’s deferred, Lighthouse still includes its full size in the audit.
+That's because `gtag.js` loads everything GA might ever need — not just the parts you use. Even though it's deferred, Lighthouse still includes its full size in the audit.
 
-- This isn’t hurting your user experience.
-- You’re already deferring it.
+- This isn't hurting your user experience.
+- You're already deferring it.
 - Real-world performance is fine.
 
 Unless you're building your own stripped-down GA proxy (or switching to server-side tracking), this is as optimized as it gets.
 
 ## Bonus: Is Facebook Pixel Slowing Down Your Website?
 
-Google Analytics isn’t the only script that can hurt your site’s performance.  
-If you’re using the Facebook (now Meta) Pixel, you can face many of the same challenges.
+Google Analytics isn't the only script that can hurt your site's performance. If you're using the Facebook (now Meta) Pixel, you can face many of the same challenges.
 
 Learn how to [stop Facebook Pixel slowing down your website](/blog/facebook-pixel-is-slowing-down-your-website-and-how-to-fix-it-securely/).
 
 
 ## Final Thoughts
 
-This approach isn’t just about speed. It’s about control.
+This approach isn't just about speed. It's about control.
 
 By hosting GA yourself and delaying its execution, you gain:
 

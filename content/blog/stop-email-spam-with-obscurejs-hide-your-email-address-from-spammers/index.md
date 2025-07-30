@@ -22,9 +22,9 @@ description = "Learn how to protect your email and phone number from spambots wi
   tags = ['web development', 'spam protection', 'email']
 +++
 
-Did you know that spambots scan websites looking to harvest emails all the time? I didn’t. At least, not starting out.  
+Did you know that spambots scan websites looking to harvest emails all the time? I didn't. At least, not starting out.  
 
-When I first started programming, I didn’t know that it was a bad idea to hardcode email addresses into my HTML. Needless to say, I got a lot of spam. Lots and lots of it.  
+When I first started programming, I didn't know that it was a bad idea to hardcode email addresses into my HTML. Needless to say, I got a lot of spam. Lots and lots of it.  
 
 When I first started looking around for a solution, this was what I found:  
 
@@ -39,11 +39,11 @@ When I first started looking around for a solution, this was what I found:
 
 It worked great. Or, so I thought.  
 
-If you’re paying attention, you may immediately spot what’s wrong.  
+If you're paying attention, you may immediately spot what's wrong.  
 
-It’s `document.write`.  
+It's `document.write`.  
 
-And since it’s a common solution still offered today, I didn’t have many options.  
+And since it's a common solution still offered today, I didn't have many options.  
 
 So, I wrote a plugin…  
 
@@ -55,7 +55,7 @@ So, I wrote a plugin…
 
 Obscure.js uses data-attributes on the `template` tag to generate email addresses and telephone numbers.  
 
-This is a great approach because the `<template>` tag is a non-semantic element designed specifically to render its content with JavaScript. When JavaScript isn’t available, the content in our `<template>` tag isn’t rendered, and we get a quiet fail.  
+This is a great approach because the `<template>` tag is a non-semantic element designed specifically to render its content with JavaScript. When JavaScript isn't available, the content in our `<template>` tag isn't rendered, and we get a quiet fail.  
 
 ### Attributes  
 
@@ -103,7 +103,7 @@ This will render the following:
 
 ### Adding Telephone Numbers  
 
-There’s not only a need to hide emails, but phone numbers as well.  
+There's not only a need to hide emails, but phone numbers as well.  
 
 To add a US-pattern telephone number, create a `<template>` tag with the following attributes:  
 
