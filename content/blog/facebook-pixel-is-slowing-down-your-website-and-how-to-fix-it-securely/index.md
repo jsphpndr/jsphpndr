@@ -1,6 +1,5 @@
 +++
 date = '2020-07-19T00:00:00-04:00'
-lastmod = '2025-01-30T00:00:00-04:00'
 draft = false
 title = 'Facebook Pixel Is Slowing Down Your Website (And How To Fix It, Securely)'
 description = 'Facebook Pixel is slowing down your website. Learn how you can use this amazing analytics tool without hurting your page speed and keeping your site secure.'

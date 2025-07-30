@@ -1,6 +1,5 @@
 +++
 date = '2021-05-28T00:00:00-04:00'
-lastmod = '2025-02-03T09:00:52-05:00'
 draft = false
 title = 'Stop Email Spam With Obscure.js (Hide Your Email Address From Spammers)'
 description = "Learn how to protect your email and phone number from spambots with Obscure.js. This lightweight script hides sensitive information on your website, keeping it safe from email and phone number harvesting while still making it accessible to real users."

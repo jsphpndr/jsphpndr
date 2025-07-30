@@ -1,6 +1,5 @@
 +++
 date = '2025-02-16T23:13:25-05:00'
-lastMod = '2025-02-16T23:13:25-05:00'
 draft = true
 title = 'Bahamians Need Not Apply'
 description = ""

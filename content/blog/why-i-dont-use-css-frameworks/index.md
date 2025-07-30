@@ -1,6 +1,5 @@
 +++
 date = '2025-02-16T23:35:40-05:00'
-lastMod = '2025-02-16T23:35:40-05:00'
 draft = true
 title = "Why I Don't Use CSS Frameworks"
 description = ""

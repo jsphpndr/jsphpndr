@@ -1,6 +1,5 @@
 +++
 date = '{{ .Date }}'
-lastMod = '{{ .Date }}'
 draft = true
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
 description = ""
@@ -17,7 +16,6 @@ description = ""
 #   content = ""
 
 [params]
-  hasTwic = true
   post = true
   categories = []
   tags = []

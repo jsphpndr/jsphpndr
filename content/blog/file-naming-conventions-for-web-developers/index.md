@@ -1,6 +1,5 @@
 +++
 date = '2020-08-19T00:00:00-04:00'
-lastmod = '2025-01-30T00:00:00-04:00'
 draft = false
 title = 'File Naming Conventions for Web Developers'
 description = "Learn essential file naming conventions for web developers to keep your directories and files organized and easy to manage. Follow best practices for consistency, readability, and efficiency in your web development projects."
