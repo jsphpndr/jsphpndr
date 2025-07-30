@@ -26,11 +26,11 @@ I believe in using modern tools and approaches to solve problems and help indivi
 ## 📝 Blog
 
 <!-- START_DYNAMIC_CONTENT -->
+- [Google Analytics Is Slowing Down Your Website (PHP + Apache)](https://josephpinder.com/blog/google-analytics-slowing-down-website-php-apache/) - Jul 30, 2025
 - [Google Analytics Is Slowing Down Your Website (HUGO + Netlify + GitHub Actions)](https://josephpinder.com/blog/google-analytics-slowing-down-website-hugo-netlify-github-actions/) - Jul 30, 2025
 - [Horses From The Front (Dealing With Imposter Syndrome)](https://josephpinder.com/blog/horses-from-the-front-dealing-with-imposter-syndrome/) - Feb 5, 2025
 - [Escape Shortcodes in HUGO](https://josephpinder.com/blog/escape-shortcodes-in-hugo/) - Feb 3, 2025
 - [Inline SVG Files in HUGO](https://josephpinder.com/blog/inline-svg-files-in-hugo/) - Feb 1, 2025
-- [The Need to Be Remembered](https://josephpinder.com/blog/the-need-to-be-remembered/) - Jan 30, 2025
 <!-- END_DYNAMIC_CONTENT -->
 
 
