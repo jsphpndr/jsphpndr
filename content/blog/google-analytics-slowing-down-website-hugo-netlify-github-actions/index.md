@@ -4,6 +4,9 @@ draft = false
 title = "Google Analytics Is Slowing Down Your Website (HUGO + Netlify + GitHub Actions)"
 description = "Google Analytics can slow down your website with unnecessary JavaScript bloat. Learn how to proxy and defer GA4 using Hugo, Netlify, and GitHub Actions for faster, privacy-friendly performance."
 
+categories = []
+tags = []
+
 [feature]
   image = "pagespeed-insights-report-joseph-pinder.jpg"
   alt= "Google Pagespeed Insights report for josephpinder.com"
@@ -18,8 +21,12 @@ description = "Google Analytics can slow down your website with unnecessary Java
 [params]
   code = true
   post = true
-  categories = []
-  tags = []
+
+[sitemap]
+  changefreq = 'monthly'
+  priority = 0.7
+
+
 +++
 
 Google Analytics (GA4) is an essential tool for website owners. It's how we keep track of who's visiting, where they're coming from, what pages they're reading, and whether they're taking the actions we want — from filling out a form to making a purchase.

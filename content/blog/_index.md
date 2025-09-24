@@ -8,5 +8,8 @@ hasTwic = false
 hasObscure = false
 hasYouTube = false
 
+[sitemap]
+  changefreq = 'monthly'
+  priority = 0.9
 
 +++

@@ -4,6 +4,9 @@ draft = false
 title = 'Escape Shortcodes in HUGO'
 description = "Learn how to escape shortcodes in HUGO and display them as raw text in your markdown files. This quick and easy workaround ensures your shortcodes don't accidentally execute when you don't want them to."
 
+categories = ['HUGO']
+tags = ['hugo', 'shortcodes']
+
 [feature]
   image = ""
   alt= ""
@@ -18,8 +21,12 @@ description = "Learn how to escape shortcodes in HUGO and display them as raw te
 [params]
   hasTwic = true
   post = true
-  categories = ['HUGO']
-  tags = ['hugo', 'shortcodes']
+
+[sitemap]
+  changefreq = 'monthly'
+  priority = 0.7
+
+
 +++
 
 If you're here, you probably just found out that HUGO shortcodes need to be escaped. 

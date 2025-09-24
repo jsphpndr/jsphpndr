@@ -4,6 +4,9 @@ draft = true
 title = 'Bahamians Need Not Apply'
 description = ""
 
+categories = []
+tags = []
+
 [feature]
   image = ""
   alt= ""
@@ -18,8 +21,13 @@ description = ""
 [params]
   hasTwic = true
   post = true
-  categories = []
-  tags = []
+
+
+[sitemap]
+  changefreq = 'monthly'
+  priority = 0.7
+
+
 +++
 
 I started my web development journey in 2015. My wife's business, [The Hair Republic](https://thehairrepublic.net), needed a website.

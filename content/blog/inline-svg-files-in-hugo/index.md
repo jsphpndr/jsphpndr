@@ -4,6 +4,9 @@ draft = false
 title = 'Inline SVG Files in HUGO'
 description = "Learn how to inline SVG files in HUGO with simple solutions ranging from static files to dynamic shortcodes. This guide covers everything you need to style and manage SVGs efficiently in your HUGO projects."
 
+categories = ['HUGO', 'Web Development']
+tags = ['hugo', 'svg', 'web development']
+
 [feature]
   image = ""
   alt= ""
@@ -18,8 +21,13 @@ description = "Learn how to inline SVG files in HUGO with simple solutions rangi
 [params]
   hasTwic = true
   post = true
-  categories = ['HUGO', 'Web Development']
-  tags = ['hugo', 'svg', 'web development']
+
+
+[sitemap]
+  changefreq = 'monthly'
+  priority = 0.7
+
+
 +++
 
 This site is [built with HUGO](https://gohugo.io/). 

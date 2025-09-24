@@ -17,6 +17,10 @@ description = "I'm a web designer, developer, educator, and business owner based
 [params]
   hasTwic = true
 
+[sitemap]
+  changefreq = 'weekly'
+  priority = 1.0
+
 +++
 
 I'm a web designer, developer, educator, and business owner based in Nassau, Bahamas. I'm passionate about creating websites that look great and perform even better.

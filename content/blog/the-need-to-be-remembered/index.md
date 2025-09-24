@@ -5,6 +5,9 @@ draft = false
 title = 'The Need to Be Remembered'
 description = "I'm writing again, for small, selfish, human reasons. It might sound bad, but I want to use this little corner of the web not just to share technical stuff, but to be remembered and to remember."
 
+categories = ['Random']
+tags = ['life', 'thoughts']
+
 [feature]
   image = ""
   alt= ""
@@ -19,8 +22,13 @@ description = "I'm writing again, for small, selfish, human reasons. It might so
 [params]
 	hasTwic = true
 	post = true
-  categories = ['Random']
-  tags = ['life', 'thoughts']
+
+
+[sitemap]
+  changefreq = 'monthly'
+  priority = 0.7
+
+
 +++
 
 I'm going to die.

@@ -20,4 +20,9 @@ description = ""
 [params]
   post = true
   code = false
+
+[sitemap]
+  changefreq = 'monthly'
+  priority = 0.7
+
 +++

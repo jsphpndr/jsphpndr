@@ -4,6 +4,9 @@ draft = false
 title = 'Stop Email Spam With Obscure.js (Hide Your Email Address From Spammers)'
 description = "Learn how to protect your email and phone number from spambots with Obscure.js. This lightweight script hides sensitive information on your website, keeping it safe from email and phone number harvesting while still making it accessible to real users."
 
+categories = ['Web Development']
+tags = ['web development', 'spam protection', 'email']
+
 [feature]
   image = ""
   alt= ""
@@ -18,8 +21,13 @@ description = "Learn how to protect your email and phone number from spambots wi
 [params]
 	hasTwic = true
 	post = true
-  categories = ['Web Development']
-  tags = ['web development', 'spam protection', 'email']
+
+
+[sitemap]
+  changefreq = 'monthly'
+  priority = 0.7
+
+
 +++
 
 Did you know that spambots scan websites looking to harvest emails all the time? I didn't. At least, not starting out.  

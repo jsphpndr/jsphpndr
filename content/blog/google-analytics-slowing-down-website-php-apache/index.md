@@ -21,6 +21,10 @@ description = "Google Analytics can slow down PHP websites with extra JavaScript
   code = true
   post = true
 
+[sitemap]
+  changefreq = 'monthly'
+  priority = 0.7
+
 +++
 
 I recently wrote about [Google Analytics slowing down static websites](/blog/google-analytics-slowing-down-website-hugo-netlify-github-actions/). However, since PHP still powers the vast majority of websites — including many of the projects I work on — I wanted to share a PHP solution as well.

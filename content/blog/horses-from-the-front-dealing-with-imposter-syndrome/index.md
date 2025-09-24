@@ -5,6 +5,9 @@ draft = false
 title = "Horses From The Front (Dealing With Imposter Syndrome)"
 description = "Imposter syndrome is something every developer faces—you're not alone. In this post, I share how a simple meme, 'Horses From the Front,' helped me realize that perfection isn't the goal. It's good enough to just start, and sometimes that's all that matters."
 
+categories = ['Random', 'Web Development']
+tags = ['imposter syndrome', 'web development', 'self-doubt', 'motivation', 'programming struggles', 'mental health in tech', 'developer mindset', 'overcoming imposter syndrome', 'personal growth', 'coding journey', 'software development', 'perfectionism']
+
 [feature]
   image = "horses-from-the-front.jpg"
   alt= "Horses From The Front meme"
@@ -19,8 +22,11 @@ description = "Imposter syndrome is something every developer faces—you're not
 [params]
   hasTwic = true
   post = true
-  categories = ['Random', 'Web Development']
-  tags = ['imposter syndrome', 'web development', 'self-doubt', 'motivation', 'programming struggles', 'mental health in tech', 'developer mindset', 'overcoming imposter syndrome', 'personal growth', 'coding journey', 'software development', 'perfectionism']
+
+[sitemap]
+  changefreq = 'monthly'
+  priority = 0.7
+
 
 +++
 

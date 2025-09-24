@@ -4,6 +4,9 @@ draft = true
 title = "Why I Don't Use CSS Frameworks"
 description = ""
 
+categories = []
+tags = []
+
 [feature]
   image = ""
   alt= ""
@@ -18,8 +21,12 @@ description = ""
 [params]
   hasTwic = true
   post = true
-  categories = []
-  tags = []
+
+
+[sitemap]
+  changefreq = 'monthly'
+  priority = 0.7
+
 +++
 
 Like many developers, when I first started learning web development a decade ago, a lot of tutorials recommended using a CSS framework. Unlike most developers, I refused to use them.

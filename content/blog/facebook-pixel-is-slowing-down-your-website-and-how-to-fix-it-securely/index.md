@@ -4,6 +4,9 @@ draft = false
 title = 'Facebook Pixel Is Slowing Down Your Website (And How To Fix It, Securely)'
 description = 'Facebook Pixel is slowing down your website. Learn how you can use this amazing analytics tool without hurting your page speed and keeping your site secure.'
 
+categories = ['SEO', 'Web Performance']
+tags = ['google', 'speed Optimization']
+
 [feature]
   image = "joseph-pinder-gt-metrix-score.jpg"
   alt= "GT Metrix Page Speed results for josephpinder.com"
@@ -19,8 +22,11 @@ description = 'Facebook Pixel is slowing down your website. Learn how you can us
 	twic = true
 	code = true
 	post = true
-  categories = ['SEO', 'Web Performance']
-  tags = ['google', 'speed Optimization']
+  
+[sitemap]
+  changefreq = 'monthly'
+  priority = 0.7
+
 
 +++
 

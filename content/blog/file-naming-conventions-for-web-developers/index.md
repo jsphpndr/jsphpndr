@@ -4,6 +4,9 @@ draft = false
 title = 'File Naming Conventions for Web Developers'
 description = "Learn essential file naming conventions for web developers to keep your directories and files organized and easy to manage. Follow best practices for consistency, readability, and efficiency in your web development projects."
 
+categories = ['Web Development']
+tags = ['web development']
+
 [feature]
   image = ""
   alt= ""
@@ -18,8 +21,13 @@ description = "Learn essential file naming conventions for web developers to kee
 [params]
 	hasTwic = true
 	post = true
-  categories = ['Web Development']
-  tags = ['web development']
+
+
+[sitemap]
+  changefreq = 'monthly'
+  priority = 0.7
+
+
 +++
 
 Whenever I mention naming conventions to my students for the first time, there’s just a slight confusion that seems to fill their minds.  
