@@ -33,11 +33,16 @@ public_path = "/uploads"
 getenv = ['^HUGO_', '^GA_TRACKING_ID$']
 
 
-[menus]
-  [[menus.main]]
-    name = 'Blog'
-    pageRef = '/blog'
-    weight = 20
+[[menus.main]]
+  name = 'Blog'
+  url = '/blog/'
+  weight = 20
+
+# [[menus.main]]
+#   name = 'Contact'
+#   url = '/contact-me/'
+#   weight = 20
+
 
 [markup]
   [markup.goldmark]

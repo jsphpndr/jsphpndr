@@ -10,9 +10,12 @@
         </a>
         <nav class="[ nav ]">
           <ul class="[ menu ][ flex ]">
-              <li class="[ menu__item ]">
-                <a class="[ menu__link ]{{ if or (eq .RelPermalink "/blog/") .Params.post }}[ current ]{{ end }}" href="/blog/" data-prefetch>Blog</a>
-              </li>
+            {{ $current := .}}
+            {{ range $current.Site.Menus.main }}
+            <li class="[ menu__item ]">
+              <a class="[ menu__link ]{{ if eq $current.RelPermalink .URL }}[ current ]{{ end }}" href="{{ .URL }}" data-prefetch>{{ .Name }}</a>
+            </li>
+            {{ end }}
           </ul>
         </nav>
       </div>
