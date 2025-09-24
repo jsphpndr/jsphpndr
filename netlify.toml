@@ -36,8 +36,8 @@
   package = "./plugins/indexnow"
 
   [plugins.inputs]
-    site = "https://getclever.marketing"
-    sitemap = "https://getclever.marketing/sitemap.xml"
+    site = "https://josephpinder.com"
+    sitemap = "https://josephpinder.com/sitemap.xml"
     key = "40ffcdd76f544546b06fa2c106f46cb0"
 
 
