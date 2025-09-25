@@ -1,0 +1,27 @@
+<div>
+  <form id="contact-form" class="[ grid gap--1 ]" name="contact" action="/thank-you" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" data-validate>
+    <input type="hidden" name="form-name" value="contact" />
+  
+    <div class="hidden">
+      <label>
+        Don't fill this out if you're human: <input name="bot-field" />
+      </label>
+    </div>
+    <div class="[ form__field ][ grid row-gap--0.5 ]">
+      <label class="[ form__label ][ font--500 font--600 ]" for="name">Name <abbr class="[ required ]" title="This field is required" aria-label="This field is required">*</abbr></label>
+      <input class="[ form__input ][ px--0.5 ]" name="name" id="name" type="text" placeholder="Your Name" required minlength="2" maxlength="50" autofill="off"/>
+    </div>
+    <div class="[ form__field ][ grid row-gap--0.5 ]">
+      <label class="[ form__label ][ font--500 font--600 ]" for="email">Email <abbr class="[ required ]" title="This field is required" aria-label="This field is required">*</abbr></label>
+      <input class="[ form__input ][ px--0.5 ]" name="email" id="email" type="email" placeholder="your@email.com" required autofill="off"/>
+    </div>
+    <div class="[ form__field ][ grid row-gap--0.5 ]">
+      <label class="[ form__label ][ font--500 font--600 ]" for="message">Message <abbr class="[ required ]" title="This field is required" aria-label="This field is required">*</abbr></label>
+      <textarea class="[ form__message ][ px--0.5 ]" name="message" id="message" placeholder="Tell us how we can help..." required maxlength="3000"></textarea>
+    </div>
+    <div data-netlify-recaptcha="true"></div>
+    <div class="[ flex end ]">
+      <button type="submit" class="[ btn btn--lg btn--ghost ]">Send</button>
+    </div>
+  </form>
+</div>

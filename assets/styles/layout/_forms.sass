@@ -1,0 +1,34 @@
+@use 'abstracts' as *
+
+textarea, input
+  color: color('white')
+  background-color: transparent
+  caret-color: color('white')
+  border: em(2.5) solid 
+  border-color: color('white')
+  border-radius: em(5)
+  +transition(border-color)
+
+  // &:focus-visible
+  //   outline: none
+  //   border-color: var(--blue--A700)
+
+  &:not([type='checkbox'])  
+    -webkit-appearance: none
+
+  &.error
+    caret-color: color('alert-red')
+
+textarea
+  min-height: 10em
+  resize: none
+
+.required
+  color: color('alert-red')
+
++ignore
+  .error
+    border-color: color('alert-red')
+
+    &-message
+      color: color('alert-red')

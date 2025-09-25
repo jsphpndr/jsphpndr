@@ -23,14 +23,8 @@
       z-index: -1
       +transition(background-color)
 
-    &:has(.post__link:hover), &:has(.post__link:focus-visible), &:has(.post__link:active)
-      
-      &::before
-        background-color: var(--background)
-
 .post
 
-  
   &__link
     color: color('white')
     display: block
@@ -43,8 +37,22 @@
       color: color('text-grey')
       margin-bottom: 1em
 
-// time
-//   font-size: 0.9em
+    &:focus-visible
+      outline: none
+  
+
+  &:has(a:hover), &:has(a:focus-visible), &:has(a:active)
+
+    &::before
+      background-color: var(--background)
+
+  &:has(a:focus-visible)
+
+    &::before
+      outline: em(1) solid color('white')
+      outline-offset: em(3)
+      
+
 .pagination
   display: grid
   grid-template-columns: [newer-start] max-content [newer-end] 1fr [older-start] max-content [older-end]

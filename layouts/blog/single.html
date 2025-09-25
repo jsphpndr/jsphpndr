@@ -6,22 +6,25 @@
 {{- end -}}
 {{- define "main" -}}
 <article class="[ post-single h-entry]">
-  <header class="[ post-single__header ]">
-    <h1>{{ .Title }}</h1>
-    {{- $format := "January 2, 2006" -}}
-    {{- $iso := "2006-01-02T15:04:05Z07:00" -}}
-    {{- $timeFormat := "3:04pm" -}}
-    
-    {{- $published := .Date -}}
-    {{- $lastModified := .Lastmod | default .Date -}}
-    {{- $hourDiff := div (sub $lastModified.Unix $published.Unix) 3600 -}}
-    <p class="[ meta{{ if .Params.feature.image }} meta--spaced{{ end }} ][ font--small ]">
-        Joseph Pinder |  
-        <time datetime="{{ $published.Format $iso }}">
-          {{ $published.Format $format }} | {{ $published.Format $timeFormat }}
-        </time>
-      | {{ .ReadingTime }} min read
-    </p>
+  <header class="[ post-single__header ][ grid row-gap--2 ]">
+    <div class="[ bar-header ][ grid pl--1 ]">
+      {{ partial "breadcrumbs.html" . }}
+      <h1>{{ .Title }}</h1>
+      {{- $format := "January 2, 2006" -}}
+      {{- $iso := "2006-01-02T15:04:05Z07:00" -}}
+      {{- $timeFormat := "3:04pm" -}}
+      
+      {{- $published := .Date -}}
+      {{- $lastModified := .Lastmod | default .Date -}}
+      {{- $hourDiff := div (sub $lastModified.Unix $published.Unix) 3600 -}}
+      <p class="[ meta{{ if .Params.feature.image }} meta--spaced{{ end }} ][ font--small ]">
+          Joseph Pinder |  
+          <time datetime="{{ $published.Format $iso }}">
+            {{ $published.Format $format }} | {{ $published.Format $timeFormat }}
+          </time>
+        | {{ .ReadingTime }} min read
+      </p>
+    </div>
     {{- with .Resources.GetMatch .Params.feature.image -}}
     <figure class="[ pb--2 ]">
       <picture id="feature" class="[ bg ]">

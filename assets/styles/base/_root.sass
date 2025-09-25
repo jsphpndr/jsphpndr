@@ -3,15 +3,17 @@
 
 \:root
 
-  +oklch('white', #fcfcfc)
-  +oklch('black', rgb(13 17 23))
+  +hsl('white', #fcfcfc)
+  +hsl('black', rgb(13 17 23))
   // --black: #191919
   // --color: rgb(163, 163, 163)
   // --color: rgb(145 152 161)
-  +oklch('text-grey', rgb(145 152 161))
+  +hsl('text-grey', rgb(145 152 161))
   --background: rgb(101 108 118 / 20%)
   // --border: rgb(44, 44, 44)
-  --border: rgb(61 68 77)
+  +hsl('border', rgb(61 68 77))
+
+  +hsl('alert-red', red)
 
   --code-color: rgb(155, 157, 157)
   --code-background: rgb(35, 35, 35)

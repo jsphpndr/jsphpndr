@@ -38,14 +38,17 @@ $inline: 2em
       color: color('white')
       background-color: transparent
 
-    &--ghost
-      color: color('white')
-      border: $border solid color('white')
-      +transition((color, background-color))
+  &--ghost
+    --btn-color: #{color('white')}
+    --btn-hvr-color: #{color('black')}
+    --btn-bg: #{color('white')}
+    color: var(--btn-color)
+    border: $border solid var(--btn-color)
+    +transition((color, background-color))
 
-      +hover
-        color: color('black')
-        background-color: color('white')
+    +hover
+      color: var(--btn-hvr-color)
+      background-color: var(--btn-bg)
 
   &--white
     color: color('white')

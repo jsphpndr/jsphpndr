@@ -38,10 +38,10 @@ getenv = ['^HUGO_', '^GA_TRACKING_ID$']
   url = '/blog/'
   weight = 20
 
-# [[menus.main]]
-#   name = 'Contact'
-#   url = '/contact-me/'
-#   weight = 20
+[[menus.main]]
+  name = 'Contact'
+  url = '/contact-me/'
+  weight = 20
 
 
 [markup]

@@ -34,11 +34,16 @@ p
 a:not([class])
   color: color('white')
   border-bottom: em(2) solid color('white')
-  +transition('color, background-color')
+  +transition((color, background-color))
 
   +hover
     color: color('black')
     background-color: color('white')
+
+a:focus-visible
+  outline: em(1) solid color('white')
+  outline-offset: em(3)
+
 
 small, figcaption, .font--small
   font-size: var(--step--1)

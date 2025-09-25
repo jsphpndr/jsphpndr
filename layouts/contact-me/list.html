@@ -1,0 +1,14 @@
+{{- define "variables" -}}
+{{- .Store.Set "hasForm" true -}}
+{{- end -}}
+{{- define "main" -}}
+<header class="[ bar-header ][ pl--1 ]">
+  {{ partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+</header>
+<div>
+ {{ .Content }}
+
+ {{ partial "forms/contact.html" . }}
+</div>
+{{- end -}}

@@ -3,6 +3,7 @@
   {{ block "variables" . }}{{ end }}
   {{ partial "head.html" . }}
   <body>
+    <a class="screen-reader-text" href="#main">Skip to main content</a>
     <header class="[ navbar ]" id="navbar">
       <div class="[ wrapper ][ flex between middle ]">
         <a class="[ logo ]" href="/" title="Home" aria-label="Home" data-prefetch>
@@ -29,6 +30,10 @@
     {{- if or .IsHome ( .Store.Get "hasObscure" ) }}
     {{ partial "script.html" (dict "path" "scripts/components/obscure.js" "targetPath" "scripts/obscure.js" "attributes" (dict "defer" true)) }}
     {{- end -}}
+    {{ if .Store.Get "hasForm" }}
+    {{ partial "script.html" (dict "path" "scripts/vendor/bouncer.polyfills.js" "targetPath" "scripts/bouncer.js" "raw" true "attributes" (dict "defer" true))}}
+    {{ partial "script.html" (dict "path" "scripts/components/validate.js" "targetPath" "scripts/validate.js") }}
+    {{ end }}
     {{- if .Store.Get "hasYouTube" -}}
     {{
       $attributes := dict
