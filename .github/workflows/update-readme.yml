@@ -4,52 +4,53 @@ on:
   push:
     branches:
       - main
-  schedule:
-    - cron: '0 0 * * *'  # Runs daily at midnight
-    
+    paths:
+      - 'content/blog/**'
+      - 'layouts/_default/rss.xml'
+      - 'hugo.toml'
+      - 'update-readme.sh'
+      - '.github/workflows/update-readme.yml'
+  workflow_dispatch:
+
 permissions:
-  contents: write  # 👈 Grants permission to push changes
+  contents: write
+
+concurrency:
+  group: update-readme
+  cancel-in-progress: false
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
 
     steps:
-      # ✅ Step 1: Checkout Repository
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
-      # ✅ Step 2: Set Up Hugo
       - name: Set Up Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.142.0'
-          extended: true  # Ensure extended version is used
-
-      # ✅ Step 3: Clear Hugo Cache (optional but recommended)
-      - name: Clear Hugo Cache
-        run: hugo mod clean
+          extended: true
 
       - name: Install Dart Sass
         run: sudo snap install dart-sass
 
-      # ✅ Step 4: Build the Hugo Site
-      - name: Build with Hugo
-        run: hugo --minify --enableGitInfo
-
-      # ✅ Step 5: Debug - List Generated Files
-      - name: List Public Directory
-        run: ls -R public/  # Helps verify RSS file generation
-
-      # ✅ Step 6: Run Update Script
-      - name: Run Update Script
+      - name: Update article list
         run: bash update-readme.sh
 
-      - name: Commit Changes
+      - name: Commit changed article list
         run: |
-          git diff
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
           git add README.md
-          git commit -m "Automated update of README 🚀" || echo "No changes to commit"
-          git push
+          if git diff --cached --quiet; then
+            echo "Article list is unchanged."
+            exit 0
+          fi
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git commit -m "Update README article list [skip netlify]"
+          git pull --rebase origin main
+          git push origin HEAD:main

@@ -1,9 +1,11 @@
-name: Trigger Netlify Deploy
+name: Refresh GA4 (weekly Netlify deploy)
 
 on:
   schedule:
-    - cron: '0 12 * * 2'  # Every Tuesday at 8 AM Bahamas (12 PM UTC)
+    - cron: '0 12 * * 2'  # Every Tuesday at 12:00 UTC
   workflow_dispatch:
+
+permissions: {}
 
 jobs:
   trigger:
@@ -11,4 +13,4 @@ jobs:
 
     steps:
       - name: Trigger Netlify Build Hook
-        run: curl -X POST -d '{}' https://api.netlify.com/build_hooks/687d796ab820d028b6b22ca0
+        run: curl --fail-with-body --silent --show-error --connect-timeout 15 --max-time 60 -X POST -d '{}' https://api.netlify.com/build_hooks/687d796ab820d028b6b22ca0
